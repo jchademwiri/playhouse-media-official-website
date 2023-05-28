@@ -1,23 +1,18 @@
 /* FAQ data */
 export const FAQs = [
   {
-    question: 'How can I book a workout class?',
+    question: 'Do I pay for Domain Registration?',
     answer:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae temporibus beatae, totam repudiandae nam recusandae ea dolores tempora maxime. adipisicing elit. Molestiae temporibus beatae, totam repudiandae adipisicing elit. Molestiae temporibus beatae, totam repudiandae nam',
+      'We do not charge you for domain registration if you want a [.co.za] domain. you only pay for [.com and .org] domains or other domain names.',
   },
   {
-    question: 'Can I pay by cash for my membership?',
+    question: 'Can I have a copy of my website?',
     answer:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae temporibus beatae, totam repudiandae nam recusandae ea dolores tempora maxime.olestiae temporibus beatae, totam repudiandae nam recusandae ea dolores tempora maxime.  adipisicing elit. Molestiae temporibus beatae, totam repudiandae',
+      'After we finish designing your website we can give it to you. You can also download it from your cpanel.',
   },
   {
-    question: 'What age do I need to be to join?',
+    question: 'Transferring you website from another hosting company',
     answer:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae temporibus beatae, totam repudiandae nam recusandae ea dolores tempora maxime.totam repudiandae nam recusandae ea dolores tempora maxime.  adipisicing elit. Molestiae temporibus beatae it amet consectetur, adipisicing elit. Molestiae temporibus beatae, totam repudiandae nam recusandae ea dolores tempora maxime.totam repudiandae nam recusandae ea dolores',
-  },
-  {
-    question: 'Are there any lockers?',
-    answer:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae temporibus beatae, totam repudiandae nam recusandae ea dolores tempora maxime. dolor sit amet  dolor sit amet ',
+      'You just give us the login details you got from the previous hosting company, probably from their first email and we do the transfer for you to our servers for FREE provided you have paid us the annual hosting fee of $40 per year. No need to pay for web designing.',
   },
 ];

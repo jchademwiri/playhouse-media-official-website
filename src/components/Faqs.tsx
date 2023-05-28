@@ -4,26 +4,30 @@ import { BiChevronDown } from 'react-icons/bi';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Faqs = ({ question, answer }: Faq) => {
-  const [show, setShow] = useState(false);
+  const [active, setActive] = useState(false);
+
+  const handleToggle = () => {
+    setActive(!active);
+  };
 
   return (
     <>
       {/* question section */}
       <div
-        onClick={() => setShow(!show)}
+        onClick={handleToggle}
         className='flex justify-between items-center cursor-pointer'
       >
         <h1 className='text-xl font-semibold text-green'>{question}</h1>
         <BiChevronDown
           className={`text-3xl transition-all duration-500 ${
-            show ? 'rotate-180' : ''
+            active ? 'rotate-180' : ''
           }`}
-        ></BiChevronDown>
+        />
       </div>
 
       {/* answer section */}
       <AnimatePresence>
-        {show && (
+        {active && (
           <motion.div
             initial={{ height: 0 }}
             animate={{ height: 'auto' }}
@@ -38,4 +42,5 @@ const Faqs = ({ question, answer }: Faq) => {
     </>
   );
 };
+
 export default Faqs;
