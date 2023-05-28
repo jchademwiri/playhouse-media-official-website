@@ -11,7 +11,7 @@ const Navbar = () => {
 
       <div className='flex'>
         <Link
-          className='text-xl font-semibold text-accent md:text-3xl'
+          className='text-xl font-semibold text-accent md:text-3xl hover:text-white'
           // activate when we add menu button👇
           // className='md:pr-24 pr-6 text-xl font-semibold text-accent md:text-3xl'
           href={`/`}
