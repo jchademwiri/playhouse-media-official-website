@@ -19,7 +19,7 @@ const Moto = () => {
           At Playhouse Media, our website designers handle the entire design
           process effortlessly. Just provide us with your preferred styles,
           colors, desired functions, your business niche, and target market, and
-          we'll craft a one-of-a-kind design for your website. With us,
+          we`&apos;ll craft a one-of-a-kind design for your website. With us,
           achieving your dream website is as simple as that!
         </p>
       </div>

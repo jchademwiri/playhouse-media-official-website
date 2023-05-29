@@ -19,11 +19,11 @@ const Hosting = () => {
         <p className='py-1'>
           At our technology company, we prioritize reducing the cost of website
           ownership and enabling organizations to secure their domain name.
-          Whether you're a small business or an individual, we believe web
-          design should be accessible to all. That's why we offer a selection of
-          professional and budget-friendly web design packages designed to suit
-          a wide range of website budgets. Count on us to make quality web
-          design affordable and within your reach.
+          Whether you&apos;re a small business or an individual, we believe web
+          design should be accessible to all. That&apos;s why we offer a
+          selection of professional and budget-friendly web design packages
+          designed to suit a wide range of website budgets. Count on us to make
+          quality web design affordable and within your reach.
         </p>
         <button className='my-6'>
           <Link

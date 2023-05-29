@@ -16,21 +16,21 @@ const Services = () => {
             </span>{' '}
             , placing special emphasis on mobile optimization. Our expertise
             extends beyond that, as we provide all-encompassing solutions for
-            your brand's digital marketing needs as well.
+            your brand&apos;s digital marketing needs as well.
           </p>
           <p className='py-2'>
             Discover the diverse array of services we offer to fuel the growth
-            of your brand. Whether it's SEO, SEM, or the technical aspects of
-            digital marketing, we excel in all areas. Count on us to be your
+            of your brand. Whether it&apos;s SEO, SEM, or the technical aspects
+            of digital marketing, we excel in all areas. Count on us to be your
             trusted partner, adept at{' '}
             <span className='text-accent'>
               maximizing your online presence and driving results.
             </span>
           </p>
           <p className='py-2'>
-            Elevate your brand's visibility with our unrivaled graphic design
-            expertise. Our talented team crafts captivating logos, visually
-            stunning website graphics,{' '}
+            Elevate your brand&apos;s visibility with our unrivaled graphic
+            design expertise. Our talented team crafts captivating logos,
+            visually stunning website graphics,{' '}
             <span className='text-accent'>
               custom company profiles, letterheads, and email signatures{' '}
             </span>{' '}
@@ -67,8 +67,8 @@ const Services = () => {
               Search Engine Optimization
             </header>
             <p>
-              We enhance your website's ranking in search engine results pages
-              (SERPs), utilizing proven techniques to boost visibility to
+              We enhance your website&apos;s ranking in search engine results
+              pages (SERPs), utilizing proven techniques to boost visibility to
               potential customers. Trust us to optimize your website and drive
               organic traffic, connecting you with your target audience.
             </p>
@@ -81,7 +81,7 @@ const Services = () => {
               Our team excels in producing top-notch graphics for diverse
               applications, including web design, print, and marketing
               materials. Trust us to create visually compelling designs that
-              enhance your brand's presence.
+              enhance your brand&apos;s presence.
             </p>
           </article>
         </div>
