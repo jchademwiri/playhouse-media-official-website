@@ -1,6 +1,6 @@
 const Contact = () => {
   return (
-    <section className='my-20 max-w-[1240px] w-full mx-auto px-4 md:px-0'>
+    <section className='mx-auto my-20 w-full max-w-[1240px] px-4'>
       Contact
     </section>
   );

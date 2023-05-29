@@ -1,30 +1,56 @@
 import Faqs from '@/components/Faqs';
 import { FAQs } from '@/data';
+import Link from 'next/link';
 import uuid from 'react-uuid';
+import SmallLine from '../SmallLine';
 
 const Hosting = () => {
   return (
-    <section className='max-w-[1240px] w-full mx-auto px-4 md:px-0'>
-      <div className='grid md:grid-cols-2 py-10 my-10'>
-        <div>
-          <h2 className='text-3xl'>Playhouse Media Group</h2>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum repellat
-          deserunt repudiandae nobis vel consequuntur similique doloremque vero
-          ratione dolorum.
-        </div>
-        <div className='w-full mx-auto grid gap-4'>
-          {FAQs.map((item) => {
-            // destruct
-            const { question, answer } = item;
-            return (
-              <div className='bg-darkcolor my-4 rounded-md' key={uuid()}>
-                {/* passing two props to this component */}
-                <Faqs question={question} answer={answer}></Faqs>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+    <section className='mx-auto my-10 grid w-full max-w-[1240px] gap-4 px-4 py-10 md:grid-cols-2'>
+      {/* <div className=''> */}
+      <article>
+        <h2 className='py-2 text-3xl font-semibold'>
+          Playhouse Media Group
+          <SmallLine />
+        </h2>
+        <h3 className='py-1 font-medium text-accent'>
+          Affordable Web Design Solutions Tailored to Your Needs.
+        </h3>
+        <p className='py-1'>
+          At our technology company, we prioritize reducing the cost of website
+          ownership and enabling organizations to secure their domain name.
+          Whether you're a small business or an individual, we believe web
+          design should be accessible to all. That's why we offer a selection of
+          professional and budget-friendly web design packages designed to suit
+          a wide range of website budgets. Count on us to make quality web
+          design affordable and within your reach.
+        </p>
+        <button className='my-6'>
+          <Link
+            href={`/`}
+            className='block bg-armyGreen px-6 py-4 font-medium uppercase text-accent hover:text-white'
+          >
+            GET STATRTED NOW
+          </Link>
+        </button>
+      </article>
+      <article className=''>
+        <h2 className='py-2 text-3xl font-semibold'>
+          Frequently Asked Questions
+          <SmallLine />
+        </h2>
+
+        {FAQs.map((item) => {
+          const { question, answer } = item;
+          return (
+            <div className='my-4' key={uuid()}>
+              {/* passing two props to this component */}
+              <Faqs question={question} answer={answer}></Faqs>
+            </div>
+          );
+        })}
+      </article>
+      {/* </div> */}
     </section>
   );
 };

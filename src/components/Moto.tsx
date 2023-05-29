@@ -4,19 +4,23 @@ import Image from 'next/image';
 const Moto = () => {
   return (
     <section className='bg-armyGreen '>
-      <div className='py-20 max-w-[1240px] w-full mx-auto px-4 md:px-0  '>
-        <header className='flex py-4 gap-2 items-center '>
-          <Image src={rocket} alt='flying rocket' className='h-[50px]' />
-          <h2 className='text-accent font-medium  md:font-semibold text-xl md:text-3xl'>
-            Unbeatable Premium Hosting Services
+      <div className='mx-auto w-full max-w-[1240px] px-4 py-20'>
+        <header className='flex items-center gap-2 py-4 '>
+          <Image
+            src={rocket}
+            alt='flying rocket'
+            className='h-[50px] md:h-[70px]'
+          />
+          <h2 className='text-xl font-medium  text-accent md:text-3xl md:font-semibold'>
+            Unbeatable Premium Hosting Services.
           </h2>
         </header>
-        <p className='md:w-4/5 py-2'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae esse
-          earum minus accusamus ut obcaecati ducimus voluptatibus commodi
-          praesentium ullam? Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Exercitationem nostrum magnam sed, veniam rem perferendis in
-          molestias optio quasi amet ipsum libero odio.
+        <p className='py-2 md:w-4/5'>
+          At Playhouse Media, our website designers handle the entire design
+          process effortlessly. Just provide us with your preferred styles,
+          colors, desired functions, your business niche, and target market, and
+          we'll craft a one-of-a-kind design for your website. With us,
+          achieving your dream website is as simple as that!
         </p>
       </div>
     </section>

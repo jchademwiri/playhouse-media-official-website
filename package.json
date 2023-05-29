@@ -30,6 +30,8 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@types/gtag.js": "^0.0.12"
+    "@types/gtag.js": "^0.0.12",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.3.0"
   }
 }

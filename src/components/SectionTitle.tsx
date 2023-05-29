@@ -1,8 +1,8 @@
 const SectionTitle = ({ title }: { title: string }) => {
   return (
-    <div className='flex gap-2 items-center py-4'>
-      <span className='h-1 rounded-full w-20  bg-accent'></span>
-      <h2 className='text-2xl text-accent font-medium'>{title}</h2>
+    <div className='flex items-center gap-2 py-4'>
+      <span className='h-1 w-20 rounded-full  bg-accent'></span>
+      <h2 className='text-2xl font-medium text-accent'>{title}</h2>
     </div>
   );
 };

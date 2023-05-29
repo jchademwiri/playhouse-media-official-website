@@ -15,9 +15,9 @@ const Faqs = ({ question, answer }: Faq) => {
       {/* question section */}
       <div
         onClick={handleToggle}
-        className='flex justify-between items-center cursor-pointer'
+        className='flex cursor-pointer justify-between bg-armyGreen p-2'
       >
-        <h1 className='text-xl font-semibold text-green'>{question}</h1>
+        <h1 className='text-xl font-semibold '>{question}</h1>
         <BiChevronDown
           className={`text-3xl transition-all duration-500 ${
             active ? 'rotate-180' : ''
@@ -35,7 +35,9 @@ const Faqs = ({ question, answer }: Faq) => {
             transition={{ duration: 0.3 }}
             className='overflow-clip'
           >
-            <p className='pt-3 text-sm md:text-base'>{answer}</p>
+            <p className='bg-armyGreen/50 p-2 text-sm md:text-base '>
+              {answer}
+            </p>
           </motion.div>
         )}
       </AnimatePresence>

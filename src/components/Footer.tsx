@@ -7,9 +7,9 @@ import uuid from 'react-uuid';
 const Footer = () => {
   return (
     <footer className='bg-armyGreen/40 py-12'>
-      <div className='max-w-[1240px] w-full mx-auto px-4 gap-4 grid md:grid-cols-2 md:place-items-center '>
+      <div className='mx-auto grid w-full max-w-[1240px] gap-4 px-4 md:grid-cols-2 md:place-items-center '>
         <div className=''>
-          <header className='flex text-2xl items-center'>
+          <header className='flex items-center text-2xl'>
             <Image src={user} alt='consulting user icon' className='pr-4' />
             Consulting
           </header>
@@ -20,14 +20,14 @@ const Footer = () => {
           </p>
           <Link
             href={`/`}
-            className='text-accent hover:text-white text-xl font-medium '
+            className='text-xl font-medium text-accent hover:text-white '
           >
             Let’s Start a Project
           </Link>
         </div>
         <div className='grid grid-cols-2 gap-8 '>
           <nav>
-            <h3 className='py-4 text-accent text-lg font-medium md:text-xl md:font-semibold'>
+            <h3 className='py-4 text-lg font-medium text-accent md:text-xl md:font-semibold'>
               Our Services
             </h3>
             <ul>
@@ -39,7 +39,7 @@ const Footer = () => {
             </ul>
           </nav>
           <nav>
-            <h3 className='py-4 text-accent text-lg font-medium md:text-xl md:font-semibold'>
+            <h3 className='py-4 text-lg font-medium text-accent md:text-xl md:font-semibold'>
               Social Links
             </h3>
             <ul>

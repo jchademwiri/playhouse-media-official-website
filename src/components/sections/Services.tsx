@@ -2,11 +2,8 @@ import SectionTitle from '../SectionTitle';
 
 const Services = () => {
   return (
-    <section
-      id='services'
-      className='my-20 max-w-[1240px] w-full mx-auto px-4 md:px-0'
-    >
-      <h2 className='md:text-6xl text-4xl font-semibold'>
+    <section id='services' className='mx-auto my-20 w-full max-w-[1240px] px-4'>
+      <h2 className='text-4xl font-semibold md:text-6xl'>
         Quality & Expertise
       </h2>
       <SectionTitle title='Our Services' />
@@ -44,7 +41,7 @@ const Services = () => {
         </div>
         <div>
           <article className='py-2'>
-            <header className='text-accent font-medium text-xl'>
+            <header className='text-xl font-medium text-accent'>
               Custom Web Design & Development
             </header>
             <p>
@@ -66,7 +63,7 @@ const Services = () => {
             </p>
           </article> */}
           <article className='py-2'>
-            <header className='text-accent font-medium text-xl'>
+            <header className='text-xl font-medium text-accent'>
               Search Engine Optimization
             </header>
             <p>
@@ -77,7 +74,7 @@ const Services = () => {
             </p>
           </article>
           <article className='py-2'>
-            <header className='text-accent font-medium text-xl'>
+            <header className='text-xl font-medium text-accent'>
               High-Quality Graphics & Branding
             </header>
             <p>

@@ -6,17 +6,17 @@ interface Card {
 
 const Card = ({ subTitle, title, description }: Card) => {
   return (
-    <div className='px-7 py-8 bg-armyGreen rounded-sm '>
+    <div className='rounded-sm bg-armyGreen px-7 py-8 '>
       <header>
         {subTitle && (
-          <h3 className='font-medium text-lg text-accent py-2'>
+          <h3 className='py-2 text-lg font-medium text-accent'>
             {subTitle} 👉{' '}
           </h3>
         )}
 
-        <h4 className='text-xs py-2 font-medium'>{title}</h4>
+        <h4 className='py-2 text-xs font-medium'>{title}</h4>
       </header>
-      <p className='text-sm py-2'>{description}</p>
+      <p className='py-2 text-sm'>{description}</p>
     </div>
   );
 };

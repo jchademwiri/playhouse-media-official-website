@@ -6,14 +6,11 @@ import Link from 'next/link';
 
 const Hero = () => {
   return (
-    <section
-      id='home'
-      className='max-w-[1240px] w-full my-5 mx-auto px-4 md:px-0'
-    >
-      <h1 className='md:text-8xl font-semibold text-4xl '>
+    <section id='home' className='mx-auto my-5 w-full max-w-[1240px] px-4'>
+      <h1 className='text-4xl font-semibold md:text-8xl '>
         A creative web development agency.
       </h1>
-      <div className='grid md:grid-cols-2 gap-4 my-10 md:place-items-center'>
+      <div className='my-10 grid gap-4 md:grid-cols-2 md:place-items-center'>
         <div>
           <SectionTitle title='About Us' />
           <p className='py-5'>
@@ -28,7 +25,7 @@ const Hero = () => {
             <Image
               src={downArrow}
               alt='down arrow'
-              className='opacity-60 animate-bounce hover:opacity-100'
+              className='animate-bounce opacity-60 hover:opacity-100'
             />
           </Link>
         </div>
