@@ -6,7 +6,12 @@ const Navbar = () => {
   return (
     <div className='mx-auto flex w-full max-w-[1240px] items-center justify-between px-4 py-4'>
       <Link href={`/`}>
-        <Image src={logo} alt='logo icon' />
+        <Image
+          src={logo}
+          placeholder='blur'
+          blurDataURL={logo.toString()}
+          alt='logo icon'
+        />
       </Link>
 
       <div className='flex'>
