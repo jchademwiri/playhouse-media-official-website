@@ -9,7 +9,7 @@ const Moto = () => {
           <Image
             src={rocket}
             alt='flying rocket'
-            className='h-[50px] md:h-[70px]'
+            className='h-[50px] w-auto md:h-[70px]'
           />
           <h2 className='text-xl font-medium  text-accent md:text-3xl md:font-semibold'>
             Unbeatable Premium Hosting Services.

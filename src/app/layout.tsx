@@ -1,4 +1,4 @@
-import CookieBanner from '@/lib/googleAnalytics/CookieBanner';
+// import CookieBanner from '@/lib/googleAnalytics/CookieBanner';
 import GoogleAnalytics from '@/lib/googleAnalytics/GoogleAnalytics';
 import './globals.css';
 import { Inter } from 'next/font/google';
@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata = {
   title: 'Playhouse Media Group',
   description:
-    'We takes pride in having worked with and advised many Business Start-Ups, Entrepreneurs, & Established Businesses Globally on their Strategic Marketing Initiatives. We welcome the opportunity to offer your Business the chance to build a successful Marketing Strategy to better dominate your market segment quickly and effectively.',
+    "Transform your online presence with our web design and development services. We create user-friendly and visually appealing websites that captivate your audience. Boost your brand's visibility and drive organic traffic with our SEO expertise.",
 };
 
 export default function RootLayout({
@@ -25,7 +25,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
-        <CookieBanner />
+        {/* <CookieBanner /> */}
       </body>
     </html>
   );
