@@ -9,9 +9,7 @@ const Card = ({ subTitle, title, description }: Card) => {
     <div className='rounded-sm bg-armyGreen px-7 py-8 '>
       <header>
         {subTitle && (
-          <h3 className='py-2 text-lg font-medium text-accent'>
-            {subTitle} 👉{' '}
-          </h3>
+          <h3 className='py-2 text-lg font-medium text-accent'>{subTitle} </h3>
         )}
 
         <h4 className='py-2 text-xs font-medium'>{title}</h4>

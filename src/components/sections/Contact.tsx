@@ -14,7 +14,13 @@ const Contact = () => {
       </header>
       <article className='my-8 grid gap-4 text-center sm:grid-cols-2 md:grid-cols-3'>
         <div className='flex flex-col items-center justify-center rounded bg-armyGreen p-8 '>
-          <Image src={phone} alt='phone icon' className='h-auto w-12 py-5' />
+          <Image
+            src={phone}
+            placeholder='blur'
+            blurDataURL={phone.toString()}
+            alt='phone icon'
+            className='h-auto w-12 py-5'
+          />
           <div>
             <h3 className='text-lg font-medium'>Phone Number</h3>
             <Link href={`tel:+27740491433`} className=''>
@@ -23,7 +29,13 @@ const Contact = () => {
           </div>
         </div>
         <div className='flex flex-col items-center justify-center rounded bg-armyGreen p-8'>
-          <Image src={mail} alt='phone icon' className='h-auto w-12 py-5' />
+          <Image
+            src={mail}
+            placeholder='blur'
+            blurDataURL={mail.toString()}
+            alt='phone icon'
+            className='h-auto w-12 py-5'
+          />
           <div>
             <h3 className='text-lg font-medium'>Email Address</h3>
             <Link href={`mailto:info@playhousemedia.net`} className=''>
@@ -32,7 +44,13 @@ const Contact = () => {
           </div>
         </div>
         <div className='flex flex-col items-center justify-center rounded bg-armyGreen p-8'>
-          <Image src={map} alt='phone icon' className='h-auto w-12 py-5' />
+          <Image
+            src={map}
+            placeholder='blur'
+            blurDataURL={map.toString()}
+            alt='phone icon'
+            className='h-auto w-12 py-5'
+          />
           <div>
             <h3 className='text-lg font-medium'>Physical Address</h3>
             <Link
