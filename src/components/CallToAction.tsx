@@ -15,18 +15,14 @@ export const CallToAction = () => {
             href='tel:+27740491433'
             className='rounded bg-dark/20 px-6 py-2 hover:bg-dark/50'
           >
-            <h4 className='py-1 text-lg font-medium text-accent'>
-              Call Us Now
-            </h4>
+            <p className='py-1 text-lg font-medium text-accent'>Call Us Now</p>
             <span>074 049 1433</span>
           </Link>
           <Link
             href='mailto:info@playhousemedia.net'
             className='rounded bg-dark/20 px-6 py-2 hover:bg-dark/50'
           >
-            <h4 className='py-1 text-lg font-medium text-accent'>
-              Email Us Now
-            </h4>
+            <p className='py-1 text-lg font-medium text-accent'>Email Us Now</p>
             <span>info@playhousemedia.net</span>
           </Link>
         </div>

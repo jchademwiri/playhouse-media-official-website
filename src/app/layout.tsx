@@ -8,17 +8,31 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Playhouse Media Group',
+  title: 'Playhouse Media Group - Web Design and Development Services',
   description:
-    "Transform your online presence with our web design and development services. We create user-friendly and visually appealing websites that captivate your audience. Boost your brand's visibility and drive organic traffic with our SEO expertise.",
+    "Transform your online presence with Playhouse Media Group. We specialize in creating user-friendly and visually appealing websites that captivate your audience. Boost your brand's visibility and drive organic traffic with our expert web design, development, and SEO services.",
   openGraph: {
-    title: 'Playhouse Media Group',
+    title: 'Playhouse Media Group - Web Design and Development Services',
     description:
-      "Transform your online presence with our web design and development services. We create user-friendly and visually appealing websites that captivate your audience. Boost your brand's visibility and drive organic traffic with our SEO expertise.",
+      "Transform your online presence with Playhouse Media Group. We specialize in creating user-friendly and visually appealing websites that captivate your audience. Boost your brand's visibility and drive organic traffic with our expert web design, development, and SEO services.",
     url: 'https://playhousemedia.net',
     siteName: 'Playhouse Media Group',
     locale: 'en_US',
     type: 'website',
+    authors: ['Jacob Chademwiri'],
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Playhouse Media Group - Web Design and Development Services',
+      },
+    ],
+  },
+  twitter: {
+    handle: '@JChademwiri',
+    site: '@JChademwiri',
+    cardType: 'summary_large_image',
   },
 };
 
