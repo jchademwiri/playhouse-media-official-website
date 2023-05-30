@@ -2,7 +2,7 @@ import Faqs from '@/components/Faqs';
 import { FAQs } from '@/data';
 import Link from 'next/link';
 import uuid from 'react-uuid';
-import SmallLine from '../SmallLine';
+import { AccentLine, WhiteLine } from '../SmallLine';
 
 const Hosting = () => {
   return (
@@ -11,7 +11,7 @@ const Hosting = () => {
       <article>
         <h2 className='py-2 text-3xl font-semibold'>
           Playhouse Media Group
-          <SmallLine />
+          <WhiteLine />
         </h2>
         <h3 className='py-1 font-medium text-accent'>
           Affordable Web Design Solutions Tailored to Your Needs.
@@ -37,7 +37,7 @@ const Hosting = () => {
       <article className=''>
         <h2 className='py-2 text-3xl font-semibold'>
           Frequently Asked Questions
-          <SmallLine />
+          <AccentLine />
         </h2>
 
         {FAQs.map((item) => {

@@ -10,7 +10,6 @@ export default function Home() {
       <Moto />
       <Hosting />
       <CallToAction />
-      <About />
       <Contact />
     </main>
   );

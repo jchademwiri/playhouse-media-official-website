@@ -19,13 +19,14 @@ const Footer = () => {
             will meet your business goals and objectives.
           </p>
           <Link
-            href={`/`}
+            href={`https://wa.me/message/AQCSRA3QZVK7G1`}
             className='text-xl font-medium text-accent hover:text-white '
           >
-            Let’s Start a Project
+            Let&apos;s Start a Project
+            <div className='h-1 w-28 bg-white'></div>
           </Link>
         </div>
-        <div className='grid grid-cols-2 gap-8 '>
+        <div className='grid grid-cols-2 gap-8'>
           <nav>
             <h3 className='py-4 text-lg font-medium text-accent md:text-xl md:font-semibold'>
               Our Services

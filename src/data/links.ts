@@ -1,11 +1,12 @@
 export const socialLinks = [
   {
     name: 'WhatsApp',
-    url: '/',
+    url: 'https://wa.me/message/AQCSRA3QZVK7G1',
   },
   {
     name: 'LinkedIn',
-    url: 'https://www.linkedin.com/company/playhouse-media-group',
+    url: 'https://www.linkedin.com/in/jchademwiri',
+    // url: 'https://www.linkedin.com/company/playhouse-media-group',
   },
   {
     name: 'Facebook',
