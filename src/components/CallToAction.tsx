@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export const CallToAction = () => {
   return (
-    <div className='bg-armyGreen py-12'>
+    <div className='bg-armyGreen py-12 text-white'>
       <div className='mx-auto w-full max-w-[1240px] justify-between gap-4 px-4 lg:flex lg:grid-cols-2 lg:items-center '>
         <div className='py-3'>
           <p>

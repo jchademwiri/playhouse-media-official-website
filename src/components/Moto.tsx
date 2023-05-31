@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Moto = () => {
   return (
-    <section className='bg-armyGreen '>
+    <section className='bg-armyGreen text-white '>
       <div className='mx-auto w-full max-w-[1240px] px-4 py-20'>
         <header className='flex items-center gap-2 py-4 '>
           <Image

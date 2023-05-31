@@ -6,7 +6,7 @@ interface Card {
 
 const Card = ({ subTitle, title, description }: Card) => {
   return (
-    <div className='rounded-sm bg-armyGreen px-7 py-8 '>
+    <div className='rounded-sm bg-armyGreen px-7 py-8 text-white'>
       <header>
         {subTitle && (
           <h3 className='py-2 text-lg font-medium text-accent'>{subTitle} </h3>
