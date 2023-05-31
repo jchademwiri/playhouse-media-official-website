@@ -6,7 +6,7 @@ import uuid from 'react-uuid';
 
 const Footer = () => {
   return (
-    <footer className='bg-armyGreen/40 py-12'>
+    <footer className='bg-armyGreen/60 py-12 text-white '>
       <div className='mx-auto grid w-full max-w-[1240px] gap-4 px-4 md:grid-cols-2 md:place-items-center '>
         <div className=''>
           <header className='flex items-center text-2xl'>

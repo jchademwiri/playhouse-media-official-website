@@ -5,14 +5,14 @@ import { downArrow, mail, map, phone } from '@/data/images';
 
 const Contact = () => {
   return (
-    <section className='mx-auto my-20 w-full max-w-[1240px] px-4'>
+    <section className='mx-auto my-20 w-full max-w-[1240px] px-4 '>
       <header>
         <h2 className='text-4xl font-semibold md:text-6xl'>
           Talk to us today.
         </h2>
         <SectionTitle title='Contact us' />
       </header>
-      <article className='my-8 grid gap-4 text-center sm:grid-cols-2 md:grid-cols-3'>
+      <article className='my-8 grid gap-4 text-center  text-white sm:grid-cols-2 md:grid-cols-3'>
         <div className='flex flex-col items-center justify-center rounded bg-armyGreen p-8 '>
           <Image
             src={phone}

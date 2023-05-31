@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <GoogleAnalytics GA_MEASUREMENT_ID='G-51M5BSC068' />
-      <body className={`${inter.className} bg-dark text-white`}>
+      <body className={`${inter.className}`}>
         <Navbar />
         {children}
         <Footer />

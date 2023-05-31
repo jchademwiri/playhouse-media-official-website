@@ -15,7 +15,7 @@ const Faqs = ({ question, answer }: Faq) => {
       {/* question section */}
       <div
         onClick={handleToggle}
-        className='flex cursor-pointer justify-between bg-armyGreen p-2'
+        className='flex cursor-pointer justify-between bg-armyGreen p-2 text-white'
       >
         <h1 className='text-xl font-semibold '>{question}</h1>
         <BiChevronDown
@@ -35,7 +35,7 @@ const Faqs = ({ question, answer }: Faq) => {
             transition={{ duration: 0.3 }}
             className='overflow-clip'
           >
-            <p className='bg-armyGreen/50 p-2 text-sm md:text-base '>
+            <p className='bg-armyGreen/50 p-2 text-sm text-white md:text-base '>
               {answer}
             </p>
           </motion.div>
