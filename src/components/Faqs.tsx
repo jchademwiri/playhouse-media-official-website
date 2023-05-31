@@ -17,7 +17,7 @@ const Faqs = ({ question, answer }: Faq) => {
         onClick={handleToggle}
         className='flex cursor-pointer justify-between bg-armyGreen p-2 text-white'
       >
-        <h1 className='text-xl font-semibold '>{question}</h1>
+        <h2 className='text-xl font-semibold '>{question}</h2>
         <BiChevronDown
           className={`text-3xl transition-all duration-500 ${
             active ? 'rotate-180' : ''
