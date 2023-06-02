@@ -11,12 +11,12 @@ import {
 export default function Home() {
   return (
     <main className=''>
-      {/* <Hero />
+      <Hero />
       <Services />
       <Moto />
-      <Hosting /> */}
+      <Hosting />
       {/* @ts-expect-error Async Server Component */}
-      <Projects />
+      {/* <Projects /> */}
       <CallToAction />
       <Contact />
     </main>
