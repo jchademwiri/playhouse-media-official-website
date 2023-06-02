@@ -18,6 +18,7 @@ export const metadata = {
     title: 'Playhouse Media Group - Web Design and Development Services',
     description:
       "Transform your online presence with Playhouse Media Group. We specialize in creating user-friendly and visually appealing websites that captivate your audience. Boost your brand's visibility and drive organic traffic with our expert web design, development, and SEO services.",
+    images: '/opengraph-image.jpg',
     url: 'https://www.playhousemedia.net',
     siteName: 'Playhouse Media Group',
     locale: 'en_US',
