@@ -8,22 +8,25 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
+  metadataBase: new URL('https://www.playhousemedia.net'),
   title: 'Playhouse Media Group - Web Design and Development Services',
   description:
     "Transform your online presence with Playhouse Media Group. We specialize in creating user-friendly and visually appealing websites that captivate your audience. Boost your brand's visibility and drive organic traffic with our expert web design, development, and SEO services.",
   alternates: {
     canonical: 'https://www.playhousemedia.net',
   },
+  
   openGraph: {
     title: 'Playhouse Media Group - Web Design and Development Services',
     description:
       "Transform your online presence with Playhouse Media Group. We specialize in creating user-friendly and visually appealing websites that captivate your audience. Boost your brand's visibility and drive organic traffic with our expert web design, development, and SEO services.",
+    images: '/opengraph-image.jpg',
     url: 'https://www.playhousemedia.net',
     siteName: 'Playhouse Media Group',
     locale: 'en_US',
-    type: 'website',
     authors: ['Jacob Chademwiri'],
   },
+
   twitter: {
     handle: '@JChademwiri',
     site: '@JChademwiri',

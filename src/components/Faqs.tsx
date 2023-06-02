@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { BiChevronDown } from 'react-icons/bi';
 import { motion, AnimatePresence } from 'framer-motion';
+// import { Faq } from '../../types';
 
 const Faqs = ({ question, answer }: Faq) => {
   const [active, setActive] = useState(false);
