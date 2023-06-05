@@ -1,12 +1,6 @@
 import { CallToAction } from '@/components/CallToAction';
 import Moto from '@/components/Moto';
-import {
-  Contact,
-  Hero,
-  Hosting,
-  Projects,
-  Services,
-} from '@/components/sections';
+import { Contact, Hero, Hosting, Services } from '@/components/sections';
 
 export default function Home() {
   return (
@@ -15,8 +9,6 @@ export default function Home() {
       <Services />
       <Moto />
       <Hosting />
-      {/* @ts-expect-error Async Server Component */}
-      {/* <Projects /> */}
       <CallToAction />
       <Contact />
     </main>
