@@ -15,23 +15,30 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.playhousemedia.net',
   },
-
   openGraph: {
+    type: 'website',
+    url: 'https://www.playhousemedia.net',
     title: 'Playhouse Media Group - Web Design and Development Services',
     description:
       "Transform your online presence with Playhouse Media Group. We specialize in creating user-friendly and visually appealing websites that captivate your audience. Boost your brand's visibility and drive organic traffic with our expert web design, development, and SEO services.",
-    images: '/images/opengraph-image.png',
-    url: 'https://www.playhousemedia.net',
-    siteName: 'Playhouse Media Group',
+    images: [
+      {
+        url: 'https://www.playhousemedia.net/images/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'OG Image',
+      },
+    ],
+    site_name: 'Playhouse Media Group',
     locale: 'en_US',
     authors: ['Jacob Chademwiri'],
   },
-
   twitter: {
     handle: '@JChademwiri',
     site: '@JChademwiri',
     cardType: 'summary_large_image',
-  },
+    image: 'https://www.playhousemedia.net/images/twitter-image.png',
+  } as TwitterMetadata,
 };
 
 export default function RootLayout({
