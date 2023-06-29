@@ -1,8 +1,7 @@
-import { downArrow } from '@/data/images';
-import Image from 'next/image';
 import SectionTitle from '../SectionTitle';
 import Card from '../Card';
 import Link from 'next/link';
+import { BsArrowDownCircle } from 'react-icons/bs';
 
 const Hero = () => {
   return (
@@ -22,11 +21,7 @@ const Hero = () => {
             optimize your website to maximize its online presence.
           </p>
           <Link href='#services'>
-            <Image
-              src={downArrow}
-              alt='down arrow'
-              className='animate-bounce opacity-60 hover:opacity-100'
-            />
+            <BsArrowDownCircle className='my-2 animate-bounce text-3xl text-accent opacity-60 hover:opacity-100' />
           </Link>
         </div>
         <div className='grid gap-2 lg:grid-cols-2'>
