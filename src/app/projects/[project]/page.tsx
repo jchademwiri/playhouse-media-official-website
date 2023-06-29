@@ -3,6 +3,10 @@ import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+// export const metadata = {
+//   title: 'Project name',
+// };
+
 type Props = {
   params: { project: string };
 };
@@ -13,8 +17,8 @@ const Project = async ({ params }: Props) => {
 
   return (
     <section className='mx-auto my-20 w-full max-w-[1240px] px-4'>
-      <header className='flex items-center justify-between'>
-        <h1 className='bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-5xl font-extrabold text-transparent drop-shadow'>
+      <header className='flex flex-col items-center justify-between'>
+        <h1 className='my-2 text-2xl font-semibold text-white drop-shadow md:text-5xl md:font-extrabold'>
           {project.name}
         </h1>
         <Link
@@ -22,7 +26,7 @@ const Project = async ({ params }: Props) => {
           title='View Project'
           target='_blank'
           rel='noopener noreferrer'
-          className='whitespace-nowrap rounded-lg bg-gray-100 px-4 py-3 font-bold text-gray-500 transition hover:bg-pink-500 hover:text-pink-100'
+          className='whitespace-nowrap rounded-lg bg-gray-100 px-4 py-3 font-bold text-dark transition hover:bg-armyGreen hover:text-accent'
         >
           View Project
         </Link>
@@ -32,7 +36,9 @@ const Project = async ({ params }: Props) => {
         alt={project.name}
         width={1920}
         height={1080}
-        className='mt-10 h-80 w-full rounded-xl border-2 border-gray-700 object-cover'
+        placeholder='blur'
+        blurDataURL={project.image}
+        className='mt-10 max-h-80 w-full rounded-t-xl object-cover'
       />
       <div className='mt-5 text-lg'>
         <PortableText value={project.content} />

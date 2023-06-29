@@ -1,4 +1,5 @@
 // import CookieBanner from '@/lib/googleAnalytics/CookieBanner';
+import { Analytics } from '@vercel/analytics/react';
 import GoogleAnalytics from '@/lib/googleAnalytics/GoogleAnalytics';
 import './globals.css';
 import { Inter } from 'next/font/google';
@@ -16,9 +17,9 @@ export const metadata = {
     canonical: 'https://www.playhousemedia.net',
   },
   openGraph: {
-    type: 'website',
     url: 'https://www.playhousemedia.net',
     title: 'Playhouse Media Group - Web Design and Development Services',
+    siteName: 'Playhouse Media Group',
     description:
       "Transform your online presence with Playhouse Media Group. We specialize in creating user-friendly and visually appealing websites that captivate your audience. Boost your brand's visibility and drive organic traffic with our expert web design, development, and SEO services.",
     images: [
@@ -29,9 +30,8 @@ export const metadata = {
         alt: 'OG Image',
       },
     ],
-    site_name: 'Playhouse Media Group',
     locale: 'en_US',
-    authors: ['Jacob Chademwiri'],
+    type: 'website',
   },
   twitter: {
     handle: '@JChademwiri',
@@ -53,6 +53,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Analytics />
         {/* <CookieBanner /> */}
       </body>
     </html>
