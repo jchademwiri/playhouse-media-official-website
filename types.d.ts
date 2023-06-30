@@ -14,9 +14,9 @@ type Project = {
   content: PortableTextBlock[];
 };
 
-type TwitterMetadata = {
-  handle: string;
-  site: string;
-  cardType: string;
-  image: string;
-};
+// type TwitterMetadata = {
+//   handle: string;
+//   site: string;
+//   cardType: string;
+//   image: string;
+// };
