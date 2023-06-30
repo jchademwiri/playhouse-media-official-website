@@ -13,10 +13,3 @@ type Project = {
   url: string;
   content: PortableTextBlock[];
 };
-
-// type TwitterMetadata = {
-//   handle: string;
-//   site: string;
-//   cardType: string;
-//   image: string;
-// };
