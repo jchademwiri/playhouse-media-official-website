@@ -10,20 +10,24 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: {
-    default: 'Jacob chademwiri Web Developer in Centurion',
-    template: '%s | Web Developer in Centurion',
+    default: 'Playhouse Media Group - Web Design and Development Services',
+    template: '%s | Web Design and Development Services',
   },
   description:
-    'I am a Frontend Developer in Centurion, SA. I love to build websites  with JavaScript, Next.js, React, Express, Tailwind and MongoDB.',
+    "Transform your online presence with Playhouse Media Group. We specialize in creating user-friendly and visually appealing websites that captivate your audience. Boost your brand's visibility and drive organic traffic with our expert web design, development, and SEO services.",
+    alternates: {
+      canonical: 'https://www.playhousemedia.net',
+    },
 
   openGraph: {
-    title: 'Frontend Developer in Centurion, SA',
-    description: `I'm a frontend developer in Centurion, SA. I love to build websites  with JavaScript, Next.js, React, Express, Tailwind and MongoDB.`,
-    url: `https://jacobc.co.za`,
-    siteName: 'Jacob Chademwiri',
+    title: 'Playhouse Media Group - Web Design and Development Services',
+    siteName: 'Playhouse Media Group',
+    description:
+    "Transform your online presence with Playhouse Media Group. We specialize in creating user-friendly and visually appealing websites that captivate your audience. Boost your brand's visibility and drive organic traffic with our expert web design, development, and SEO services.",
+    url: 'https://www.playhousemedia.net',
     images: [
       {
-        url: `https://jacobc.co.za/social.jpg`,
+        url: 'https://www.playhousemedia.net/opengraph-image.png',
         width: 1200,
         height: 600,
         alt: 'Jacob Chademwiri Frontend Developer in Centurion, SA',
@@ -34,13 +38,11 @@ export const metadata = {
   },
   category: 'technology',
   twitter: {
-    card: 'summary_large_image',
-    title: 'Jacob Chademwiri',
-    description: `I'm a frontend developer in Centurion, SA. I love to build websites  with JavaScript, Next.js, React, Express, Tailwind and MongoDB.`,
-    siteId: '1467726470533754880',
     creator: '@jchademwiri',
     creatorId: '1467726470533754880',
-    images: ['https://jacobc.co.za/social.jpg'],
+    siteId: '1467726470533754880',
+    card: 'summary_large_image',
+    images: ['https://www.playhousemedia.net/twitter-image.png'],
   },
   robots: {
     index: true,
