@@ -12,14 +12,14 @@ const Projects = async () => {
           <h2 className='text-4xl font-semibold md:text-6xl'>Case Study</h2>
           <SectionTitle title='Our Selected Projects' />
         </div>
-        <div className='flex place-content-end gap-2'>
+        {/* <div className='flex place-content-end gap-2'>
           <BsArrowLeft className='cursor-pointer rounded-full bg-armyGreen p-2 text-3xl text-accent hover:text-white' />
           <BsArrowRight className='cursor-pointer rounded-full bg-armyGreen p-2 text-3xl text-accent hover:text-white' />
-        </div>
+        </div> */}
       </div>
       <div className='my-5 grid gap-4  sm:grid-cols-2 md:grid-cols-3'>
         {projects.map((project) => (
-          <ProjectCard key={project.id} {...project} />
+          <ProjectCard key={project.slug} {...project} />
         ))}
       </div>
     </section>

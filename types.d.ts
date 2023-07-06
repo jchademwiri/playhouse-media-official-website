@@ -5,18 +5,18 @@ type Faq = {
 };
 
 type Project = {
-  id: string;
-  createdAt: Date;
   name: string;
   slug: string;
   image: string;
   url: string;
-  content: PortableTextBlock[];
+  content: PortableTextBlock;
 };
 
-type TwitterMetadata = {
-  handle: string;
-  site: string;
-  cardType: string;
-  image: string;
+type Post = {
+  title: string;
+  slug: string;
+  excerpt: string;
+  featuredImage: string;
+  content: PortableTextBlock;
+  author: string;
 };
