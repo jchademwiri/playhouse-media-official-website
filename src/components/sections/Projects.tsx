@@ -1,7 +1,7 @@
 import { getProjects } from '@/sanity/sanity-utils';
 import SectionTitle from '../SectionTitle';
-import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import ProjectCard from '../ProjectCard';
+// import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 
 const Projects = async () => {
   const projects = await getProjects();
