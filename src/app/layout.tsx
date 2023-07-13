@@ -61,7 +61,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${inter.className}`}>
-      <GoogleAnalytics GA_MEASUREMENT_ID='G-51M5BSC068' />
+      {/* <GoogleAnalytics GA_MEASUREMENT_ID='G-51M5BSC068' /> */}
         <Navbar />
         {children}
         <Footer />
