@@ -10,7 +10,6 @@ import { Metadata } from 'next';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.playhousemedia.net'),
   title: {
     default: 'Playhouse Media Group - Web Design and Development Services',
     template: '%s | Web Design and Development Services',
@@ -36,7 +35,7 @@ export const metadata: Metadata = {
     creatorId: '1467726470533754880',
     siteId: '1467726470533754880',
     card: 'summary_large_image',
-    images: ['/twitter-image.png'],
+   
   },
   robots: {
     index: true,
@@ -52,7 +51,6 @@ export const metadata: Metadata = {
     },
   },
 };
-
 export default function RootLayout({
   children,
 }: {
