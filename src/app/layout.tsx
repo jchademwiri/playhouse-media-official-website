@@ -10,6 +10,7 @@ import { Metadata } from 'next';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.playhousemedia.net'),
   title: {
     default: 'Playhouse Media Group - Web Design and Development Services',
     template: '%s | Web Design and Development Services',

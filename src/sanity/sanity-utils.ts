@@ -10,8 +10,7 @@ export const getProjects = async (): Promise<Project[]> => {
         'slug': slug.current,
         'image':image.asset->url,
         url,
-        content,
-    }, cache:'no-cache'`);
+    }`);
 };
 
 export const getProject = async (slug: string): Promise<Project> => {
@@ -23,7 +22,6 @@ export const getProject = async (slug: string): Promise<Project> => {
         'slug': slug.current,
         'image':image.asset->url,
         url,
-        content
     }`,
     { slug }
   );
