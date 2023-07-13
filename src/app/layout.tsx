@@ -1,11 +1,11 @@
 // import CookieBanner from '@/lib/googleAnalytics/CookieBanner';
-import { Analytics } from '@vercel/analytics/react';
-import GoogleAnalytics from '@/lib/googleAnalytics/GoogleAnalytics';
 import './globals.css';
+import GoogleAnalytics from '@/lib/googleAnalytics/GoogleAnalytics';
+import { Analytics } from '@vercel/analytics/react';
+import type { Metadata } from 'next'
 import { Inter } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import type { Metadata } from 'next'
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -51,6 +51,8 @@ export const metadata: Metadata = {
     },
   },
 };
+
+
 export default function RootLayout({
   children,
 }: {
@@ -58,8 +60,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <GoogleAnalytics GA_MEASUREMENT_ID='G-51M5BSC068' />
       <body className={`${inter.className}`}>
+      <GoogleAnalytics GA_MEASUREMENT_ID='G-51M5BSC068' />
         <Navbar />
         {children}
         <Footer />
