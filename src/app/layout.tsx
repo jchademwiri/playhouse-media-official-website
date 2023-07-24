@@ -31,8 +31,6 @@ export const metadata: Metadata = {
   },
   category: 'technology',
   twitter: {
-    description:
-    "Transform your online presence with Playhouse Media Group. We specialize in creating user-friendly and visually appealing websites that captivate your audience. Boost your brand's visibility and drive organic traffic with our expert web design, development, and SEO services.",
     creator: '@jchademwiri',
     creatorId: '1467726470533754880',
     siteId: '1467726470533754880',
