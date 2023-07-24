@@ -1,11 +1,11 @@
 // import CookieBanner from '@/lib/googleAnalytics/CookieBanner';
-import { Analytics } from '@vercel/analytics/react';
-import GoogleAnalytics from '@/lib/googleAnalytics/GoogleAnalytics';
 import './globals.css';
+// import GoogleAnalytics from '@/lib/googleAnalytics/GoogleAnalytics';
+import { Analytics } from '@vercel/analytics/react';
+import type { Metadata } from 'next'
 import { Inter } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Metadata } from 'next';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,15 +16,15 @@ export const metadata: Metadata = {
   },
   description:
     "Transform your online presence with Playhouse Media Group. We specialize in creating user-friendly and visually appealing websites that captivate your audience. Boost your brand's visibility and drive organic traffic with our expert web design, development, and SEO services.",
-    alternates: {
-      canonical: 'https://www.playhousemedia.net',
-    },
+  alternates: {
+    canonical: 'https://www.playhousemedia.net',
+  },
 
   openGraph: {
     title: 'Playhouse Media Group - Web Design and Development Services',
     siteName: 'Playhouse Media Group',
     description:
-    "Transform your online presence with Playhouse Media Group. We specialize in creating user-friendly and visually appealing websites that captivate your audience. Boost your brand's visibility and drive organic traffic with our expert web design, development, and SEO services.",
+      "Transform your online presence with Playhouse Media Group. We specialize in creating user-friendly and visually appealing websites that captivate your audience. Boost your brand's visibility and drive organic traffic with our expert web design, development, and SEO services.",
     url: 'https://www.playhousemedia.net',
     locale: 'en_US',
     type: 'website',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     creatorId: '1467726470533754880',
     siteId: '1467726470533754880',
     card: 'summary_large_image',
-   
+
   },
   robots: {
     index: true,
@@ -51,6 +51,8 @@ export const metadata: Metadata = {
     },
   },
 };
+
+
 export default function RootLayout({
   children,
 }: {
@@ -58,8 +60,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <GoogleAnalytics GA_MEASUREMENT_ID='G-51M5BSC068' />
       <body className={`${inter.className}`}>
+        {/* <GoogleAnalytics GA_MEASUREMENT_ID='G-51M5BSC068' /> */}
         <Navbar />
         {children}
         <Footer />
