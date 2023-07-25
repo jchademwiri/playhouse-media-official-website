@@ -1,6 +1,4 @@
-// import CookieBanner from '@/lib/googleAnalytics/CookieBanner';
-import './globals.css';
-// import GoogleAnalytics from '@/lib/googleAnalytics/GoogleAnalytics';
+import '../globals.css';
 import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google';
