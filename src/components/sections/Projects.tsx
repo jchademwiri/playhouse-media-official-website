@@ -1,6 +1,6 @@
-import { getProjects } from '@/sanity/sanity-utils';
 import SectionTitle from '../SectionTitle';
 import ProjectCard from '../ProjectCard';
+import { getProjects } from '@/lib/sanity/sanity-utils';
 // import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 
 const Projects = async () => {
