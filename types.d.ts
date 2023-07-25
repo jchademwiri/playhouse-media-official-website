@@ -8,14 +8,13 @@ type Project = {
   slug: string;
   image: string;
   url: string;
-
 };
 
 type Post = {
   title: string;
   slug: string;
   excerpt: string;
-  featuredImage: string;
+  mainImage: string;
   content: PortableTextBlock;
   author: string;
 };

@@ -28,7 +28,7 @@ const Hosting = () => {
         <button className='my-6'>
           <Link
             href={`/`}
-            className='block bg-armyGreen px-6 py-4 font-medium uppercase text-white'
+            className='block bg-accent px-6 py-4 font-medium uppercase text-white'
           >
             GET STATRTED NOW
           </Link>

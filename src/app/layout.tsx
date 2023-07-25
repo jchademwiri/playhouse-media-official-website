@@ -10,10 +10,7 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: {
-    default: 'Playhouse Media Group - Web Design and Development Services',
-    template: '%s | Web Design and Development Services',
-  },
+  title: 'Playhouse Media Group - Web Design and Development Services',
   description:
     "Transform your online presence with Playhouse Media Group. We specialize in creating user-friendly and visually appealing websites that captivate your audience. Boost your brand's visibility and drive organic traffic with our expert web design, development, and SEO services.",
   alternates: {

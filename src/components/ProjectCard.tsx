@@ -8,7 +8,7 @@ const ProjectCard = ({ url, name, image }: Project) => {
         <Image
           src={image}
           alt={name}
-          className='rounded-lg object-cover '
+          className='rounded-lg object-cover h-52 '
           width={1920}
           height={1080}
           placeholder='blur'
