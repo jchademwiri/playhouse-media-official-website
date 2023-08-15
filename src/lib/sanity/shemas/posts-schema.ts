@@ -27,19 +27,33 @@ const post = {
       },
     },
     {
+      name: 'author',
+      title: 'Author',
+      type: 'reference',
+      to: { type: 'author' },
+    },
+    {
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
       options: {
         hotspot: true,
       },
-      fields: [
-        {
-          name: 'alt',
-          title: 'Alt',
-          type: 'string',
-        },
-      ],
+    },
+    {
+      name: 'categories',
+      title: 'Categories',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'category' } }],
+    },
+    {
+      name: 'tags',
+      title: 'Tags',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        layout: 'tags',
+      },
     },
     {
       name: 'publishedAt',
@@ -47,26 +61,24 @@ const post = {
       type: 'datetime',
     },
     {
-      name: 'content',
-      type: 'array',
-      title: 'Content',
-      of: [
-        {
-          type: 'block',
-        },
-        {
-          type: 'image',
-          fields: [
-            {
-              type: 'text',
-              name: 'alt',
-              title: 'Alternative Text',
-            },
-          ],
-        },
-      ],
+      name: 'body',
+      title: 'Body',
+      type: 'blockContent',
     },
   ],
-};
 
+  preview: {
+    select: {
+      title: 'title',
+      author: 'author.name',
+      media: 'mainImage',
+    },
+    prepare(selection: Post) {
+      const { author } = selection;
+      return Object.assign({}, selection, {
+        subtitle: author && `by ${author}`,
+      });
+    },
+  },
+};
 export default post;

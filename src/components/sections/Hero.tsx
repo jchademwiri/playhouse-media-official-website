@@ -32,6 +32,7 @@ const Hero = () => {
             We recently revamped the appearance and user experience of Sithembe
         Transportation & Projects through a cutting-edge redesign. By incorporating new technologies, we significantly enhanced the website 's performance, mobile responsiveness, and SEO capabilities.
             "
+            href='https://www.sithembe.co.za'
           />
 
           <Card
@@ -40,6 +41,7 @@ const Hero = () => {
             description='
             We recently developed a brand new website for King Tax Accounting Services, aimed at reaching a broader online target audience. Our team implemented robust on-page SEO strategies and established quality backlinks to ensure exceptional search engine optimization.
             '
+            href='https://www.kingtaxaccounting.co.za'
           />
         </div>
       </div>

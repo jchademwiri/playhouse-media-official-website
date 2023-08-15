@@ -17,7 +17,7 @@ const Projects = async () => {
           <BsArrowRight className='cursor-pointer rounded-full bg-armyGreen p-2 text-3xl text-accent hover:text-white' />
         </div> */}
       </div>
-      <div className='my-5 grid gap-4  sm:grid-cols-2 md:grid-cols-3'>
+      <div className='my-5 w-full place-content-center grid gap-2 lg:gap-4 sm:grid-cols-2 lg:grid-cols-3'>
         {projects.map((project) => (
           <ProjectCard key={project.slug} {...project} />
         ))}
