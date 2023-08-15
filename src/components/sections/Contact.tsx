@@ -54,12 +54,12 @@ const Contact = () => {
           <div>
             <h3 className='text-lg font-medium'>Physical Address</h3>
             <Link
-              href={`https://www.google.com/search?q=84+Goldman+Street%2C+Florida+Roodeport%2C+Gauteng&oq=84+Goldman+Street%2C+Florida+Roodeport%2C+Gauteng&aqs=chrome..69i57.680j0j4&sourceid=chrome&ie=UTF-8`}
+              href={`https://www.google.com/search?q=playhouse+media+group&oq=pla&aqs=chrome.1.69i60j69i59j69i57j69i59j69i60l3.4085j0j9&sourceid=chrome&ie=UTF-8&dlnr=1&sei=_TjbZPWHM8jpkgXjwISQCw#dlnr=1`}
               className=''
               target='_blank'
               rel='noreferrer'
             >
-              84 Goldman Street, Florida Roodepoort, Gauteng
+              50 Janet St, Florida, Roodepoort, 1709
             </Link>
           </div>
         </div>

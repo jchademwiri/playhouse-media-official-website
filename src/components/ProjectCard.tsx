@@ -3,14 +3,14 @@ import Link from 'next/link';
 
 const ProjectCard = ({ url, name, image }: Project) => {
   return (
-    <div className=''>
+    <div className='w-full'>
       <Link href={url} target='_blank' rel='noopener noreferrer'>
         <Image
           src={image}
           alt={name}
           className='rounded-lg object-cover h-52 '
-          width={1920}
-          height={1080}
+          width={911}
+          height={208}
           placeholder='blur'
           blurDataURL={`/opengraph-image.png`}
         />

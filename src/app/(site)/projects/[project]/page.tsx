@@ -41,9 +41,6 @@ const Project = async ({ params }: Props) => {
         blurDataURL={project.image}
         className='mt-10 max-h-80 w-full rounded-t-xl object-cover'
       />
-      {/* <div className='mt-5 text-lg'>
-        <PortableText value={project.content} />
-      </div> */}
     </section>
   );
 };

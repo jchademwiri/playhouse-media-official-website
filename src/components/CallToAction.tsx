@@ -10,7 +10,7 @@ export const CallToAction = () => {
             <span className='text-accent'>Free .co.za</span> Domain.
           </p>
         </div>
-        <div className='grid gap-4 md:flex'>
+        <div className='grid sm:grid-cols-2 gap-2'>
           <Link
             href='tel:+27740491433'
             className='rounded bg-dark/20 px-6 py-2 hover:bg-dark/50'

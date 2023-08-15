@@ -16,5 +16,9 @@ type Post = {
   excerpt: string;
   mainImage: string;
   content: PortableTextBlock;
-  author: string;
+  publishedAt: Date;
+  author: {
+    name: string;
+    image: string;
+  };
 };

@@ -11,6 +11,7 @@ export const getProjects = async (): Promise<Project[]> => {
         'slug': slug.current,
         'image':image.asset->url,
         url,
+        
     }`
   );
 };
@@ -35,9 +36,14 @@ export const getPosts = async (): Promise<Post[]> => {
     groq`*[_type == 'post']{
         'id':_id,
         'createdAt':_createdAt,
+        publishedAt,
         title,
         'slug': slug.current,
         'mainImage':mainImage.asset->url,
+        author -> {
+          name,
+          image,
+        },
     }`
   );
 };
@@ -47,10 +53,15 @@ export const getPost = async (slug: string): Promise<Post> => {
     groq`*[_type == 'post' && slug.current == $slug][0]{
         'id':_id,
         'createdAt':_createdAt,
-        tittle,
+        publishedAt,
+        title,
         'slug': slug.current,
         'mainImage':mainImage.asset->url,
         content,
+        author -> {
+          name,
+          image,
+        },
     }`,
     { slug }
   );

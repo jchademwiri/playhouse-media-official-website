@@ -1,17 +1,19 @@
 import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
-// import { visionTool } from '@sanity/vision';
+import { visionTool } from '@sanity/vision';
 import schemas from './shemas';
 
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
+const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION!;
+
 const config = defineConfig({
-  projectId: 'bcw45zol',
-  dataset: 'production',
-  title: 'Playhouse Media Group',
-  apiVersion: '2023-06-01',
   basePath: '/admin',
-  useCdn: false,
-  plugins: [deskTool()],
-  // plugins: [deskTool(), visionTool()],
+  projectId,
+  dataset,
+  apiVersion,
+  title: 'Playhouse Media Group',
+  plugins: [deskTool(), visionTool()],
 
   schema: { types: schemas },
 });
