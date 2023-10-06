@@ -1,6 +1,6 @@
-import { getPosts } from "@/lib/sanity/sanity-utils";
-import PostCard from "../PostCard"
-import SectionTitle from "../SectionTitle"
+import { getPosts } from '@/sanity/sanity-utils';
+import PostCard from '../PostCard';
+import SectionTitle from '../SectionTitle';
 
 const Blog = async () => {
   const posts = await getPosts();
@@ -19,6 +19,6 @@ const Blog = async () => {
         ))}
       </div>
     </section>
-  )
-}
-export default Blog
+  );
+};
+export default Blog;

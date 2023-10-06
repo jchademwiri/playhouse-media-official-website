@@ -18,6 +18,12 @@ const post = {
       type: 'string',
     },
     {
+      name: 'views',
+      title: 'Views',
+      type: 'number',
+      initialValue: 0,
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',

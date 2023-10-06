@@ -1,7 +1,10 @@
-import { PortableText, type PortableTextReactComponents, } from '@portabletext/react';
+import {
+  PortableText,
+  type PortableTextReactComponents,
+} from '@portabletext/react';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { getPost } from '@/lib/sanity/sanity-utils';
+import { getPost } from '@/sanity/sanity-utils';
 import moment from 'moment';
 // import { SanityImage } from '@/components/SanityImage';
 
@@ -25,7 +28,7 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
   //     return <SanityImage {...value} />
   //   },
   // },
-}
+};
 
 const PostSlug = async ({ params: { slug } }: Props) => {
   const post = await getPost(slug);
@@ -38,7 +41,10 @@ const PostSlug = async ({ params: { slug } }: Props) => {
         {moment(post.publishedAt ? post.publishedAt : '').format('DD MMM YYYY')}
       </small>
       <div className='prose max-w-[1240px] portableText dark:prose-invert'>
-        <PortableText value={post.content} components={myPortableTextComponents} />
+        <PortableText
+          value={post.content}
+          components={myPortableTextComponents}
+        />
       </div>
     </section>
   );

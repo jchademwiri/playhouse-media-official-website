@@ -7,6 +7,8 @@ const project = {
       name: 'name',
       title: 'Name',
       type: 'string',
+      require,
+      validation: (Rule: any) => Rule.required(),
     },
     {
       name: 'slug',
@@ -18,6 +20,7 @@ const project = {
       name: 'image',
       title: 'Image',
       type: 'image',
+      validation: (Rule: any) => Rule.required(),
       options: { hotspot: true },
       fields: [
         {
@@ -26,6 +29,20 @@ const project = {
           type: 'string',
         },
       ],
+    },
+    {
+      name: 'categories',
+      title: 'Categories',
+      type: 'string',
+      options: {
+        list: [
+          'Web Development',
+          'Web & Email Hosting',
+          'Search Engine Optimization',
+          'Graphics Design',
+          'Other',
+        ],
+      },
     },
     {
       name: 'url',

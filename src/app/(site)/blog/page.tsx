@@ -1,11 +1,9 @@
-
-import { getPosts } from '@/lib/sanity/sanity-utils';
+import { getPosts } from '@/sanity/sanity-utils';
 import moment from 'moment';
 import Link from 'next/link';
 
 const Blog = async () => {
   const posts = await getPosts();
-
 
   // console.log(posts)
   return (
@@ -15,20 +13,21 @@ const Blog = async () => {
         <ul>
           {posts.map((post) => (
             <li key={post.slug} className='grid my-2 gap-4'>
-              <Link href={post.slug} prefetch className='rounded flex justify-between hover:bg-armyGreen/80  bg-armyGreen p-2'>
+              <Link
+                href={post.slug}
+                prefetch
+                className='rounded flex justify-between hover:bg-armyGreen/80  bg-armyGreen p-2'
+              >
                 <div>
                   {post.title}
                   <span className='text-accent'>
-                    {' - '}{post.author.name}
+                    {' - '}
+                    {post.author.name}
                   </span>
                 </div>
-                <small>
-                  {' '}
-                  {moment(post.publishedAt).format('DD MMM YYYY')}
-                </small>
+                <small> {moment(post.publishedAt).format('DD MMM YYYY')}</small>
               </Link>
             </li>
-
           ))}
         </ul>
       </div>
