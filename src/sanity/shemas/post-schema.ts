@@ -13,8 +13,8 @@ const post = {
       type: 'string',
     },
     {
-      name: 'exempt',
-      title: 'Exempt',
+      name: 'excerpt',
+      title: 'Excerpt',
       type: 'string',
     },
     {

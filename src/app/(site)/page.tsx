@@ -14,11 +14,11 @@ export default function Home() {
     <main className=''>
       <Hero />
       <Services />
-      {/* <Blog /> */}
-      {/* <Projects /> */}
+      <Projects />
       <Moto />
       <Hosting />
       <CallToAction />
+      <Blog />
       <Contact />
     </main>
   );

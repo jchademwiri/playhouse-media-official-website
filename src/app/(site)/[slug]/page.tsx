@@ -4,8 +4,9 @@ import {
 } from '@portabletext/react';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { getPost } from '@/sanity/sanity-utils';
+// import { getPost } from '@/lib/sanity/sanity-utils';
 import moment from 'moment';
+import { getPost } from '@/sanity/actions';
 // import { SanityImage } from '@/components/SanityImage';
 
 interface Props {
@@ -20,6 +21,7 @@ export async function generateMetadata({
   const post = await getPost(slug);
   return {
     title: post.title,
+    description: post.excerpt,
   };
 }
 const myPortableTextComponents: Partial<PortableTextReactComponents> = {
@@ -36,6 +38,7 @@ const PostSlug = async ({ params: { slug } }: Props) => {
     <section className='mx-auto my-20 w-full max-w-[1240px] px-4'>
       <Link href='/blog'>Back to Blog</Link>
       <h1 className='my-4'>{post.title}</h1>
+      <p> {post.excerpt} </p>
       <p>{post.author.name}</p>
       <small>
         {moment(post.publishedAt ? post.publishedAt : '').format('DD MMM YYYY')}

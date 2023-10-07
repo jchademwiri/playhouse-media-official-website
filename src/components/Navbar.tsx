@@ -4,10 +4,12 @@ import Link from 'next/link';
 
 const Navbar = () => {
   return (
-    <div className='mx-auto flex w-full max-w-[1240px] items-center justify-between px-4 py-4'>
+    <nav className='mx-auto flex w-full max-w-[1240px] items-center justify-between px-4 py-4'>
       <Link href={`/`}>
         <Image
           src={logo}
+          width={70}
+          height={70}
           placeholder='blur'
           blurDataURL={logo.toString()}
           alt='logo icon'
@@ -31,7 +33,7 @@ const Navbar = () => {
           <div className='h-1 w-8 bg-white'></div>
         </div> */}
       </div>
-    </div>
+    </nav>
   );
 };
 export default Navbar;

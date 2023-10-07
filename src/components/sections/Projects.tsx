@@ -1,10 +1,19 @@
 import SectionTitle from '../SectionTitle';
 import ProjectCard from '../ProjectCard';
-import { getProjects } from '@/sanity/sanity-utils';
+import { getProjects } from '@/sanity/actions';
 // import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 
+export const revalidate = 900;
+
 const Projects = async () => {
-  const projects = await getProjects();
+  const projects = await getProjects({
+    query: '',
+    category: '',
+    page: '1',
+  });
+
+  // console.log(projects);
+
   return (
     <section id='projects' className='mx-auto my-20 w-full max-w-[1240px] px-4'>
       <div className='items-end justify-between md:flex'>
@@ -18,9 +27,13 @@ const Projects = async () => {
         </div> */}
       </div>
       <div className='my-5 w-full place-content-center grid gap-2 lg:gap-4 sm:grid-cols-2 lg:grid-cols-3'>
-        {projects.map((project) => (
-          <ProjectCard key={project.slug} {...project} />
-        ))}
+        {projects?.length > 0 ? (
+          projects.map((project: Project) => (
+            <ProjectCard key={project.id} {...project} />
+          ))
+        ) : (
+          <p>No projects</p>
+        )}
       </div>
     </section>
   );
