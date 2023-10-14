@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const ProjectCard = ({ url, name, image }: Project) => {
+const ProjectCard = ({ url, name, image, categories }: Project) => {
   return (
     <div className='w-full'>
       <Link href={url} target='_blank' rel='noopener noreferrer'>
+        <h3 className='my-3 text-lg font-medium'>{name}</h3>
         <div className='h-52 w-auto'>
           <Image
             src={image}
@@ -16,8 +17,8 @@ const ProjectCard = ({ url, name, image }: Project) => {
             blurDataURL={`/opengraph-image.png`}
           />
         </div>
-        <h3 className='my-3 text-lg font-medium'>{name}</h3>
       </Link>
+      <p className='text-green-300 text-sm py-2 italic'>{categories}</p>
     </div>
   );
 };

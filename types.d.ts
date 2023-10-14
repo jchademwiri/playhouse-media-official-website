@@ -9,7 +9,8 @@ type Project = {
   slug: string;
   image: string;
   url: string;
-  category: string;
+  categories?: string;
+  content: PortableTextBlock;
 };
 
 type Post = {
