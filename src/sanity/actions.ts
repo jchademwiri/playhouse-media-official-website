@@ -26,7 +26,8 @@ export const getProjects = async (params: GetProjectParams) => {
            url,
            'createdAt':_createdAt,
            'slug': slug.current,
-            }`
+            }`,
+      { next: { revalidate: 900 } }
     );
 
     return projects;
@@ -79,7 +80,8 @@ export const getPosts = async (params: GetProjectParams) => {
                 },
              'createdAt':_createdAt,
              'slug': slug.current,
-        }`
+        }`,
+      { next: { revalidate: 900 } }
     );
 
     return posts;
