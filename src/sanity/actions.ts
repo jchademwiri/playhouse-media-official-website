@@ -21,11 +21,11 @@ export const getProjects = async (params: GetProjectParams) => {
       })}{
         'id':_id,
            name,
-           categories,
            'image':image.asset->url,
            url,
            'createdAt':_createdAt,
            'slug': slug.current,
+           categories,
             }`,
       { next: { revalidate: 900 } }
     );
@@ -48,6 +48,7 @@ export const getProject = async (slug: string) => {
             url,
             'createdAt':_createdAt,
             'slug': slug.current,
+            content,
           }
         `
     );

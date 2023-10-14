@@ -1,6 +1,6 @@
 // import { getProject } from '@/sanity/sanity-utils';
 import { getProject } from '@/sanity/actions';
-import { PortableText } from '@portabletext/react';
+import { PortableText, PortableTextReactComponents } from '@portabletext/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -12,16 +12,22 @@ type Props = {
   params: { project: string };
 };
 
+const myPortableTextComponents: Partial<PortableTextReactComponents> = {};
+
 const Project = async ({ params }: Props) => {
   const slug = params.project;
-  const project = await getProject(slug);
+  const project: Project = await getProject(slug);
 
   return (
     <section className='mx-auto my-20 w-full max-w-[1240px] px-4'>
       <header className='flex my-4 gap-4 items-center justify-between'>
-        <h1 className='my-2 text-2xl font-semibold text-white drop-shadow md:text-5xl md:font-extrabold'>
-          {project.name}
-        </h1>
+        <div>
+          <h1 className='my-2 text-2xl font-semibold text-white drop-shadow md:text-5xl md:font-extrabold'>
+            {project.name}
+          </h1>
+          <small className='text-green-300 italic'>{project.categories}</small>
+        </div>
+
         <Link
           href={project.url}
           title='View Project'
@@ -41,7 +47,7 @@ const Project = async ({ params }: Props) => {
             width={1920}
             height={1080}
             placeholder='blur'
-            blurDataURL={project.image}
+            blurDataURL={`/opengraph-image.png`}
             className='rounded-t-xl object-cover'
           />
         </div>
@@ -49,14 +55,12 @@ const Project = async ({ params }: Props) => {
           <h2 className='my-2 text-xl font-semibold text-white drop-shadow md:text-3xl md:font-extrabold'>
             {project.name}
           </h2>
-          <p className='pb-6'>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit
-            modi enim dolore rem doloremque distinctio, nobis cum error iste qui
-            accusamus in! Temporibus voluptatum dolorum aut pariatur dolorem sit
-            saepe itaque, libero aliquam natus. Id reiciendis vero voluptatum
-            dignissimos, amet perferendis dolorum quod dolor, earum facere ad
-            nulla, natus officiis!
-          </p>
+          <div className='prose max-w-[1240px] portableText dark:prose-invert'>
+            <PortableText
+              value={project.content}
+              components={myPortableTextComponents}
+            />
+          </div>
           <Link
             href={project.url}
             title='View Project'

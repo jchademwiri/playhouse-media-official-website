@@ -6,7 +6,7 @@ import { getProjects } from '@/sanity/actions';
 export const revalidate = 900;
 
 const Projects = async () => {
-  const projects = await getProjects({
+  const projects: Project[] = await getProjects({
     query: '',
     category: '',
     page: '1',
@@ -28,7 +28,7 @@ const Projects = async () => {
       </div>
       <div className='my-5 w-full place-content-center grid gap-2 lg:gap-4 sm:grid-cols-2 lg:grid-cols-3'>
         {projects?.length > 0 ? (
-          projects.map((project: Project) => (
+          projects.map((project) => (
             <ProjectCard key={project.id} {...project} />
           ))
         ) : (
