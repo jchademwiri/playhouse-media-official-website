@@ -13,9 +13,15 @@ const post = {
       type: 'string',
     },
     {
-      name: 'exempt',
-      title: 'Exempt',
+      name: 'excerpt',
+      title: 'Excerpt',
       type: 'string',
+    },
+    {
+      name: 'views',
+      title: 'Views',
+      type: 'number',
+      initialValue: 0,
     },
     {
       name: 'slug',

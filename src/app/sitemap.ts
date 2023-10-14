@@ -1,17 +1,19 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const rootUrl = 'https://www.playhousemedia.net';
+
   return [
     {
-      url: 'https://www.playhousemedia.net/',
+      url: `${rootUrl}`,
       lastModified: new Date(),
     },
     {
-      url: 'https://www.playhousemedia.net/blog',
+      url: `${rootUrl}/blog`,
       lastModified: new Date(),
     },
     {
-      url: 'https://www.playhousemedia.net/projects',
+      url: `${rootUrl}/projects`,
       lastModified: new Date(),
     },
   ];

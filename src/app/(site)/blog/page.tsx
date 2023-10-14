@@ -1,11 +1,13 @@
-
-import { getPosts } from '@/lib/sanity/sanity-utils';
+import { getPosts } from '@/sanity/actions';
 import moment from 'moment';
 import Link from 'next/link';
 
 const Blog = async () => {
-  const posts = await getPosts();
-
+  const posts = await getPosts({
+    query: '',
+    category: '',
+    page: '1',
+  });
 
   // console.log(posts)
   return (
@@ -13,22 +15,24 @@ const Blog = async () => {
       <div>
         <p className='text-2xl font-bold'>Blog Posts</p>
         <ul>
-          {posts.map((post) => (
+          {posts.map((post: Post) => (
             <li key={post.slug} className='grid my-2 gap-4'>
-              <Link href={post.slug} prefetch className='rounded flex justify-between hover:bg-armyGreen/80  bg-armyGreen p-2'>
+              <Link
+                href={post.slug}
+                prefetch
+                className='rounded flex justify-between hover:bg-armyGreen/80  bg-armyGreen p-2'
+              >
                 <div>
                   {post.title}
                   <span className='text-accent'>
-                    {' - '}{post.author.name}
+                    {' - '}
+                    {post.author.name}
                   </span>
                 </div>
-                <small>
-                  {' '}
-                  {moment(post.publishedAt).format('DD MMM YYYY')}
-                </small>
+                <small> {moment(post.publishedAt).format('DD MMM YYYY')}</small>
               </Link>
+              {/* <p className='py-1'>{post.excerpt}</p> */}
             </li>
-
           ))}
         </ul>
       </div>

@@ -2,10 +2,10 @@ import { CallToAction } from '@/components/CallToAction';
 import Moto from '@/components/Moto';
 import {
   Blog,
+  Projects,
   Contact,
   Hero,
   Hosting,
-  Projects,
   Services,
 } from '@/components/sections';
 
@@ -14,11 +14,11 @@ export default function Home() {
     <main className=''>
       <Hero />
       <Services />
-      {/* <Blog /> */}
       <Projects />
       <Moto />
       <Hosting />
       <CallToAction />
+      {/* <Blog /> */}
       <Contact />
     </main>
   );

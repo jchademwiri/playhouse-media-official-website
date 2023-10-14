@@ -4,10 +4,12 @@ type Faq = {
 };
 
 type Project = {
+  id: string;
   name: string;
   slug: string;
   image: string;
   url: string;
+  category: string;
 };
 
 type Post = {

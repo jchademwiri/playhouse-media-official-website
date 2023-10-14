@@ -2,7 +2,7 @@
 // 	<pre>{JSON.stringify(props, null, 2)}</pre>;
 // };
 
-export default {
+const code = {
   name: 'code',
   title: 'Code',
   type: 'object',
@@ -20,3 +20,5 @@ export default {
   // 	component: code,
   // },
 };
+
+export default code;
