@@ -10,18 +10,18 @@ const BlogCard = ({ slug, title, author, publishedAt, excerpt }: Post) => {
           <small className='text-slate-400'>
             {moment(publishedAt).format('DD MMMM YYYY')}
           </small>
-          <div>
+          <div className=''>
             <Image
               src={author.image}
               alt={author.name}
               width={30}
               height={30}
-              className='rounded-full'
+              className='rounded-full border-2 border-armyGreen'
             />
           </div>
         </div>
         <Link href={slug} prefetch>
-          <h2 className='text-lg font-semibold'> {title}</h2>
+          <h2 className='text-lg font-semibold hover:underline'> {title}</h2>
         </Link>
         <p className='py-4 text-slate-200'>{excerpt}</p>
       </div>
@@ -29,7 +29,7 @@ const BlogCard = ({ slug, title, author, publishedAt, excerpt }: Post) => {
       <Link
         href={slug}
         prefetch
-        className='block transition-colors text-center rounded-sm text-slate-300 hover:text-slate-100 py-2 bg-armyGreen/60 hover:bg-armyGreen/80'
+        className='block transition-colors text-center rounded-md un text-slate-300 hover:text-slate-100 py-2 bg-armyGreen/60 hover:bg-armyGreen/80'
       >
         Read More
       </Link>
