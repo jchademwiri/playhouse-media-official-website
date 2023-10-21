@@ -3,6 +3,7 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardTitle,
 } from '@/components/ui/card';
 import moment from 'moment';
@@ -11,9 +12,9 @@ import Link from 'next/link';
 
 const BlogCard = ({ slug, title, author, publishedAt, excerpt }: Post) => {
   return (
-    <Card className='p-4 bg-transparent rounded-md border-secondary border gap-4 flex  justify-between flex-col'>
+    <Card className='bg-transparent rounded-md border-secondary border gap-4 flex  justify-between flex-col'>
       <CardContent>
-        <div className='flex justify-between items-center pb-4'>
+        <div className='flex justify-between items-center py-4'>
           <CardDescription>
             {moment(publishedAt).format('DD MMMM YYYY')}
           </CardDescription>
@@ -23,7 +24,7 @@ const BlogCard = ({ slug, title, author, publishedAt, excerpt }: Post) => {
               alt={author.name}
               width={30}
               height={30}
-              className='rounded-full border-2 border-primary'
+              className='rounded-full'
             />
           </div>
         </div>
@@ -36,11 +37,13 @@ const BlogCard = ({ slug, title, author, publishedAt, excerpt }: Post) => {
         </Link>
         <p className='py-4'>{excerpt}</p>
       </CardContent>
-      <Button variant={'secondary'} className='hover:bg-secondary'>
-        <Link href={slug} prefetch>
-          Read More
-        </Link>
-      </Button>
+      <CardFooter>
+        <Button variant={'secondary'} className='hover:bg-secondary w-full'>
+          <Link href={slug} prefetch>
+            Read More
+          </Link>
+        </Button>
+      </CardFooter>
     </Card>
   );
 };
