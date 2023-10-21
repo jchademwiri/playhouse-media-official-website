@@ -1,5 +1,5 @@
 import SectionTitle from '../SectionTitle';
-import Card from '../Card';
+import Card from '../HeroCard';
 import Link from 'next/link';
 import { BsArrowDownCircle } from 'react-icons/bs';
 

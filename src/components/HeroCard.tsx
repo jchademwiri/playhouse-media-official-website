@@ -2,14 +2,14 @@ import Link from 'next/link';
 import { CardTitle } from './ui/card';
 import { Button } from './ui/button';
 
-interface Card {
+interface HeroCard {
   subTitle?: string;
   title: string;
   description: string;
   href: string;
 }
 
-const Card = ({ subTitle, title, description, href }: Card) => {
+const HeroCard = ({ subTitle, title, description, href }: HeroCard) => {
   return (
     <div className='rounded-sm bg-secondary px-4 py-4 '>
       <header>
@@ -25,4 +25,4 @@ const Card = ({ subTitle, title, description, href }: Card) => {
     </div>
   );
 };
-export default Card;
+export default HeroCard;

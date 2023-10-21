@@ -11,7 +11,7 @@ const Footer = () => {
     <footer className='bg-secondary py-12  '>
       <div className='mx-auto grid w-full max-w-[1240px] gap-4 px-4 md:grid-cols-2 md:place-items-center '>
         <div className=''>
-          <header className='flex items-center text-primary text-2xl'>
+          <header className='flex items-center text-primary font-semibold text-2xl'>
             {/* <Image src={user} alt='consulting user icon' className='pr-4' /> */}
             <User2 className='pr-2' size={40} />
             Consulting
