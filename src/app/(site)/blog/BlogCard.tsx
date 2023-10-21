@@ -18,22 +18,16 @@ const BlogCard = ({ slug, title, author, publishedAt, excerpt }: Post) => {
           <CardDescription>
             {moment(publishedAt).format('DD MMMM YYYY')}
           </CardDescription>
-          <div className=''>
-            <Image
-              src={author.image}
-              alt={author.name}
-              width={30}
-              height={30}
-              className='rounded-full'
-            />
-          </div>
+          <Image
+            src={author.image}
+            alt={author.name}
+            width={30}
+            height={30}
+            className='rounded-full'
+          />
         </div>
         <Link href={slug} prefetch>
-          <CardTitle className='hover:underline'>
-            {/* <h2 className='text-lg font-semibold hover:underline'>  */}
-            {title}
-            {/* </h2> */}
-          </CardTitle>
+          <CardTitle className='hover:underline'>{title}</CardTitle>
         </Link>
         <p className='py-4'>{excerpt}</p>
       </CardContent>
