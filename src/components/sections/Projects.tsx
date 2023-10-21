@@ -22,15 +22,15 @@ const Projects = async () => {
           <SectionTitle title='Our Selected Projects' />
         </div>
         {/* <div className='flex place-content-end gap-2'>
-          <BsArrowLeft className='cursor-pointer rounded-full bg-armyGreen p-2 text-3xl text-accent hover:text-white' />
-          <BsArrowRight className='cursor-pointer rounded-full bg-armyGreen p-2 text-3xl text-accent hover:text-white' />
+          <BsArrowLeft className='cursor-pointer rounded-full bg-secondary p-2 text-3xl text-primary hover:' />
+          <BsArrowRight className='cursor-pointer rounded-full bg-secondary p-2 text-3xl text-primary hover:' />
         </div> */}
       </div>
       <div className='my-5 w-full place-content-center grid gap-2 lg:gap-4 sm:grid-cols-2 lg:grid-cols-3'>
         {projects?.length > 0 ? (
-          projects.map((project) => (
-            <ProjectCard key={project.id} {...project} />
-          ))
+          projects
+            .slice(0, 3)
+            .map((project) => <ProjectCard key={project.id} {...project} />)
         ) : (
           <p>No projects</p>
         )}

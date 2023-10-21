@@ -25,19 +25,13 @@ export async function generateMetadata({
     description: post.excerpt,
   };
 }
-const myPortableTextComponents: Partial<PortableTextReactComponents> = {
-  // types: {
-  //   image: ({ value }) => {
-  //     return <SanityImage {...value} />
-  //   },
-  // },
-};
+const myPortableTextComponents: Partial<PortableTextReactComponents> = {};
 
 const PostSlug = async ({ params: { slug } }: Props) => {
   const post = await getPost(slug);
   return (
     <section className='mx-auto my-5 w-full max-w-[1240px] px-4'>
-      <Link href='/blog' className='text-accent flex gap-2 items-center'>
+      <Link href='/blog' className='text-primary flex gap-2 items-center'>
         <BsArrowLeft /> Back to Blog
       </Link>
       <h1 className='my-4'>{post.title}</h1>

@@ -1,39 +1,47 @@
+import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardTitle,
+} from '@/components/ui/card';
 import moment from 'moment';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const BlogCard = ({ slug, title, author, publishedAt, excerpt }: Post) => {
   return (
-    <article className='p-4 rounded-md border-armyGreen border gap-4 flex  justify-between flex-col'>
-      <div>
+    <Card className='p-4 bg-transparent rounded-md border-secondary border gap-4 flex  justify-between flex-col'>
+      <CardContent>
         <div className='flex justify-between items-center pb-4'>
-          <small className='text-slate-400'>
+          <CardDescription>
             {moment(publishedAt).format('DD MMMM YYYY')}
-          </small>
+          </CardDescription>
           <div className=''>
             <Image
               src={author.image}
               alt={author.name}
               width={30}
               height={30}
-              className='rounded-full border-2 border-armyGreen'
+              className='rounded-full border-2 border-primary'
             />
           </div>
         </div>
         <Link href={slug} prefetch>
-          <h2 className='text-lg font-semibold hover:underline'> {title}</h2>
+          <CardTitle className='hover:underline'>
+            {/* <h2 className='text-lg font-semibold hover:underline'>  */}
+            {title}
+            {/* </h2> */}
+          </CardTitle>
         </Link>
-        <p className='py-4 text-slate-200'>{excerpt}</p>
-      </div>
-
-      <Link
-        href={slug}
-        prefetch
-        className='block transition-colors text-center rounded-md un text-slate-300 hover:text-slate-100 py-2 bg-armyGreen/60 hover:bg-armyGreen/80'
-      >
-        Read More
-      </Link>
-    </article>
+        <p className='py-4'>{excerpt}</p>
+      </CardContent>
+      <Button variant={'secondary'} className='hover:bg-secondary'>
+        <Link href={slug} prefetch>
+          Read More
+        </Link>
+      </Button>
+    </Card>
   );
 };
 export default BlogCard;

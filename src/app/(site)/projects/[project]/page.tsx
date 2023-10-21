@@ -22,7 +22,7 @@ const Project = async ({ params }: Props) => {
     <section className='mx-auto my-20 w-full max-w-[1240px] px-4'>
       <header className='flex my-4 gap-4 items-center justify-between'>
         <div>
-          <h1 className='my-2 text-2xl font-semibold text-white drop-shadow md:text-5xl md:font-extrabold'>
+          <h1 className='my-2 text-2xl font-semibold  drop-shadow md:text-5xl md:font-extrabold'>
             {project.name}
           </h1>
           <small className='text-green-300 italic'>{project.categories}</small>
@@ -33,7 +33,7 @@ const Project = async ({ params }: Props) => {
           title='View Project'
           target='_blank'
           rel='noopener noreferrer'
-          className='whitespace-nowrap rounded-lg bg-gray-100 px-4 py-3 font-bold text-dark transition hover:bg-armyGreen hover:text-accent'
+          className='whitespace-nowrap rounded-lg bg-gray-100 px-4 py-3 font-bold text-dark transition hover:bg-secondary hover:text-primary'
         >
           View Project
         </Link>
@@ -52,7 +52,7 @@ const Project = async ({ params }: Props) => {
           />
         </div>
         <div className='justify-between'>
-          <h2 className='my-2 text-xl font-semibold text-white drop-shadow md:text-3xl md:font-extrabold'>
+          <h2 className='my-2 text-xl font-semibold  drop-shadow md:text-3xl md:font-extrabold'>
             {project.name}
           </h2>
           <div className='prose max-w-[1240px] portableText dark:prose-invert'>
@@ -66,7 +66,7 @@ const Project = async ({ params }: Props) => {
             title='View Project'
             target='_blank'
             rel='noopener noreferrer'
-            className='whitespace-nowrap rounded-lg bg-gray-100 px-4 py-3 font-bold text-dark transition hover:bg-armyGreen hover:text-accent'
+            className='whitespace-nowrap rounded-lg bg-gray-100 px-4 py-3 font-bold text-dark transition hover:bg-secondary hover:text-primary'
           >
             View Project
           </Link>

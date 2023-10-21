@@ -2,7 +2,9 @@ import Faqs from '@/components/Faqs';
 import { FAQs } from '@/data';
 import Link from 'next/link';
 import uuid from 'react-uuid';
-import { AccentLine, WhiteLine } from '../SmallLine';
+import { PrimaryLine } from '../SmallLine';
+import { Button } from '../ui/button';
+import { FAQAccordion } from '../FAQAccordion';
 
 const Hosting = () => {
   return (
@@ -11,9 +13,9 @@ const Hosting = () => {
       <article>
         <h2 className='py-2 text-3xl font-semibold'>
           Playhouse Media Group
-          <WhiteLine />
+          <PrimaryLine />
         </h2>
-        <h3 className='py-1 font-medium text-accent'>
+        <h3 className='py-1 font-medium text-primary'>
           Affordable Web Design Solutions Tailored to Your Needs.
         </h3>
         <p className='py-1'>
@@ -25,19 +27,14 @@ const Hosting = () => {
           designed to suit a wide range of website budgets. Count on us to make
           quality web design affordable and within your reach.
         </p>
-        <button className='my-6'>
-          <Link
-            href={`/`}
-            className='block bg-armyGreen px-6 py-4 font-medium uppercase text-accent'
-          >
-            GET STATRTED NOW
-          </Link>
-        </button>
+        <Button size={'lg'} className='my-6'>
+          <Link href={`/`}>GET STATRTED NOW</Link>
+        </Button>
       </article>
       <article className=''>
         <h2 className='py-2 text-3xl font-semibold'>
           Frequently Asked Questions
-          <AccentLine />
+          <PrimaryLine />
         </h2>
 
         {FAQs.map((item) => {
@@ -45,7 +42,8 @@ const Hosting = () => {
           return (
             <div className='my-4' key={uuid()}>
               {/* passing two props to this component */}
-              <Faqs question={question} answer={answer}></Faqs>
+              {/* <Faqs question={question} answer={answer}></Faqs> */}
+              <FAQAccordion question={question} answer={answer} />
             </div>
           );
         })}
