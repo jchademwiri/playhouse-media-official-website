@@ -4,6 +4,7 @@ import { User2 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import uuid from 'react-uuid';
+import { PrimaryLine } from './SmallLine';
 
 const Footer = () => {
   return (
@@ -25,7 +26,7 @@ const Footer = () => {
             className='text-xl font-medium text-primary hover: '
           >
             Let&apos;s Start a Project
-            <div className='h-1 rounded-full w-28 bg-foreground'></div>
+            <PrimaryLine />
           </Link>
         </div>
         <div className='grid grid-cols-2 gap-8'>
