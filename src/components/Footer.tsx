@@ -8,7 +8,7 @@ import { PrimaryLine } from './SmallLine';
 
 const Footer = () => {
   return (
-    <footer className='bg-secondary py-12  '>
+    <footer className='bg-secondary py-12'>
       <div className='mx-auto grid w-full max-w-[1240px] gap-4 px-4 md:grid-cols-2 md:place-items-center '>
         <div className=''>
           <header className='flex items-center text-primary font-semibold text-2xl'>
