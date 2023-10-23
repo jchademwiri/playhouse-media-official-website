@@ -1,7 +1,7 @@
 import { CallToAction } from '@/components/CallToAction';
 import Moto from '@/components/Moto';
 import {
-  Blog,
+  // Blog,
   Projects,
   Contact,
   Hero,
@@ -18,7 +18,7 @@ export default function Home() {
       <Moto />
       <Hosting />
       <CallToAction />
-      <Blog />
+      {/* <Blog /> */}
       <Contact />
     </main>
   );
