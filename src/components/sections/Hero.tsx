@@ -1,5 +1,5 @@
 import SectionTitle from '../SectionTitle';
-import Card from '../Card';
+import Card from '../HeroCard';
 import Link from 'next/link';
 import { BsArrowDownCircle } from 'react-icons/bs';
 
@@ -21,7 +21,7 @@ const Hero = () => {
             optimize your website to maximize its online presence.
           </p>
           <Link href='#services'>
-            <BsArrowDownCircle className='my-2 animate-bounce text-3xl text-accent opacity-60 hover:opacity-100' />
+            <BsArrowDownCircle className='my-2 animate-bounce text-3xl text-primary opacity-60 hover:opacity-100' />
           </Link>
         </div>
         <div className='grid gap-2 lg:grid-cols-2'>

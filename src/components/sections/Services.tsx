@@ -1,5 +1,5 @@
 import SectionTitle from '../SectionTitle';
-import { WhiteLine } from '../SmallLine';
+import { PrimaryLine } from '../SmallLine';
 
 const Services = () => {
   return (
@@ -12,7 +12,7 @@ const Services = () => {
         <div className=''>
           <p className='py-2'>
             We offer a comprehensive range of{' '}
-            {/* <span className='text-accent'> */}
+            {/* <span className='text-primary'> */}
             web design and development services
             {/* </span>{' '} */}, placing special emphasis on mobile
             optimization. Our expertise extends beyond that, as we provide
@@ -23,7 +23,7 @@ const Services = () => {
             Discover the diverse array of services we offer to fuel the growth
             of your brand. Whether it&apos;s SEO, SEM, or the technical aspects
             of digital marketing, we excel in all areas. Count on us to be your
-            trusted partner, adept at {/* <span className='text-accent'> */}
+            trusted partner, adept at {/* <span className='text-primary'> */}
             maximizing your online presence and driving results.
             {/* </span> */}
           </p>
@@ -31,7 +31,7 @@ const Services = () => {
             Elevate your brand&apos;s visibility with our unrivaled graphic
             design expertise. Our talented team crafts captivating logos,
             visually stunning website graphics,{' '}
-            {/* <span className='text-accent'> */}
+            {/* <span className='text-primary'> */}
             custom company profiles, letterheads, and email signatures{' '}
             {/* </span>{' '} */}
             that make a lasting impression. Let us bring your brand to life
@@ -41,9 +41,9 @@ const Services = () => {
         </div>
         <div>
           <article className='py-2'>
-            <header className='pb-2 text-xl font-medium text-accent'>
+            <header className='pb-2 text-xl font-medium text-primary'>
               Custom Web Design & Development
-              <WhiteLine />
+              <PrimaryLine />
             </header>
             <p>
               Our agency excels in creating visually appealing and user-friendly
@@ -53,7 +53,7 @@ const Services = () => {
             </p>
           </article>
           {/* <article className='py-2'>
-            <header className='text-accent font-medium text-xl'>
+            <header className='text-primary font-medium text-xl'>
               E-Commerce Solutions
             </header>
             <p>
@@ -64,9 +64,9 @@ const Services = () => {
             </p>
           </article> */}
           <article className='py-2'>
-            <header className='pb-2 text-xl font-medium text-accent'>
+            <header className='pb-2 text-xl font-medium text-primary'>
               Search Engine Optimization
-              <WhiteLine />
+              <PrimaryLine />
             </header>
             <p>
               We enhance your website&apos;s ranking in search engine results
@@ -76,9 +76,9 @@ const Services = () => {
             </p>
           </article>
           <article className='py-2'>
-            <header className='pb-2 text-xl font-medium text-accent'>
+            <header className='pb-2 text-xl font-medium text-primary'>
               High-Quality Graphics & Branding
-              <WhiteLine />
+              <PrimaryLine />
             </header>
             <p>
               Our team excels in producing top-notch graphics for diverse

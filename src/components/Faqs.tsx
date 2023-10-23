@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { BiChevronDown } from 'react-icons/bi';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Button } from './ui/button';
 // import { Faq } from '../../types';
 
 const Faqs = ({ question, answer }: Faq) => {
@@ -16,7 +17,7 @@ const Faqs = ({ question, answer }: Faq) => {
       {/* question section */}
       <div
         onClick={handleToggle}
-        className='flex cursor-pointer justify-between bg-armyGreen p-2 text-white'
+        className='flex cursor-pointer justify-between bg-secondary p-2 '
       >
         <h2 className='text-xl font-semibold '>{question}</h2>
         <BiChevronDown
@@ -36,12 +37,13 @@ const Faqs = ({ question, answer }: Faq) => {
             transition={{ duration: 0.3 }}
             className='overflow-clip'
           >
-            <p className='bg-armyGreen/50 p-2 text-sm text-white md:text-base '>
+            <p className='bg-secondary/50 p-2 text-sm  md:text-base '>
               {answer}
             </p>
           </motion.div>
         )}
       </AnimatePresence>
+      <div></div>
     </>
   );
 };

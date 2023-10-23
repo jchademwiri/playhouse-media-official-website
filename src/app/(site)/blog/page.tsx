@@ -1,6 +1,5 @@
 import { getPosts } from '@/sanity/actions';
-import moment from 'moment';
-import Link from 'next/link';
+import BlogCard from './BlogCard';
 
 const Blog = async () => {
   const posts = await getPosts({
@@ -9,33 +8,16 @@ const Blog = async () => {
     page: '1',
   });
 
-  // console.log(posts)
   return (
-    <section className='mx-auto my-20 w-full max-w-[1240px] px-4'>
-      <div>
-        <p className='text-2xl font-bold'>Blog Posts</p>
-        <ul>
-          {posts.map((post: Post) => (
-            <li key={post.slug} className='grid my-2 gap-4'>
-              <Link
-                href={post.slug}
-                prefetch
-                className='rounded flex justify-between hover:bg-armyGreen/80  bg-armyGreen p-2'
-              >
-                <div>
-                  {post.title}
-                  <span className='text-accent'>
-                    {' - '}
-                    {post.author.name}
-                  </span>
-                </div>
-                <small> {moment(post.publishedAt).format('DD MMM YYYY')}</small>
-              </Link>
-              {/* <p className='py-1'>{post.excerpt}</p> */}
-            </li>
-          ))}
-        </ul>
-      </div>
+    <section className='mx-auto my-10 w-full max-w-[1240px] px-4'>
+      <h1 className='text-2xl font-semibold md:text-4xl mb-8 md:font-bold'>
+        The latest web development blog
+      </h1>
+      <section className='grid sm:grid-cols-2 gap-4 lg:grid-cols-3'>
+        {posts.map((post: Post) => (
+          <BlogCard key={post.id} {...post} />
+        ))}
+      </section>
     </section>
   );
 };

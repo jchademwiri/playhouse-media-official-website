@@ -10,7 +10,7 @@ const ProjectCard = ({ url, name, image, categories }: Project) => {
           <Image
             src={image}
             alt={name}
-            className='max-h-52 w-full rounded-lg object-cover'
+            className='max-h-52 w-full rounded-lg object-cover border border-secondary hover:border-primary'
             width={311}
             height={208}
             placeholder='blur'
@@ -18,7 +18,7 @@ const ProjectCard = ({ url, name, image, categories }: Project) => {
           />
         </div>
       </Link>
-      <p className='text-green-300 text-sm py-2 italic'>{categories}</p>
+      <p className='text-primary text-sm py-2 italic'>{categories}</p>
     </div>
   );
 };

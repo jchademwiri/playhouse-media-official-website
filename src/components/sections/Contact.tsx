@@ -12,8 +12,8 @@ const Contact = () => {
         </h2>
         <SectionTitle title='Contact us' />
       </header>
-      <article className='my-8 grid gap-4 text-center  text-white sm:grid-cols-2 md:grid-cols-3'>
-        <div className='flex flex-col items-center justify-center rounded bg-armyGreen p-8 '>
+      <article className='my-8 grid gap-4 text-center   sm:grid-cols-2 md:grid-cols-3'>
+        <div className='flex flex-col items-center justify-center rounded bg-secondary p-8 '>
           <Image
             src={phone}
             placeholder='blur'
@@ -28,7 +28,7 @@ const Contact = () => {
             </Link>
           </div>
         </div>
-        <div className='flex flex-col items-center justify-center rounded bg-armyGreen p-8'>
+        <div className='flex flex-col items-center justify-center rounded bg-secondary p-8'>
           <Image
             src={mail}
             placeholder='blur'
@@ -43,7 +43,7 @@ const Contact = () => {
             </Link>
           </div>
         </div>
-        <div className='flex flex-col items-center justify-center rounded bg-armyGreen p-8'>
+        <div className='flex flex-col items-center justify-center rounded bg-secondary p-8'>
           <Image
             src={map}
             placeholder='blur'
@@ -63,7 +63,7 @@ const Contact = () => {
             </Link>
           </div>
         </div>
-        <div className='hidden flex-col items-center justify-center rounded bg-armyGreen p-8 sm:flex md:hidden'>
+        <div className='hidden flex-col items-center justify-center rounded bg-secondary p-8 sm:flex md:hidden'>
           <Image
             src={downArrow}
             alt='phone icon'
