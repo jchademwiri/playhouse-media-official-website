@@ -1,7 +1,9 @@
 import SectionTitle from '../SectionTitle';
-import Card from '../HeroCard';
+import HeroCard from '../HeroCard';
 import Link from 'next/link';
 import { BsArrowDownCircle } from 'react-icons/bs';
+import Image from 'next/image';
+import { topWebLogo } from '@/data/images';
 
 const Hero = () => {
   return (
@@ -12,7 +14,7 @@ const Hero = () => {
       <h1 className='text-4xl font-semibold md:text-8xl '>
         A creative web development agency.
       </h1>
-      <div className='my-10 grid gap-4 md:grid-cols-2 md:place-items-center'>
+      <div className='my-10 grid gap-4 md:grid-cols-2 lg:place-items-center'>
         <div>
           <SectionTitle title='About Us' />
           <p className='py-5'>
@@ -27,8 +29,8 @@ const Hero = () => {
             <BsArrowDownCircle className='my-2 animate-bounce text-3xl text-primary opacity-60 hover:opacity-100' />
           </Link>
         </div>
-        <div className='grid gap-2 lg:grid-cols-2'>
-          <Card
+        <div className='grid gap-2 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2'>
+          <HeroCard
             subTitle='Featured Project'
             title='Sithembe Transportation & Projects'
             description="
@@ -38,14 +40,15 @@ const Hero = () => {
             href='https://www.sithembe.co.za'
           />
 
-          <Card
-            subTitle='Featured Project'
-            title='King Tax Accounting Services'
-            description='
-            We recently developed a brand new website for King Tax Accounting Services, aimed at reaching a broader online target audience. Our team implemented robust on-page SEO strategies and established quality backlinks to ensure exceptional search engine optimization.
-            '
-            href='https://www.kingtaxaccounting.co.za'
-          />
+          <div className='p-4 border rounded-sm border-secondary grid place-items-center'>
+            <Link
+              href='https://www.designrush.com/agency/web-development-companies'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <Image src={topWebLogo} alt='top-web-development-companies' />
+            </Link>
+          </div>
         </div>
       </div>
     </section>
