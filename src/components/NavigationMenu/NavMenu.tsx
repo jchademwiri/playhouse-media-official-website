@@ -1,9 +1,10 @@
 import Link from 'next/link';
-import { ModeToggle } from '../ModeToggle';
+import { ThemeToggle } from '../ThemeToggle';
 import { Menu } from './Menu';
 import { MobileMenu } from './MobileNav';
 import Image from 'next/image';
 import { logo } from '@/data/images';
+import { Button } from '../ui/button';
 
 const NavMenu = () => {
   return (
@@ -22,10 +23,23 @@ const NavMenu = () => {
           <div className='hidden md:block'>
             <Menu />
           </div>
+
+          {/* <Button variant={'link'}>
+            <Link
+              className='text-xl md:text-3xl font-semibold text-primary'
+              href={`https://wa.me/message/AQCSRA3QZVK7G1`}
+              target='_blank'
+              rel='noreferrer'
+            >
+              New Project
+            </Link>
+          </Button> */}
+
           <div className='md:hidden'>
             <MobileMenu />
           </div>
-          <ModeToggle />
+
+          <ThemeToggle />
         </div>
       </div>
     </nav>

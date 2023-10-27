@@ -2,17 +2,16 @@ import Image from 'next/image';
 import SectionTitle from '../SectionTitle';
 import Link from 'next/link';
 import { downArrow, mail, map, phone } from '@/data/images';
+import TitleHeader from '../ui/TitleHeader';
+import ContactMap from '../ContactMap';
 
 const Contact = () => {
   return (
     <section id='contact' className='mx-auto my-20 w-full max-w-[1240px] px-4 '>
       <header>
-        <h2 className='text-4xl font-semibold md:text-6xl'>
-          Talk to us today.
-        </h2>
-        <SectionTitle title='Contact us' />
+        <TitleHeader title='Talk to us today.' subTitle='Contact us' />
       </header>
-      <article className='my-8 grid gap-4 text-center   sm:grid-cols-2 md:grid-cols-3'>
+      <article className='my-8 grid gap-4 text-center sm:grid-cols-2 md:grid-cols-3'>
         <div className='flex flex-col items-center justify-center rounded bg-secondary p-8 '>
           <Image
             src={phone}
@@ -73,6 +72,9 @@ const Contact = () => {
             Let us work together on your next project.
           </h3>
         </div>
+      </article>
+      <article>
+        <ContactMap />
       </article>
     </section>
   );

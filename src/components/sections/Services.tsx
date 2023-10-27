@@ -1,13 +1,15 @@
 import SectionTitle from '../SectionTitle';
 import { PrimaryLine } from '../SmallLine';
+import TitleHeader from '../ui/TitleHeader';
 
 const Services = () => {
   return (
-    <section id='services' className='mx-auto my-20 w-full max-w-[1240px] px-4'>
-      <h2 className='text-4xl font-semibold md:text-6xl'>
-        Quality & Expertise
-      </h2>
-      <SectionTitle title='Our Services' />
+    <section
+      id='services'
+      className='mx-auto py-10 min-h-screen w-full max-w-[1240px] px-4'
+    >
+      <TitleHeader title='Quality & Expertise' subTitle='Our Services' />
+
       <div className='grid gap-4 md:grid-cols-2'>
         <div className=''>
           <p className='py-2'>

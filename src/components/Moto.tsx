@@ -2,7 +2,7 @@ import { Rocket } from 'lucide-react';
 
 const Moto = () => {
   return (
-    <section id='about' className='bg-secondary  '>
+    <section className='bg-secondary  '>
       <div className='mx-auto w-full max-w-[1240px] px-4 py-20'>
         <header className='flex items-center text-primary gap-2 py-4 '>
           <Rocket size={50} className='' />

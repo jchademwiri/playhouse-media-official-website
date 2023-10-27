@@ -5,7 +5,10 @@ import { BsArrowDownCircle } from 'react-icons/bs';
 
 const Hero = () => {
   return (
-    <section id='home' className='mx-auto my-5 w-full max-w-[1240px] px-4'>
+    <section
+      id='home'
+      className='mx-auto py-10 min-h-screen w-full max-w-[1240px] px-4'
+    >
       <h1 className='text-4xl font-semibold md:text-8xl '>
         A creative web development agency.
       </h1>

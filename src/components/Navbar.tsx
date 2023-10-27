@@ -1,7 +1,7 @@
 import { logo, menu } from '@/data/images';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ModeToggle } from './ModeToggle';
+import { ThemeToggle } from './ThemeToggle';
 import { Button } from './ui/button';
 
 const Navbar = () => {
@@ -32,7 +32,7 @@ const Navbar = () => {
           </Link>
         </Button>
         <div className='grid w-14 cursor-pointer justify-items-end gap-1'>
-          <ModeToggle />
+          <ThemeToggle />
         </div>
       </div>
     </nav>

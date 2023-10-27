@@ -1,5 +1,4 @@
 import { CallToAction } from '@/components/CallToAction';
-import Moto from '@/components/Moto';
 import {
   Blog,
   Projects,
@@ -15,7 +14,6 @@ export default function Home() {
       <Hero />
       <Services />
       <Projects />
-      <Moto />
       <Hosting />
       <CallToAction />
       <Blog />
