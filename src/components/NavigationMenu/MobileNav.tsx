@@ -2,6 +2,7 @@
 
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetDescription,
   SheetFooter,
@@ -29,7 +30,7 @@ export function MobileMenu() {
         </Button>
       </SheetTrigger>
       <SheetContent side={'left'}>
-        <SheetHeader className=''>
+        <SheetHeader className='text-left'>
           <SheetTitle>Navigation Menu</SheetTitle>
           <SheetDescription>We are at your service.</SheetDescription>
         </SheetHeader>
@@ -41,9 +42,11 @@ export function MobileMenu() {
                 <div key={link.href}>
                   <Link href={link.href} legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`grid gap-2 rounded-sm p-2 hover:bg-accent`}
+                      className={`grid gap-2 !text-left rounded-sm p-2 hover:bg-accent`}
                     >
-                      {link.title}
+                      <SheetClose className='text-left'>
+                        {link.title}
+                      </SheetClose>
                     </NavigationMenuLink>
                   </Link>
                 </div>
