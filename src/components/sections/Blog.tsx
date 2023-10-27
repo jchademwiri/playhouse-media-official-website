@@ -9,7 +9,7 @@ const Blog = async () => {
     page: '1',
   });
   return (
-    <section id='projects' className='mx-auto my-20 w-full max-w-[1240px] px-4'>
+    <section id='blog' className='mx-auto my-20 w-full max-w-[1240px] px-4'>
       <div className='items-end justify-between md:flex'>
         <div>
           <h2 className='text-4xl font-semibold md:text-6xl'>Blog</h2>

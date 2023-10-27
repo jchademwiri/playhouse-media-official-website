@@ -5,7 +5,7 @@ import { downArrow, mail, map, phone } from '@/data/images';
 
 const Contact = () => {
   return (
-    <section className='mx-auto my-20 w-full max-w-[1240px] px-4 '>
+    <section id='contact' className='mx-auto my-20 w-full max-w-[1240px] px-4 '>
       <header>
         <h2 className='text-4xl font-semibold md:text-6xl'>
           Talk to us today.
