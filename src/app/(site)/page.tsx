@@ -16,7 +16,7 @@ export default function Home() {
       <Projects />
       <Hosting />
       <CallToAction />
-      <Blog />
+      {/* <Blog /> */}
       <Contact />
     </main>
   );

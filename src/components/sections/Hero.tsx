@@ -40,15 +40,14 @@ const Hero = () => {
             href='https://www.sithembe.co.za'
           />
 
-          <div className='p-4 border rounded-sm border-secondary grid place-items-center'>
-            <Link
-              href='https://www.designrush.com/agency/web-development-companies'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <Image src={topWebLogo} alt='top-web-development-companies' />
-            </Link>
-          </div>
+          <Link
+            href='https://www.designrush.com/agency/web-development-companies'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='border rounded-sm border-secondary hover:border-primary/50 p-4  grid place-items-center'
+          >
+            <Image src={topWebLogo} alt='top-web-development-companies' />
+          </Link>
         </div>
       </div>
     </section>

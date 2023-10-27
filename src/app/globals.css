@@ -61,4 +61,12 @@ html {
   body {
     @apply bg-background text-foreground;
   }
+  .test {
+    color: #22c55e; /*root */
+    color: hsl(240, 33%, 36%); /*dark */
+  }
 }
+
+/* my-dark: '#001514',
+accent: '#47EA7A',
+myarmy-secondary: '#364538', */

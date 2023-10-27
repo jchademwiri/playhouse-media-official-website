@@ -73,9 +73,7 @@ const Contact = () => {
           </h3>
         </div>
       </article>
-      <article>
-        <ContactMap />
-      </article>
+      {/* <article><ContactMap /></article> */}
     </section>
   );
 };
