@@ -13,14 +13,14 @@ export const CallToAction = () => {
         <div className='grid sm:grid-cols-2 gap-2'>
           <Link
             href='tel:+27740491433'
-            className='rounded bg-background px-6 py-2 hover:bg-background'
+            className='rounded bg-background px-6 py-2'
           >
             <p className='py-1 text-lg font-medium text-primary'>Call Us Now</p>
             <span>074 049 1433</span>
           </Link>
           <Link
             href='mailto:info@playhousemedia.net'
-            className='rounded bg-background px-6 py-2 hover:bg-background'
+            className='rounded bg-background px-6 py-2'
           >
             <p className='py-1 text-lg font-medium text-primary'>
               Email Us Now

@@ -1,15 +1,20 @@
 import SectionTitle from '../SectionTitle';
-import Card from '../HeroCard';
+import HeroCard from '../HeroCard';
 import Link from 'next/link';
 import { BsArrowDownCircle } from 'react-icons/bs';
+import Image from 'next/image';
+import { topWebLogo } from '@/data/images';
 
 const Hero = () => {
   return (
-    <section id='home' className='mx-auto my-5 w-full max-w-[1240px] px-4'>
+    <section
+      id='home'
+      className='mx-auto py-10 min-h-screen w-full max-w-[1240px] px-4'
+    >
       <h1 className='text-4xl font-semibold md:text-8xl '>
         A creative web development agency.
       </h1>
-      <div className='my-10 grid gap-4 md:grid-cols-2 md:place-items-center'>
+      <div className='my-10 grid gap-4 md:grid-cols-2 lg:place-items-center'>
         <div>
           <SectionTitle title='About Us' />
           <p className='py-5'>
@@ -24,8 +29,8 @@ const Hero = () => {
             <BsArrowDownCircle className='my-2 animate-bounce text-3xl text-primary opacity-60 hover:opacity-100' />
           </Link>
         </div>
-        <div className='grid gap-2 lg:grid-cols-2'>
-          <Card
+        <div className='grid gap-2 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2'>
+          <HeroCard
             subTitle='Featured Project'
             title='Sithembe Transportation & Projects'
             description="
@@ -35,14 +40,14 @@ const Hero = () => {
             href='https://www.sithembe.co.za'
           />
 
-          <Card
-            subTitle='Featured Project'
-            title='King Tax Accounting Services'
-            description='
-            We recently developed a brand new website for King Tax Accounting Services, aimed at reaching a broader online target audience. Our team implemented robust on-page SEO strategies and established quality backlinks to ensure exceptional search engine optimization.
-            '
-            href='https://www.kingtaxaccounting.co.za'
-          />
+          <Link
+            href='https://www.designrush.com/agency/web-development-companies'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='border rounded-sm border-secondary hover:border-primary/50 p-4  grid place-items-center'
+          >
+            <Image src={topWebLogo} alt='top-web-development-companies' />
+          </Link>
         </div>
       </div>
     </section>

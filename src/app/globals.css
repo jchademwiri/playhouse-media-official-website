@@ -49,6 +49,11 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -57,7 +62,7 @@
     @apply bg-background text-foreground;
   }
   .test {
-    color: hsl(128, 12%, 24%); /*root */
+    color: #22c55e; /*root */
     color: hsl(240, 33%, 36%); /*dark */
   }
 }

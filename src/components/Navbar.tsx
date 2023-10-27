@@ -1,12 +1,12 @@
 import { logo, menu } from '@/data/images';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ModeToggle } from './ModeToggle';
+import { ThemeToggle } from './ThemeToggle';
 import { Button } from './ui/button';
 
 const Navbar = () => {
   return (
-    <nav className='mx-auto flex w-full max-w-[1240px] items-center justify-between px-4 py-4'>
+    <nav className='mx-auto flex  items-center justify-between px-4 w-full max-w-[1240px] py-4'>
       <Link href={`/`}>
         <Image
           src={logo}
@@ -32,7 +32,7 @@ const Navbar = () => {
           </Link>
         </Button>
         <div className='grid w-14 cursor-pointer justify-items-end gap-1'>
-          <ModeToggle />
+          <ThemeToggle />
         </div>
       </div>
     </nav>
