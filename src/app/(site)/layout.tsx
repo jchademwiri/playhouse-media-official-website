@@ -56,8 +56,8 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${inter.className}`}>
-        <Navbar />
-        {/* <NavMenu /> */}
+        {/* <Navbar /> */}
+        <NavMenu />
         {children}
         <Footer />
         <Analytics />

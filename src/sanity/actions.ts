@@ -1,6 +1,7 @@
 import { groq } from 'next-sanity';
 import { readClient } from './lib/client';
 import { buildQuery } from './uitils';
+import { revalidatePath } from 'next/cache';
 
 interface GetProjectParams {
   query: string;
@@ -26,8 +27,7 @@ export const getProjects = async (params: GetProjectParams) => {
            'createdAt':_createdAt,
            'slug': slug.current,
            categories,
-            }`,
-      { next: { revalidate: 900 } }
+            }`
     );
 
     return projects;
@@ -81,8 +81,7 @@ export const getPosts = async (params: GetProjectParams) => {
                 },
              'createdAt':_createdAt,
              'slug': slug.current,
-        }`,
-      { next: { revalidate: 900 } }
+        }`
     );
 
     return posts;

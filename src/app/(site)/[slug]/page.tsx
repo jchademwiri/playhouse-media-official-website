@@ -12,17 +12,18 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { MoveLeft } from 'lucide-react';
 
+export const revalidate = 5;
 // import { SanityImage } from '@/components/SanityImage';
 
-interface Props {
+type PostProps = {
   params: {
     slug: string;
   };
-}
+};
 
 export async function generateMetadata({
   params: { slug },
-}: Props): Promise<Metadata> {
+}: PostProps): Promise<Metadata> {
   const post = await getPost(slug);
   return {
     title: post.title,
@@ -31,8 +32,9 @@ export async function generateMetadata({
 }
 const myPortableTextComponents: Partial<PortableTextReactComponents> = {};
 
-const PostSlug = async ({ params: { slug } }: Props) => {
-  const post = await getPost(slug);
+const Post = async ({ params: { slug } }: PostProps) => {
+  const post: Post = await getPost(slug);
+
   return (
     <section className='mx-auto my-5 w-full max-w-[1240px] px-4'>
       <Button variant={'link'} className='my-2'>
@@ -75,4 +77,4 @@ const PostSlug = async ({ params: { slug } }: Props) => {
     </section>
   );
 };
-export default PostSlug;
+export default Post;

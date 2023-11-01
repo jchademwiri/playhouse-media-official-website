@@ -51,12 +51,12 @@ const HeaderMobile = () => {
       ref={containerRef}
     >
       <motion.div
-        className="absolute inset-0 right-0 w-full bg-white"
+        className='absolute inset-0 right-0 w-full bg-secondary'
         variants={sidebar}
       />
       <motion.ul
         variants={variants}
-        className="absolute grid w-full gap-3 px-10 py-16"
+        className='absolute grid w-full gap-3 px-10 py-16'
       >
         {SIDENAV_ITEMS.map((item, idx) => {
           const isLastItem = idx === SIDENAV_ITEMS.length - 1; // Check if it's the last item
@@ -79,9 +79,7 @@ const HeaderMobile = () => {
                 </MenuItem>
               )}
 
-              {!isLastItem && (
-                <MenuItem className="my-3 h-px w-full bg-gray-300" />
-              )}
+              {!isLastItem && <MenuItem className='my-3 h-px w-full' />}
             </div>
           );
         })}
@@ -96,9 +94,9 @@ export default HeaderMobile;
 const MenuToggle = ({ toggle }: { toggle: any }) => (
   <button
     onClick={toggle}
-    className="pointer-events-auto absolute right-4 top-[14px] z-30"
+    className='pointer-events-auto absolute right-4 top-[14px] z-30'
   >
-    <svg width="23" height="23" viewBox="0 0 23 23">
+    <svg width='23' height='23' viewBox='0 0 23 23'>
       <Path
         variants={{
           closed: { d: 'M 2 2.5 L 20 2.5' },
@@ -106,7 +104,7 @@ const MenuToggle = ({ toggle }: { toggle: any }) => (
         }}
       />
       <Path
-        d="M 2 9.423 L 20 9.423"
+        d='M 2 9.423 L 20 9.423'
         variants={{
           closed: { opacity: 1 },
           open: { opacity: 0 },
@@ -125,10 +123,10 @@ const MenuToggle = ({ toggle }: { toggle: any }) => (
 
 const Path = (props: any) => (
   <motion.path
-    fill="transparent"
-    strokeWidth="2"
-    stroke="hsl(0, 0%, 18%)"
-    strokeLinecap="round"
+    fill='transparent'
+    strokeWidth='2'
+    stroke='hsl(142.1 76.2% 36.3%)'
+    strokeLinecap='round'
     {...props}
   />
 );
@@ -158,22 +156,22 @@ const MenuItemWithSubMenu: React.FC<MenuItemWithSubMenuProps> = ({
     <>
       <MenuItem>
         <button
-          className="flex w-full text-2xl"
+          className='flex w-full text-2xl'
           onClick={() => setSubMenuOpen(!subMenuOpen)}
         >
-          <div className="flex flex-row justify-between w-full items-center">
+          <div className='flex flex-row justify-between w-full items-center'>
             <span
               className={`${pathname.includes(item.path) ? 'font-bold' : ''}`}
             >
               {item.title}
             </span>
             <div className={`${subMenuOpen && 'rotate-180'}`}>
-              <Icon icon="lucide:chevron-down" width="24" height="24" />
+              <Icon icon='lucide:chevron-down' width='24' height='24' />
             </div>
           </div>
         </button>
       </MenuItem>
-      <div className="mt-2 ml-2 flex flex-col space-y-2">
+      <div className='mt-2 ml-2 flex flex-col space-y-2'>
         {subMenuOpen && (
           <>
             {item.subMenuItems?.map((subItem, subIdx) => {

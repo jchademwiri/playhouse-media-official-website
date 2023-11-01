@@ -64,8 +64,8 @@ const ContactMap = () => {
           <Button className='w-full'>Send Message</Button>
         </form>
         <p className='text-xs text-muted-foreground/50 mt-3'>
-          Chicharrones blog helvetica normcore iceland tousled brook viral
-          artisan.
+          We will not share any of your information with any third-party
+          comapnies or organisation.
         </p>
       </div>
     </div>

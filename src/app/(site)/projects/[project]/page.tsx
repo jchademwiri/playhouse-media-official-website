@@ -1,6 +1,8 @@
 // import { getProject } from '@/sanity/sanity-utils';
+import { Button } from '@/components/ui/button';
 import { getProject } from '@/sanity/actions';
 import { PortableText, PortableTextReactComponents } from '@portabletext/react';
+import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -8,13 +10,23 @@ import Link from 'next/link';
 //   title: 'Project name',
 // };
 
-type Props = {
+type ProjectProps = {
   params: { project: string };
 };
 
+export async function generateMetadata({
+  params,
+}: ProjectProps): Promise<Metadata> {
+  const slug = params.project;
+  const project = await getProject(slug);
+  return {
+    title: project.name,
+  };
+}
+
 const myPortableTextComponents: Partial<PortableTextReactComponents> = {};
 
-const Project = async ({ params }: Props) => {
+const Project = async ({ params }: ProjectProps) => {
   const slug = params.project;
   const project: Project = await getProject(slug);
 
@@ -27,20 +39,27 @@ const Project = async ({ params }: Props) => {
           </h1>
           <small className='text-green-300 italic'>{project.categories}</small>
         </div>
-
-        <Link
-          href={project.url}
-          title='View Project'
-          target='_blank'
-          rel='noopener noreferrer'
-          className='whitespace-nowrap rounded-lg bg-gray-100 px-4 py-3 font-bold text-dark transition hover:bg-secondary hover:text-primary'
-        >
-          View Project
-        </Link>
       </header>
       <section className='gap-4 grid sm:grid-cols-2 '>
+        <div className='flex flex-col justify-between'>
+          <div className='prose max-w-[1240px] portableText dark:prose-invert'>
+            <PortableText
+              value={project.content}
+              components={myPortableTextComponents}
+            />
+          </div>
+          <Button>
+            <Link
+              href={project.url}
+              title='View Project'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              View Project
+            </Link>
+          </Button>
+        </div>
         <div>
-          {/* h-full w-auto */}
           <Image
             src={project.image}
             alt={project.name}
@@ -50,26 +69,6 @@ const Project = async ({ params }: Props) => {
             blurDataURL={`/opengraph-image.png`}
             className='rounded-t-xl object-cover'
           />
-        </div>
-        <div className='justify-between'>
-          <h2 className='my-2 text-xl font-semibold  drop-shadow md:text-3xl md:font-extrabold'>
-            {project.name}
-          </h2>
-          <div className='prose max-w-[1240px] portableText dark:prose-invert'>
-            <PortableText
-              value={project.content}
-              components={myPortableTextComponents}
-            />
-          </div>
-          <Link
-            href={project.url}
-            title='View Project'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='whitespace-nowrap rounded-lg bg-gray-100 px-4 py-3 font-bold text-dark transition hover:bg-secondary hover:text-primary'
-          >
-            View Project
-          </Link>
         </div>
       </section>
     </section>

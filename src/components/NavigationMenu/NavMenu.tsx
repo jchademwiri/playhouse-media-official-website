@@ -19,21 +19,21 @@ const NavMenu = () => {
             className='w-auto h-12'
           />
         </Link>
-        <div className='flex items-center gap-1'>
+        <div className='flex items-center gap-2'>
           <div className='hidden md:block'>
             <Menu />
           </div>
 
-          {/* <Button variant={'link'}>
+          <Button className='py-5'>
             <Link
-              className='text-xl md:text-3xl font-semibold text-primary'
+              className='text-xl font-semibold'
               href={`https://wa.me/message/AQCSRA3QZVK7G1`}
               target='_blank'
               rel='noreferrer'
             >
-              New Project
+              Start a Project
             </Link>
-          </Button> */}
+          </Button>
 
           <div className='md:hidden'>
             <MobileMenu />

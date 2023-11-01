@@ -1,5 +1,3 @@
-import '../globals.css';
-
 export const metadata = {
   title: 'PMG Studio',
   description: 'PMG Data Studio',
