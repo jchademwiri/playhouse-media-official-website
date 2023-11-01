@@ -1,4 +1,5 @@
 import { CallToAction } from '@/components/CallToAction';
+export const revalidate = 5;
 import {
   Blog,
   Projects,
