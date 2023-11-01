@@ -1,10 +1,10 @@
-import SectionTitle from '../SectionTitle';
 import ProjectCard from '../ProjectCard';
 import { getProjects } from '@/sanity/actions';
 import TitleHeader from '../ui/TitleHeader';
+import { revalidatePath } from 'next/cache';
 // import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 
-export const revalidate = 900;
+export const revalidate = 5;
 
 const Projects = async () => {
   const projects: Project[] = await getProjects({
@@ -13,7 +13,7 @@ const Projects = async () => {
     page: '1',
   });
 
-  // console.log(projects);
+  // revalidatePath('/');
 
   return (
     <section

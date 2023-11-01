@@ -2,20 +2,28 @@
 import { getProject } from '@/sanity/actions';
 import { PortableText, PortableTextReactComponents } from '@portabletext/react';
 import Image from 'next/image';
+import { Metadata } from 'next';
 import Link from 'next/link';
 
-// export const metadata = {
-//   title: 'Project name',
-// };
+export const revalidate = 5;
 
 type Props = {
-  params: { project: string };
+  params: { slug: string };
 };
+
+export async function generateMetadata({
+  params: { slug },
+}: Props): Promise<Metadata> {
+  const project = await getProject(slug);
+  return {
+    title: project.title,
+    description: project.excerpt,
+  };
+}
 
 const myPortableTextComponents: Partial<PortableTextReactComponents> = {};
 
-const Project = async ({ params }: Props) => {
-  const slug = params.project;
+const Project = async ({ params: { slug } }: Props) => {
   const project: Project = await getProject(slug);
 
   return (
