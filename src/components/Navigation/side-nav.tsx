@@ -15,7 +15,7 @@ const SideNav = () => {
       <div className='flex flex-col space-y-6 w-full'>
         <Link
           href='/dashboard'
-          className='flex flex-row space-x-3 items-center justify-center md:justify-start md:px-6 border-b border-foreground h-12 w-full'
+          className='flex flex-row space-x-3 items-center justify-center md:justify-start md:px-6 border-b h-12 w-full'
         >
           <span className='h-7 w-7 bg-secondary rounded-lg' />
           <span className='font-bold text-xl hidden md:flex'>Logo</span>

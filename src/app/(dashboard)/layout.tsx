@@ -1,10 +1,14 @@
-import Footer from '@/components/Footer';
 import Header from '@/components/Navigation/header';
 import HeaderMobile from '@/components/Navigation/header-mobile';
 import MarginWidthWrapper from '@/components/Navigation/margin-width-wrapper';
 import PageWrapper from '@/components/Navigation/page-wrapper';
 import SideNav from '@/components/Navigation/side-nav';
 import { ThemeProvider } from '@/components/ThemeProvider';
+
+export const metadata = {
+  title: 'PMG Dashboard',
+  description: 'PMG Data Dashboard',
+};
 
 export default function RootLayout({
   children,
@@ -18,7 +22,7 @@ export default function RootLayout({
           attribute='class'
           defaultTheme='system'
           enableSystem
-          // disableTransitionOnChange
+          disableTransitionOnChange
         >
           <div className='flex'>
             <SideNav />
@@ -30,7 +34,6 @@ export default function RootLayout({
               </MarginWidthWrapper>
             </main>
           </div>
-          <Footer />
         </ThemeProvider>
       </body>
     </html>
