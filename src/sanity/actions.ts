@@ -109,8 +109,7 @@ export const getPost = async (slug: string) => {
             },
               'slug': slug.current,
             }
-          `,
-      { next: { tags: ['post'] } }
+          `
     );
 
     return post[0];
