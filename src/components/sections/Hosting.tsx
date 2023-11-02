@@ -1,11 +1,11 @@
-import Faqs from '@/components/Faqs';
 import { FAQs } from '@/data';
 import Link from 'next/link';
-import uuid from 'react-uuid';
+
 import { PrimaryLine } from '../SmallLine';
 import { Button } from '../ui/button';
 import { FAQAccordion } from '../FAQAccordion';
 import Moto from '../Moto';
+import { randomUUID } from 'crypto';
 
 const Hosting = () => {
   return (
@@ -42,7 +42,7 @@ const Hosting = () => {
           {FAQs.map((item) => {
             const { question, answer } = item;
             return (
-              <div className='my-4' key={uuid()}>
+              <div className='my-4' key={randomUUID()}>
                 {/* passing two props to this component */}
                 {/* <Faqs question={question} answer={answer}></Faqs> */}
                 <FAQAccordion question={question} answer={answer} />
