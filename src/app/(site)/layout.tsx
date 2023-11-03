@@ -1,13 +1,10 @@
-import '../globals.css';
 import { Analytics } from '@vercel/analytics/react';
-import '../globals.css';
-import { Inter } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import type { Metadata } from 'next';
 import NavMenu from '@/components/NavigationMenu/NavMenu';
+import { Toaster } from '@/components/ui/toaster';
 
-const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.playhousemedia.net'),
   title: 'Playhouse Media Group - Web Design and Development Services',
@@ -55,11 +52,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={`${inter.className}`}>
+      <body>
         {/* <Navbar /> */}
         <NavMenu />
         {children}
         <Footer />
+        <Toaster />
         <Analytics />
       </body>
     </html>

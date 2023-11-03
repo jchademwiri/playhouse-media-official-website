@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import SectionTitle from '../SectionTitle';
 import Link from 'next/link';
 import { downArrow, mail, map, phone } from '@/data/images';
 import TitleHeader from '../ui/TitleHeader';
@@ -73,7 +72,9 @@ const Contact = () => {
           </h3>
         </div>
       </article>
-      {/* <article><ContactMap /></article> */}
+      <article>
+        <ContactMap />
+      </article>
     </section>
   );
 };

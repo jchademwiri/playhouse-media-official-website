@@ -1,8 +1,11 @@
-https://thewebsitearchitect.com/web-design-portfolio/
+generator client {
+  provider = "prisma-client-js"
+}
 
-
-Responsive Animated Image Cards in Tailwind CSS - https://play.tailwindcss.com/t8hoEfMek9
-
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
 
 model Message {
   id        String   @id @default(cuid())
