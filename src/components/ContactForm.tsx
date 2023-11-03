@@ -28,8 +28,8 @@ const contactFormSchema = z.object({
     .min(10, {
       message: 'Message must be at least 10 characters.',
     })
-    .max(160, {
-      message: 'Message must not be longer than 30 characters.',
+    .max(300, {
+      message: 'Message must not be longer than 300 characters.',
     }),
 });
 
@@ -105,8 +105,8 @@ const ContactForm = () => {
               <FormLabel>Message</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder='Tell us a little bit about yourself'
-                  className='resize-none'
+                  placeholder='Talk about your website project. Any requirements, ideas, goals, or examples to get the discussion started.'
+                  className='resize-none min-h-[120px]'
                   {...field}
                 />
               </FormControl>
