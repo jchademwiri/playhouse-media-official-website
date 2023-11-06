@@ -70,7 +70,7 @@ export function LoginUser() {
             )}
           />
           <div className='my-2 flex justify-between items-center'>
-            <Button type='submit'>Register</Button>
+            <Button type='submit'>Login</Button>
             <small>
               Don&apos;t have an account?{' '}
               <Link href='/register' className='text-primary font-medium'>
