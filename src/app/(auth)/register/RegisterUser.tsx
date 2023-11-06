@@ -43,7 +43,7 @@ export function RegisterUser() {
 
   return (
     <Form {...form}>
-      <section className='w-2/3 max-w-sm space-y-6  bg-secondary/5 border border-secondary rounded-sm p-4'>
+      <section className='w-2/3 max-w-sm space-y-6 border border-secondary rounded-sm p-4'>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <FormField
             control={form.control}
