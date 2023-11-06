@@ -1,4 +1,6 @@
-export default function RootLayout({
+import { Toaster } from '@/components/ui/toaster';
+
+export default function AuthLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -6,7 +8,10 @@ export default function RootLayout({
   return (
     <html lang='en' suppressHydrationWarning>
       <head />
-      <body>{children}</body>
+      <body>
+        {children}
+        <Toaster />
+      </body>
     </html>
   );
 }

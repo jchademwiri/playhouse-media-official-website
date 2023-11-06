@@ -4,13 +4,14 @@ import MarginWidthWrapper from '@/components/Navigation/margin-width-wrapper';
 import PageWrapper from '@/components/Navigation/page-wrapper';
 import SideNav from '@/components/Navigation/side-nav';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import { Toaster } from '@/components/ui/toaster';
 
 export const metadata = {
   title: 'PMG Dashboard',
   description: 'PMG Data Dashboard',
 };
 
-export default function RootLayout({
+export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -34,6 +35,7 @@ export default function RootLayout({
               </MarginWidthWrapper>
             </main>
           </div>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
