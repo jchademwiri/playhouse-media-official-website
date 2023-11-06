@@ -17,37 +17,33 @@ import {
 import { Input } from '@/components/ui/input';
 import { toast } from '@/components/ui/use-toast';
 
-const FormSchema = z.object({
-  fullname: z.string().min(3, {
-    message: 'Fullname must be at least 3 characters.',
-  }),
+const LoginFormSchema = z.object({
   email: z
     .string()
-    .min(3, {
-      message: 'email must be at least 3 characters.',
+    .min(1, {
+      message: 'email is required.',
     })
     .email(),
-  password: z.string().min(5, {
-    message: 'Username must be at least 5 characters.',
+  password: z.string().min(1, {
+    message: 'Password is required.',
   }),
 });
 
-export function RegisterUser() {
-  const form = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema),
+export function LoginUser() {
+  const form = useForm<z.infer<typeof LoginFormSchema>>({
+    resolver: zodResolver(LoginFormSchema),
     defaultValues: {
-      fullname: '',
       email: '',
       password: '',
     },
   });
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
+  function onSubmit(data: z.infer<typeof LoginFormSchema>) {
     toast({
       title: 'You submitted the following values:',
       description: (
-        <pre className='mt-2 w-[340px] rounded-md bg-slate-950 p-4'>
-          <code className='text-white'>{JSON.stringify(data, null, 2)}</code>
+        <pre className='mt-2 w-[340px] rounded-md bg-secondary p-4'>
+          <code className=''>{JSON.stringify(data, null, 2)}</code>
         </pre>
       ),
     });
@@ -55,21 +51,8 @@ export function RegisterUser() {
 
   return (
     <Form {...form}>
-      <section className='w-2/3 max-w-sm space-y-6  bg-secondary rounded-sm p-4'>
+      <section className='w-2/3 max-w-sm space-y-6  bg-secondary/5 border border-secondary rounded-sm p-4'>
         <form onSubmit={form.handleSubmit(onSubmit)}>
-          <FormField
-            control={form.control}
-            name='fullname'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Full Name</FormLabel>
-                <FormControl>
-                  <Input placeholder='Full Name' {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
           <FormField
             control={form.control}
             name='email'
@@ -90,14 +73,14 @@ export function RegisterUser() {
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input placeholder='password' {...field} />
+                  <Input placeholder='password' type='password' {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
           <Button className='my-2' type='submit'>
-            Submit
+            Login
           </Button>
         </form>
       </section>
