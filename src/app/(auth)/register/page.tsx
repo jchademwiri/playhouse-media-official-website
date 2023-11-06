@@ -1,5 +1,9 @@
-import { RegisterUser } from "./RegisterUser";
+import { RegisterUser } from './RegisterUser';
 
+export const metadata = {
+  title: 'PMG Register',
+  description: 'PMG Data Register',
+};
 
 const Register = () => {
   return (

@@ -41,7 +41,7 @@ export function LoginUser() {
 
   return (
     <Form {...form}>
-      <section className='w-[90%] lg:max-w-sm mx-auto border border-secondary rounded-sm p-4'>
+      <section className='w-[90%] sm:max-w-sm mx-auto border border-secondary rounded-sm p-4'>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <FormField
             control={form.control}
