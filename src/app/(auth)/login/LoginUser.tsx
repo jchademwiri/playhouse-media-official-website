@@ -17,6 +17,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { toast } from '@/components/ui/use-toast';
 import { LoginFormSchema } from '@/lib/models';
+import Link from 'next/link';
 
 export function LoginUser() {
   const form = useForm<z.infer<typeof LoginFormSchema>>({
@@ -68,9 +69,15 @@ export function LoginUser() {
               </FormItem>
             )}
           />
-          <Button className='my-2' type='submit'>
-            Login
-          </Button>
+          <div className='my-2 flex justify-between items-center'>
+            <Button type='submit'>Register</Button>
+            <small>
+              Don&apos;t have an account?{' '}
+              <Link href='/register' className='text-primary font-medium'>
+                Register
+              </Link>
+            </small>
+          </div>
         </form>
       </section>
     </Form>

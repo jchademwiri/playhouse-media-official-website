@@ -16,6 +16,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { toast } from '@/components/ui/use-toast';
 import { RegisterFormSchema } from '@/lib/models';
+import Link from 'next/link';
 
 export function RegisterUser() {
   const form = useForm<z.infer<typeof RegisterFormSchema>>({
@@ -84,9 +85,15 @@ export function RegisterUser() {
               </FormItem>
             )}
           />
-          <Button className='my-2' type='submit'>
-            Register
-          </Button>
+          <div className='my-2 flex justify-between items-center'>
+            <Button type='submit'>Register</Button>
+            <small>
+              Already have an account?{' '}
+              <Link href='/login' className='text-primary font-medium'>
+                Login
+              </Link>
+            </small>
+          </div>
         </form>
       </section>
     </Form>
