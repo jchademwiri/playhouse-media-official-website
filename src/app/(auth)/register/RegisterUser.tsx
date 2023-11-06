@@ -44,7 +44,7 @@ export function RegisterUser() {
 
   return (
     <Form {...form}>
-      <section className='w-2/3 max-w-sm space-y-6 border border-secondary rounded-sm p-4'>
+      <section className='w-[90%] lg:max-w-sm mx-auto border border-secondary rounded-sm p-4'>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <FormField
             control={form.control}
@@ -85,7 +85,7 @@ export function RegisterUser() {
               </FormItem>
             )}
           />
-          <div className='my-2 flex justify-between items-center'>
+          <div className='my-2 gap-2 flex justify-between items-center'>
             <Button type='submit'>Register</Button>
             <small>
               Already have an account?{' '}
