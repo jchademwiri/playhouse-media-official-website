@@ -16,18 +16,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { toast } from '@/components/ui/use-toast';
-
-const LoginFormSchema = z.object({
-  email: z
-    .string()
-    .min(1, {
-      message: 'email is required.',
-    })
-    .email(),
-  password: z.string().min(1, {
-    message: 'Password is required.',
-  }),
-});
+import { LoginFormSchema } from '@/lib/models';
 
 export function LoginUser() {
   const form = useForm<z.infer<typeof LoginFormSchema>>({

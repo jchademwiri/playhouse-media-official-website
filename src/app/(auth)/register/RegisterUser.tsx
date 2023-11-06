@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -16,21 +15,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { toast } from '@/components/ui/use-toast';
-
-const RegisterFormSchema = z.object({
-  fullname: z.string().min(3, {
-    message: 'Fullname must be at least 3 characters.',
-  }),
-  email: z
-    .string()
-    .min(3, {
-      message: 'email must be at least 3 characters.',
-    })
-    .email(),
-  password: z.string().min(5, {
-    message: 'Username must be at least 5 characters.',
-  }),
-});
+import { RegisterFormSchema } from '@/lib/models';
 
 export function RegisterUser() {
   const form = useForm<z.infer<typeof RegisterFormSchema>>({
