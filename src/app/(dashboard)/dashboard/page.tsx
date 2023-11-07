@@ -1,4 +1,3 @@
-import UserAccountNav from '@/components/Navigation/userAccountNav';
 import { authOptions } from '@/lib/auth';
 import { getServerSession } from 'next-auth';
 
@@ -13,7 +12,7 @@ const Dashboard = async () => {
           <span className='font-bold text-4xl'>
             Welcome {session?.user.fullname}
           </span>
-          <UserAccountNav />
+
           <div className='border-dashed border border-secondary w-full h-12 rounded-lg'></div>
           <div className='border-dashed border border-secondary w-full h-64 rounded-lg'></div>
         </>
