@@ -38,21 +38,34 @@ export function RegisterUser() {
 
   async function onSubmit(data: RegisterForm) {
     try {
-      setIsSubmitting(true);
-      toast({
-        title: `Thank you ${data.fullname} for registering`,
-        description: (
-          <pre className='mt-2 w-[340px] rounded-md bg-secondary p-4'>
-            <div>
-              <code>
-                {JSON.stringify('Form submited Successfully', null, 2)}
-              </code>
-            </div>
-          </pre>
-        ),
+      const response = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+
+        body: JSON.stringify({
+          fullname: data.fullname,
+          email: data.email,
+          password: data.password,
+        }),
       });
-      revalidatePath('/login');
-      router.push('/login');
+      if (response.ok) {
+        setIsSubmitting(true);
+        toast({
+          title: `Thank you ${data.fullname} for registering`,
+          description: (
+            <pre className='mt-2 w-[340px] rounded-md bg-secondary p-4'>
+              <div>
+                <code>
+                  {JSON.stringify('Form submited Successfully', null, 2)}
+                </code>
+              </div>
+            </pre>
+          ),
+        });
+        router.push('/login');
+      }
     } catch (error) {
       setIsSubmitting(false);
       setError('An unexpected error ocured');
