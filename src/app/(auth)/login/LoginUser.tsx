@@ -17,6 +17,7 @@ import Spinner from '@/components/Spinner';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { signIn } from 'next-auth/react';
+import { toast } from '@/components/ui/use-toast';
 
 export function LoginUser() {
   const router = useRouter();
@@ -40,8 +41,13 @@ export function LoginUser() {
 
     if (signInData?.error) {
       setIsSubmitting(false);
-      console.log(signInData.error);
+      toast({
+        title: 'Error',
+        description: 'Something went wrong',
+        variant: 'destructive',
+      });
     } else {
+      router.refresh();
       router.push('/dashboard');
     }
   }

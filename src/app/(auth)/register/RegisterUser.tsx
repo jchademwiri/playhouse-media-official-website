@@ -37,40 +37,45 @@ export function RegisterUser() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   async function onSubmit(data: RegisterForm) {
-    try {
-      const response = await fetch('/api/auth/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          fullname: data.fullname,
-          email: data.email,
-          password: data.password,
-        }),
+    setIsSubmitting(true);
+    const response = await fetch('/api/auth/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        fullname: data.fullname,
+        email: data.email,
+        password: data.password,
+      }),
+    });
+    if (response.ok) {
+      toast({
+        title: `Thank you ${data.fullname} for registering`,
+        description: (
+          <pre className='mt-2 w-[340px] rounded-md bg-secondary p-4'>
+            <div>
+              <code>
+                {JSON.stringify('Form submited Successfully', null, 2)}
+              </code>
+            </div>
+          </pre>
+        ),
       });
-      if (response.ok) {
-        setIsSubmitting(true);
-        toast({
-          title: `Thank you ${data.fullname} for registering`,
-          description: (
-            <pre className='mt-2 w-[340px] rounded-md bg-secondary p-4'>
-              <div>
-                <code>
-                  {JSON.stringify('Form submited Successfully', null, 2)}
-                </code>
-              </div>
-            </pre>
-          ),
-        });
-        router.push('/login');
-      }
-    } catch (error) {
+      router.push('/login');
+    } else {
       setIsSubmitting(false);
       setError('An unexpected error ocured');
-      console.log(error);
+      toast({
+        title: 'Error',
+        description: 'Something went wrong',
+        variant: 'destructive',
+      });
     }
   }
+  // } catch (error) {
+
+  // }
 
   return (
     <Form {...form}>
