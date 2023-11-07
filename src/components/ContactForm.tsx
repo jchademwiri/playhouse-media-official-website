@@ -15,26 +15,10 @@ import {
   FormLabel,
   FormMessage,
 } from './ui/form';
-
-const contactFormSchema = z.object({
-  name: z.string().min(2, {
-    message: 'Name must be at least 2 characters.',
-  }),
-  email: z.string().email().min(2, {
-    message: 'Email must be at least 2 characters.',
-  }),
-  message: z
-    .string()
-    .min(10, {
-      message: 'Message must be at least 10 characters.',
-    })
-    .max(300, {
-      message: 'Message must not be longer than 300 characters.',
-    }),
-});
+import { ContactForm, contactFormSchema } from '@/lib/models';
 
 const ContactForm = () => {
-  const form = useForm<z.infer<typeof contactFormSchema>>({
+  const form = useForm<ContactForm>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
       name: '',
@@ -44,7 +28,7 @@ const ContactForm = () => {
   });
 
   // 2. Define a submit handler.
-  function onSubmit(data: z.infer<typeof contactFormSchema>) {
+  function onSubmit(data: ContactForm) {
     toast({
       title: `Thank you ${data.name} for Contacting us,`,
       description: (

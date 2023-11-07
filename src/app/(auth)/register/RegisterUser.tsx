@@ -2,7 +2,6 @@
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import * as z from 'zod';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -15,11 +14,16 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { toast } from '@/components/ui/use-toast';
-import { RegisterFormSchema } from '@/lib/models';
+import { RegisterForm, RegisterFormSchema } from '@/lib/models';
 import Link from 'next/link';
+import { useState } from 'react';
+import axios from 'axios';
+import { revalidatePath } from 'next/cache';
+import { useRouter } from 'next/navigation';
 
 export function RegisterUser() {
-  const form = useForm<z.infer<typeof RegisterFormSchema>>({
+  const router = useRouter();
+  const form = useForm<RegisterForm>({
     resolver: zodResolver(RegisterFormSchema),
     defaultValues: {
       fullname: '',
@@ -28,18 +32,34 @@ export function RegisterUser() {
     },
   });
 
-  function onSubmit(data: z.infer<typeof RegisterFormSchema>) {
-    toast({
-      title: `Thank you ${data.fullname} for registering`,
-      description: (
-        <pre className='mt-2 w-[340px] rounded-md bg-secondary p-4'>
-          <div>
-            <code>{JSON.stringify('Form submited Successfully', null, 2)}</code>
-          </div>
-        </pre>
-      ),
-    });
-    form.reset();
+  const [error, setError] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  async function onSubmit(data: RegisterForm) {
+    try {
+      setIsSubmitting(true);
+      await axios.post('/api/auth/register', data);
+      router.push('/login');
+      revalidatePath('/register', 'page');
+
+      toast({
+        title: `Thank you ${data.fullname} for registering`,
+        description: (
+          <pre className='mt-2 w-[340px] rounded-md bg-secondary p-4'>
+            <div>
+              <code>
+                {JSON.stringify('Form submited Successfully', null, 2)}
+              </code>
+            </div>
+          </pre>
+        ),
+      });
+      form.reset();
+    } catch (error) {
+      setIsSubmitting(false);
+      setError('An unexpected error ocured');
+      console.log(error);
+    }
   }
 
   return (
@@ -86,7 +106,9 @@ export function RegisterUser() {
             )}
           />
           <div className='my-2 gap-2 flex justify-between items-center'>
-            <Button type='submit'>Register</Button>
+            <Button type='submit' disabled={isSubmitting}>
+              Register {isSubmitting && 'Submitting...'}
+            </Button>
             <small>
               Already have an account?{' '}
               <Link href='/login' className='text-primary font-medium'>

@@ -1,5 +1,5 @@
 'use client';
-import * as z from 'zod';
+import z from 'zod';
 
 const RegisterFormSchema = z.object({
   fullname: z.string().min(3, {
@@ -16,6 +16,8 @@ const RegisterFormSchema = z.object({
   }),
 });
 
+type RegisterForm = z.infer<typeof RegisterFormSchema>;
+
 const LoginFormSchema = z.object({
   email: z
     .string()
@@ -28,4 +30,27 @@ const LoginFormSchema = z.object({
   }),
 });
 
-export { RegisterFormSchema, LoginFormSchema };
+type LoginForm = z.infer<typeof LoginFormSchema>;
+
+const contactFormSchema = z.object({
+  name: z.string().min(2, {
+    message: 'Name must be at least 2 characters.',
+  }),
+  email: z.string().email().min(2, {
+    message: 'Email must be at least 2 characters.',
+  }),
+  message: z
+    .string()
+    .min(10, {
+      message: 'Message must be at least 10 characters.',
+    })
+    .max(300, {
+      message: 'Message must not be longer than 300 characters.',
+    }),
+});
+
+type ContactForm = z.infer<typeof contactFormSchema>;
+
+export { RegisterFormSchema, LoginFormSchema, contactFormSchema };
+
+export type { RegisterForm, LoginForm, ContactForm };
