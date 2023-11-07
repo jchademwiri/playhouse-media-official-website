@@ -17,12 +17,12 @@ import { toast } from '@/components/ui/use-toast';
 import { RegisterForm, RegisterFormSchema } from '@/lib/models';
 import Link from 'next/link';
 import { useState } from 'react';
-import { revalidatePath } from 'next/cache';
 import { useRouter } from 'next/navigation';
 import Spinner from '@/components/Spinner';
 
 export function RegisterUser() {
   const router = useRouter();
+
   const form = useForm<RegisterForm>({
     resolver: zodResolver(RegisterFormSchema),
     defaultValues: {
@@ -43,7 +43,6 @@ export function RegisterUser() {
         headers: {
           'Content-Type': 'application/json',
         },
-
         body: JSON.stringify({
           fullname: data.fullname,
           email: data.email,
