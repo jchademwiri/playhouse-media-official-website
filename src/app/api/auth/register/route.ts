@@ -1,11 +1,26 @@
 import prisma from '@/prisma/client';
 import { NextRequest, NextResponse } from 'next/server';
 import { hash } from 'bcrypt';
+import z from 'zod';
+
+const RegisterFormSchema = z.object({
+  fullname: z
+    .string()
+    .min(1, {
+      message: 'Fullname is required.',
+    })
+    .max(100),
+  email: z.string().min(1, 'Email is required').email('Invalid email'),
+  password: z
+    .string()
+    .min(1, 'Password is required')
+    .min(8, 'Password must have than 8 characters'),
+});
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { fullname, email, password } = body;
+    const { fullname, email, password } = RegisterFormSchema.parse(body);
 
     const existingUserByEmail = await prisma.user.findUnique({
       where: { email },
@@ -28,9 +43,11 @@ export async function POST(request: NextRequest) {
       },
     });
 
+    const { password: newUserPassword, ...rest } = newUser;
+
     return NextResponse.json(
       {
-        Newuser: newUser,
+        Newuser: rest,
         message: 'New User has been created successfully',
       },
       { status: 201 }

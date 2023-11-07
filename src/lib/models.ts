@@ -1,4 +1,4 @@
-'use client';
+
 import z from 'zod';
 
 const RegisterFormSchema = z
