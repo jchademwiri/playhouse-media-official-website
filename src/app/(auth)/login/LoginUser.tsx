@@ -21,6 +21,7 @@ import Link from 'next/link';
 import Spinner from '@/components/Spinner';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { signIn } from 'next-auth/react';
 
 export function LoginUser() {
   const router = useRouter();
@@ -35,18 +36,21 @@ export function LoginUser() {
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  function onSubmit(data: LoginForm) {
+  async function onSubmit(data: LoginForm) {
     try {
       setIsSubmitting(true);
-      toast({
-        title: 'You submitted the following values:',
-        description: (
-          <pre className='mt-2 w-[340px] rounded-md bg-secondary p-4'>
-            <code className=''>{JSON.stringify(data, null, 2)}</code>
-          </pre>
-        ),
+      const signInData = await signIn('credentials', {
+        email: data.email,
+        password: data.password,
+        redirect: false,
       });
-      router.push('/dashboard');
+
+      if (signInData?.error) {
+        setIsSubmitting(false);
+        console.log(signInData.error);
+      } else {
+        router.push('/dashboard');
+      }
     } catch (error) {
       setIsSubmitting(false);
       setError('An unexpected error ocured');
