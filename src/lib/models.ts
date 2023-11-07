@@ -1,20 +1,25 @@
 'use client';
 import z from 'zod';
 
-const RegisterFormSchema = z.object({
-  fullname: z.string().min(3, {
-    message: 'Fullname must be at least 3 characters.',
-  }),
-  email: z
-    .string()
-    .min(3, {
-      message: 'email must be at least 3 characters.',
-    })
-    .email(),
-  password: z.string().min(5, {
-    message: 'Username must be at least 5 characters.',
-  }),
-});
+const RegisterFormSchema = z
+  .object({
+    fullname: z
+      .string()
+      .min(1, {
+        message: 'Fullname is required.',
+      })
+      .max(100),
+    email: z.string().min(1, 'Email is required').email('Invalid email'),
+    password: z
+      .string()
+      .min(1, 'Password is required')
+      .min(8, 'Password must have than 8 characters'),
+    confirmPassword: z.string().min(1, 'Password confirmation is required'),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    path: ['confirmPassword'],
+    message: 'Password do not match',
+  });
 
 type RegisterForm = z.infer<typeof RegisterFormSchema>;
 

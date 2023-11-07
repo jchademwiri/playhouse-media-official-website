@@ -18,6 +18,8 @@ import { Input } from '@/components/ui/input';
 import { toast } from '@/components/ui/use-toast';
 import { LoginFormSchema } from '@/lib/models';
 import Link from 'next/link';
+import Spinner from '@/components/Spinner';
+import { useState } from 'react';
 
 export function LoginUser() {
   const form = useForm<z.infer<typeof LoginFormSchema>>({
@@ -27,6 +29,9 @@ export function LoginUser() {
       password: '',
     },
   });
+
+  const [error, setError] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   function onSubmit(data: z.infer<typeof LoginFormSchema>) {
     toast({
@@ -70,7 +75,9 @@ export function LoginUser() {
             )}
           />
           <div className='my-2 gap-2 flex justify-between items-center'>
-            <Button type='submit'>Login</Button>
+            <Button type='submit' disabled={isSubmitting}>
+              Login {isSubmitting && <Spinner />}
+            </Button>
             <small>
               Don&apos;t have an account?{' '}
               <Link href='/register' className='text-primary font-medium'>

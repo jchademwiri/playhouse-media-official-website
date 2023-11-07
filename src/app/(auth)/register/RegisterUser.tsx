@@ -19,7 +19,8 @@ import Link from 'next/link';
 import { useState } from 'react';
 import axios from 'axios';
 import { revalidatePath } from 'next/cache';
-import { useRouter } from 'next/navigation';
+import { redirect, useRouter } from 'next/navigation';
+import Spinner from '@/components/Spinner';
 
 export function RegisterUser() {
   const router = useRouter();
@@ -29,6 +30,7 @@ export function RegisterUser() {
       fullname: '',
       email: '',
       password: '',
+      confirmPassword: '',
     },
   });
 
@@ -38,10 +40,6 @@ export function RegisterUser() {
   async function onSubmit(data: RegisterForm) {
     try {
       setIsSubmitting(true);
-      await axios.post('/api/auth/register', data);
-      router.push('/login');
-      revalidatePath('/register', 'page');
-
       toast({
         title: `Thank you ${data.fullname} for registering`,
         description: (
@@ -54,7 +52,8 @@ export function RegisterUser() {
           </pre>
         ),
       });
-      form.reset();
+      router.push('/login');
+      // form.reset();
     } catch (error) {
       setIsSubmitting(false);
       setError('An unexpected error ocured');
@@ -105,9 +104,26 @@ export function RegisterUser() {
               </FormItem>
             )}
           />
+          <FormField
+            control={form.control}
+            name='confirmPassword'
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Confirm Password</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder='confirmPassword'
+                    type='password'
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           <div className='my-2 gap-2 flex justify-between items-center'>
             <Button type='submit' disabled={isSubmitting}>
-              Register {isSubmitting && 'Submitting...'}
+              Register {isSubmitting && <Spinner />}
             </Button>
             <small>
               Already have an account?{' '}
