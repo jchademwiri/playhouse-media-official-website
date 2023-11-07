@@ -37,24 +37,18 @@ export function LoginUser() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   async function onSubmit(data: LoginForm) {
-    try {
-      setIsSubmitting(true);
-      const signInData = await signIn('credentials', {
-        email: data.email,
-        password: data.password,
-        redirect: false,
-      });
+    setIsSubmitting(true);
+    const signInData = await signIn('credentials', {
+      email: data.email,
+      password: data.password,
+      redirect: false,
+    });
 
-      if (signInData?.error) {
-        setIsSubmitting(false);
-        console.log(signInData.error);
-      } else {
-        router.push('/dashboard');
-      }
-    } catch (error) {
+    if (signInData?.error) {
       setIsSubmitting(false);
-      setError('An unexpected error ocured');
-      console.log(error);
+      console.log(signInData.error);
+    } else {
+      router.push('/dashboard');
     }
   }
 
