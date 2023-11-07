@@ -17,9 +17,8 @@ import { toast } from '@/components/ui/use-toast';
 import { RegisterForm, RegisterFormSchema } from '@/lib/models';
 import Link from 'next/link';
 import { useState } from 'react';
-import axios from 'axios';
 import { revalidatePath } from 'next/cache';
-import { redirect, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import Spinner from '@/components/Spinner';
 
 export function RegisterUser() {
@@ -52,8 +51,8 @@ export function RegisterUser() {
           </pre>
         ),
       });
+      revalidatePath('/login');
       router.push('/login');
-      // form.reset();
     } catch (error) {
       setIsSubmitting(false);
       setError('An unexpected error ocured');

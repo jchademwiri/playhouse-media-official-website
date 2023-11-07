@@ -16,13 +16,15 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { toast } from '@/components/ui/use-toast';
-import { LoginFormSchema } from '@/lib/models';
+import { LoginForm, LoginFormSchema } from '@/lib/models';
 import Link from 'next/link';
 import Spinner from '@/components/Spinner';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export function LoginUser() {
-  const form = useForm<z.infer<typeof LoginFormSchema>>({
+  const router = useRouter();
+  const form = useForm<LoginForm>({
     resolver: zodResolver(LoginFormSchema),
     defaultValues: {
       email: '',
@@ -33,15 +35,23 @@ export function LoginUser() {
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  function onSubmit(data: z.infer<typeof LoginFormSchema>) {
-    toast({
-      title: 'You submitted the following values:',
-      description: (
-        <pre className='mt-2 w-[340px] rounded-md bg-secondary p-4'>
-          <code className=''>{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      ),
-    });
+  function onSubmit(data: LoginForm) {
+    try {
+      setIsSubmitting(true);
+      toast({
+        title: 'You submitted the following values:',
+        description: (
+          <pre className='mt-2 w-[340px] rounded-md bg-secondary p-4'>
+            <code className=''>{JSON.stringify(data, null, 2)}</code>
+          </pre>
+        ),
+      });
+      router.push('/dashboard');
+    } catch (error) {
+      setIsSubmitting(false);
+      setError('An unexpected error ocured');
+      console.log(error);
+    }
   }
 
   return (
