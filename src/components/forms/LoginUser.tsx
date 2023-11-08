@@ -88,8 +88,8 @@ export function LoginUser() {
             </Button>
             <small>
               Don&apos;t have an account?{' '}
-              <Link href='/register' className='text-primary font-medium'>
-                Register
+              <Link href='/#contact' className='text-primary font-medium'>
+                Contact Admin
               </Link>
             </small>
           </div>

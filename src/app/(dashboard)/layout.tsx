@@ -3,8 +3,8 @@ import HeaderMobile from '@/components/Navigation/header-mobile';
 import MarginWidthWrapper from '@/components/Navigation/margin-width-wrapper';
 import PageWrapper from '@/components/Navigation/page-wrapper';
 import SideNav from '@/components/Navigation/side-nav';
-import SProvider from '@/components/SessionProvider';
-import { ThemeProvider } from '@/components/ThemeProvider';
+import AuthProvider from '@/context/AuthProvider';
+import { ThemeProvider } from '@/context/ThemeProvider';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata = {
@@ -20,26 +20,19 @@ export default function DashboardLayout({
   return (
     <html lang='en'>
       <body>
-        <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
-          enableSystem
-          disableTransitionOnChange
-        >
-          <SProvider>
-            <div className='flex'>
-              <SideNav />
-              <main className='flex-1'>
-                <MarginWidthWrapper>
-                  <Header />
-                  <HeaderMobile />
-                  <PageWrapper>{children}</PageWrapper>
-                </MarginWidthWrapper>
-              </main>
-            </div>
-          </SProvider>
-          <Toaster />
-        </ThemeProvider>
+        <AuthProvider>
+          <div className='flex'>
+            <SideNav />
+            <main className='flex-1'>
+              <MarginWidthWrapper>
+                <Header />
+                <HeaderMobile />
+                <PageWrapper>{children}</PageWrapper>
+              </MarginWidthWrapper>
+            </main>
+          </div>
+        </AuthProvider>
+        <Toaster />
       </body>
     </html>
   );

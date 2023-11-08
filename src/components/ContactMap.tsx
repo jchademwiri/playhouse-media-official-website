@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import ContactForm from './ContactForm';
+import ContactForm from './forms/ContactForm';
 import { mapLocation } from '@/data';
 
 const ContactMap = () => {

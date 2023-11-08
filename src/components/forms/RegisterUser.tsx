@@ -15,14 +15,10 @@ import {
 import { Input } from '@/components/ui/input';
 import { toast } from '@/components/ui/use-toast';
 import { RegisterForm, RegisterFormSchema } from '@/lib/models';
-import Link from 'next/link';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import Spinner from '@/components/Spinner';
 
 export function RegisterUser() {
-  const router = useRouter();
-
   const form = useForm<RegisterForm>({
     resolver: zodResolver(RegisterFormSchema),
     defaultValues: {
@@ -62,20 +58,17 @@ export function RegisterUser() {
           </pre>
         ),
       });
-      router.push('/login');
+      form.reset();
     } else {
       setIsSubmitting(false);
       setError('An unexpected error ocured');
       toast({
         title: 'Error',
-        description: 'Something went wrong',
+        description: `${error}`,
         variant: 'destructive',
       });
     }
   }
-  // } catch (error) {
-
-  // }
 
   return (
     <Form {...form}>
@@ -137,17 +130,12 @@ export function RegisterUser() {
               </FormItem>
             )}
           />
-          <div className='my-2 gap-2 flex justify-between items-center'>
-            <Button type='submit' disabled={isSubmitting}>
-              Register {isSubmitting && <Spinner />}
-            </Button>
-            <small>
-              Already have an account?{' '}
-              <Link href='/login' className='text-primary font-medium'>
-                Login
-              </Link>
-            </small>
-          </div>
+          {/* <div className=' gap-2 flex justify-between items-center'> */}
+          <Button type='submit' disabled={isSubmitting} className='my-2'>
+            Register New User {isSubmitting && <Spinner />}
+          </Button>
+
+          {/* </div> */}
         </form>
       </section>
     </Form>

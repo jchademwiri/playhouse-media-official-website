@@ -1,10 +1,5 @@
 import { Toaster } from '@/components/ui/toaster';
 
-export const metadata = {
-  title: 'PMG Dashboard Auth',
-  description: 'PMG Data Dashboard Auth',
-};
-
 export default function AuthLayout({
   children,
 }: {

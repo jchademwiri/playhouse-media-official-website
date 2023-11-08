@@ -1,4 +1,4 @@
-import { LoginUser } from './LoginUser';
+import { LoginUser } from '@/components/forms/LoginUser';
 
 export const metadata = {
   title: 'PMG Login',

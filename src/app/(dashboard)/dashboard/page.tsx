@@ -9,15 +9,11 @@ const Dashboard = async () => {
     <section>
       <>
         <span className='font-bold text-4xl'>
-          Welcome {session?.user.fullname}
+          Welcome <span className='text-primary'>{session?.user.fullname}</span>
         </span>
 
-        <div className='border-dashed border border-secondary w-full rounded-lg'>
-          <h2>Client Session:</h2>
-          <User />
-        </div>
-        <div className='border-dashed border border-secondary w-full rounded-lg'>
-          <h2>Server Session:</h2>
+        <div className='border-dashed p-2 border border-secondary w-full rounded-lg'>
+          <h2>Server Session User Details:</h2>
           <pre>{JSON.stringify(session, null, 2)}</pre>
         </div>
       </>
