@@ -1,9 +1,7 @@
 import { server } from '@/config';
 
 export async function getMessages() {
-  const res = await fetch(`${server}/api/messages`, {
-    cache: 'no-store',
-  });
+  const res = await fetch(`${server}/api/messages`);
 
   if (!res.ok) {
     throw new Error('Failed to fetch data');

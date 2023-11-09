@@ -1,4 +1,3 @@
-// import { getProject } from '@/sanity/sanity-utils';
 import { Button } from '@/components/ui/button';
 import { getProject } from '@/sanity/actions';
 import { PortableText, PortableTextReactComponents } from '@portabletext/react';
@@ -6,9 +5,6 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
-// export const metadata = {
-//   title: 'Project name',
-// };
 
 type ProjectProps = {
   params: { project: string };
