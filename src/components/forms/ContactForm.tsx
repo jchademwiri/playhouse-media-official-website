@@ -15,6 +15,7 @@ import {
 } from '../ui/form';
 import { ContactForm, contactFormSchema } from '@/lib/models';
 import { useState } from 'react';
+import { revalidatePath } from 'next/cache';
 
 const ContactForm = () => {
   const form = useForm<ContactForm>({
@@ -71,6 +72,7 @@ const ContactForm = () => {
         ),
       });
       form.reset();
+      revalidatePath('/dashboard/messages');
     } else {
       setIsSubmitting(false);
       setError('An unexpected error ocured');
