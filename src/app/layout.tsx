@@ -10,7 +10,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className={`${inter.className} bg-background `}>
+      <body className={inter.className}>
         <ThemeProvider
           attribute='class'
           defaultTheme='system'

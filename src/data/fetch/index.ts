@@ -1,7 +1,7 @@
 import { server } from '@/config';
 
 export async function getMessages() {
-  const res = await fetch(`${server}/api/contact`, {
+  const res = await fetch(`${server}/api/messages`, {
     cache: 'no-store',
   });
 

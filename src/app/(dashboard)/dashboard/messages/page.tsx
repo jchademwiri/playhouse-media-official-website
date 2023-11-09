@@ -1,16 +1,20 @@
-import { getMessages } from '@/data/api';
+import { getMessages } from '@/data/fetch';
 
-const Messages = async () => {
+export const metadata = {
+  title: 'PMG Messages',
+  description: 'PMG Messages',
+};
+
+const ContactMessages = async () => {
   const messages = await getMessages();
-  return (
-    <>
-      <span className='font-bold text-4xl'>Messages</span>
 
+  return (
+    <section>
+      <span className='font-bold text-4xl'>Messages:</span>
       <div className='border-dashed  p-2 border border-zinc-500 w-full min-h-64 rounded-lg'>
         <pre>{JSON.stringify(messages, null, 2)}</pre>
       </div>
-    </>
+    </section>
   );
 };
-
-export default Messages;
+export default ContactMessages;

@@ -20,8 +20,8 @@ export const links: { title: string; href: string }[] = [
     title: 'Contact',
     href: '/#contact',
   },
-  {
-    title: 'Admin',
-    href: '/login',
-  },
+  // {
+  //   title: 'Admin',
+  //   href: '/login',
+  // },
 ];

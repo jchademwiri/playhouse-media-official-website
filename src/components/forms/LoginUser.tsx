@@ -86,12 +86,12 @@ export function LoginUser() {
             <Button type='submit' disabled={isSubmitting}>
               Login {isSubmitting && <Spinner />}
             </Button>
-            <small>
+            {/* <small>
               Don&apos;t have an account?{' '}
               <Link href='/#contact' className='text-primary font-medium'>
                 Contact Admin
               </Link>
-            </small>
+            </small> */}
           </div>
         </form>
       </section>

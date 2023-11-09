@@ -1,4 +1,3 @@
-
 import { authOptions } from '@/lib/auth';
 import { getServerSession } from 'next-auth';
 
@@ -7,16 +6,14 @@ const Dashboard = async () => {
 
   return (
     <section>
-      <>
-        <span className='font-bold text-4xl'>
-          Welcome <span className='text-primary'>{session?.user.fullname}</span>
-        </span>
+      <span className='font-bold text-4xl'>
+        Welcome <span className='text-primary'>{session?.user.fullname}</span>
+      </span>
 
-        <div className='border-dashed p-2 border border-secondary w-full rounded-lg'>
-          <h2>Server Session User Details:</h2>
-          <pre>{JSON.stringify(session, null, 2)}</pre>
-        </div>
-      </>
+      <div className='border-dashed p-2 border border-secondary w-full rounded-lg'>
+        <h2>Server Session User Details:</h2>
+        <pre>{JSON.stringify(session, null, 2)}</pre>
+      </div>
     </section>
   );
 };
