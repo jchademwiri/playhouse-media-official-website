@@ -1,8 +1,6 @@
 'use client';
-
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import * as z from 'zod';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
@@ -16,6 +14,7 @@ import {
   FormMessage,
 } from '../ui/form';
 import { ContactForm, contactFormSchema } from '@/lib/models';
+import { useState } from 'react';
 
 const ContactForm = () => {
   const form = useForm<ContactForm>({
@@ -28,33 +27,60 @@ const ContactForm = () => {
     },
   });
 
+  const [error, setError] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   // 2. Define a submit handler.
-  function onSubmit(data: ContactForm) {
-    toast({
-      title: `Thank you ${data.name} for Contacting us,`,
-      description: (
-        <div>
-          <pre className='mt-2 w-[340px] rounded-md bg-secondary p-4'>
-            <p>
-              Name:
-              <code>{JSON.stringify(data.name, null, 2)}</code>
-            </p>
-            <p>
-              Phone Number:
-              <code>{JSON.stringify(data.phone, null, 2)}</code>
-            </p>
-            <p>
-              Email:
-              <code>{JSON.stringify(data.email, null, 2)}</code>
-            </p>
-          </pre>
-          <p className='py-2'>We will get back to you as soon as possible.</p>
-        </div>
-      ),
+  async function onSubmit(data: ContactForm) {
+    setIsSubmitting(true);
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: data.name,
+        phone: data.phone,
+        email: data.email,
+        message: data.message,
+      }),
     });
 
-    console.log(data);
-    form.reset();
+    if (response.ok) {
+      setIsSubmitting(false);
+      toast({
+        title: `Thank you ${data.name} for Contacting us,`,
+        description: (
+          <div>
+            <pre className='mt-2 w-[340px] rounded-md bg-secondary p-4'>
+              <p>
+                Name:
+                <code>{JSON.stringify(data.name, null, 2)}</code>
+              </p>
+              <p>
+                Phone Number:
+                <code>{JSON.stringify(data.phone, null, 2)}</code>
+              </p>
+              <p>
+                Email:
+                <code>{JSON.stringify(data.email, null, 2)}</code>
+              </p>
+            </pre>
+            <p className='py-2'>We will get back to you as soon as possible.</p>
+          </div>
+        ),
+      });
+      form.reset();
+    } else {
+      setIsSubmitting(false);
+      setError('An unexpected error ocured');
+      console.log(error);
+      toast({
+        title: 'Error',
+        description: `${error}`,
+        variant: 'destructive',
+      });
+    }
   }
 
   return (

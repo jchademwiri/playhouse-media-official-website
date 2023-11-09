@@ -1,14 +1,16 @@
-import React from 'react';
+import { getMessages } from '@/data/api';
 
-const MessagesPage = () => {
+const Messages = async () => {
+  const messages = await getMessages();
   return (
     <>
-      <span className="font-bold text-4xl">Messages</span>
+      <span className='font-bold text-4xl'>Messages</span>
 
-      <div className="border-dashed border border-zinc-500 w-full h-12 rounded-lg"></div>
-      <div className="border-dashed border border-zinc-500 w-full h-64 rounded-lg"></div>
+      <div className='border-dashed border border-zinc-500 w-full min-h-64 rounded-lg'>
+        <pre>{JSON.stringify(messages, null, 2)}</pre>
+      </div>
     </>
   );
 };
 
-export default MessagesPage;
+export default Messages;

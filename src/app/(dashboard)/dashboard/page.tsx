@@ -1,4 +1,4 @@
-import User from '@/components/User';
+
 import { authOptions } from '@/lib/auth';
 import { getServerSession } from 'next-auth';
 

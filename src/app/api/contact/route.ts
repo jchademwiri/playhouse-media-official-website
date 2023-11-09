@@ -55,3 +55,8 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: error }, { status: 500 });
   }
 }
+
+export async function GET() {
+  const messages = await prisma.message.findMany();
+  return new NextResponse(JSON.stringify(messages), { status: 200 });
+}
