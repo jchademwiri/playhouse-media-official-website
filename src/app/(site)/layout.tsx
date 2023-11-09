@@ -1,5 +1,5 @@
 import { Analytics } from '@vercel/analytics/react';
-import Navbar from '@/components/Navbar';
+
 import Footer from '@/components/Footer';
 import type { Metadata } from 'next';
 import NavMenu from '@/components/NavigationMenu/NavMenu';
