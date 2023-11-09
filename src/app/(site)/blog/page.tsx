@@ -1,14 +1,12 @@
 import { getPosts } from '@/sanity/actions';
 import BlogCard from './BlogCard';
-import { revalidatePath } from 'next/cache';
-export const revalidate = 5;
+
 const Blog = async () => {
   const posts = await getPosts({
     query: '',
     category: '',
     page: '1',
   });
-  revalidatePath('/blog');
 
   return (
     <section className='mx-auto my-10 w-full max-w-[1240px] px-4'>

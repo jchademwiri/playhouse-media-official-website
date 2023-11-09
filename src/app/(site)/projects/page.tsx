@@ -4,16 +4,12 @@ import { getProjects } from '@/sanity/actions';
 import { revalidatePath } from 'next/cache';
 // import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 
-export const revalidate = 5;
-
 const Projects = async () => {
   const projects: Project[] = await getProjects({
     query: '',
     category: '',
     page: '1',
   });
-
-  revalidatePath('/projects');
 
   return (
     <section id='projects' className='mx-auto my-20 w-full max-w-[1240px] px-4'>
