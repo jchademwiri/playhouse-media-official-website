@@ -7,6 +7,6 @@ interface AuthProviderProps {
 }
 
 const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
-  return <SessionProvider>{children}</SessionProvider>;
+  return <SessionProvider basePath='/api/auth'>{children}</SessionProvider>;
 };
 export default AuthProvider;
