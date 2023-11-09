@@ -1,5 +1,7 @@
+import { ThemeProvider } from '@/context/ThemeProvider';
 import './globals.css';
-import { ThemeProvider } from '@/components/ThemeProvider';
+import { Inter } from 'next/font/google';
+const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({
   children,
@@ -8,8 +10,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <head />
-      <body>
+      <body className={inter.className}>
         <ThemeProvider
           attribute='class'
           defaultTheme='system'
@@ -17,6 +18,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+
+          {/* <Toaster /> */}
         </ThemeProvider>
       </body>
     </html>

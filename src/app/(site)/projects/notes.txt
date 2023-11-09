@@ -2,3 +2,13 @@ https://thewebsitearchitect.com/web-design-portfolio/
 
 
 Responsive Animated Image Cards in Tailwind CSS - https://play.tailwindcss.com/t8hoEfMek9
+
+
+model Message {
+  id        String   @id @default(cuid())
+  name      String   @db.VarChar(255)
+  email     String   @unique
+  message   String   @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

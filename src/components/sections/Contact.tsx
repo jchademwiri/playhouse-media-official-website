@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import SectionTitle from '../SectionTitle';
 import Link from 'next/link';
 import { downArrow, mail, map, phone } from '@/data/images';
 import TitleHeader from '../ui/TitleHeader';
+import { mapLocation } from '@/data';
 import ContactMap from '../ContactMap';
 
 const Contact = () => {
@@ -53,12 +53,12 @@ const Contact = () => {
           <div>
             <h3 className='text-lg font-medium'>Physical Address</h3>
             <Link
-              href={`https://www.google.com/search?q=playhouse+media+group&oq=pla&aqs=chrome.1.69i60j69i59j69i57j69i59j69i60l3.4085j0j9&sourceid=chrome&ie=UTF-8&dlnr=1&sei=_TjbZPWHM8jpkgXjwISQCw#dlnr=1`}
+              href={mapLocation}
               className=''
               target='_blank'
               rel='noreferrer'
             >
-              50 Janet St, Florida, Roodepoort, 1709
+              285 Erasmus Ave, Raslouw AH, Centurion, 0157
             </Link>
           </div>
         </div>
@@ -73,7 +73,9 @@ const Contact = () => {
           </h3>
         </div>
       </article>
-      {/* <article><ContactMap /></article> */}
+      <article>
+        <ContactMap />
+      </article>
     </section>
   );
 };

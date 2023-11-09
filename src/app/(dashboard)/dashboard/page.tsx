@@ -1,12 +1,20 @@
-const Dashboard = () => {
+import { authOptions } from '@/lib/auth';
+import { getServerSession } from 'next-auth';
+
+const Dashboard = async () => {
+  const session = await getServerSession(authOptions);
+
   return (
-    <div>
-      <>
-        <span className='font-bold text-4xl'>Home</span>
-        <div className='border-dashed border border-secondary w-full h-12 rounded-lg'></div>
-        <div className='border-dashed border border-secondary w-full h-64 rounded-lg'></div>
-      </>
-    </div>
+    <section>
+      <span className='font-bold text-4xl'>
+        Welcome <span className='text-primary'>{session?.user.fullname}</span>
+      </span>
+
+      <div className='border-dashed p-2 border border-secondary w-full rounded-lg'>
+        <h2>Server Session User Details:</h2>
+        <pre>{JSON.stringify(session, null, 2)}</pre>
+      </div>
+    </section>
   );
 };
 export default Dashboard;

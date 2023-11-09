@@ -3,14 +3,16 @@ import HeaderMobile from '@/components/Navigation/header-mobile';
 import MarginWidthWrapper from '@/components/Navigation/margin-width-wrapper';
 import PageWrapper from '@/components/Navigation/page-wrapper';
 import SideNav from '@/components/Navigation/side-nav';
-import { ThemeProvider } from '@/components/ThemeProvider';
+import AuthProvider from '@/context/AuthProvider';
+import { ThemeProvider } from '@/context/ThemeProvider';
+import { Toaster } from '@/components/ui/toaster';
 
 export const metadata = {
   title: 'PMG Dashboard',
   description: 'PMG Data Dashboard',
 };
 
-export default function RootLayout({
+export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -18,12 +20,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body>
-        <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
-          enableSystem
-          disableTransitionOnChange
-        >
+        <AuthProvider>
           <div className='flex'>
             <SideNav />
             <main className='flex-1'>
@@ -34,7 +31,8 @@ export default function RootLayout({
               </MarginWidthWrapper>
             </main>
           </div>
-        </ThemeProvider>
+        </AuthProvider>
+        <Toaster />
       </body>
     </html>
   );

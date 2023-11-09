@@ -32,6 +32,7 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
     subMenuItems: [
       { title: 'Account', path: '/dashboard/settings/account' },
       { title: 'Privacy', path: '/dashboard/settings/privacy' },
+      { title: 'Add User', path: '/dashboard/settings/adduser' },
     ],
   },
   {

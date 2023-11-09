@@ -1,13 +1,13 @@
 'use client';
-
 import React from 'react';
-
 import Link from 'next/link';
 import { useSelectedLayoutSegment } from 'next/navigation';
-
 import useScroll from '@/hooks/use-scroll';
 import { cn } from '@/lib/utils';
 import { ThemeToggle } from '../ThemeToggle';
+import { Button } from '../ui/button';
+import { signOut } from 'next-auth/react';
+import { LogOut } from 'lucide-react';
 
 const Header = () => {
   const scrolled = useScroll(5);
@@ -33,14 +33,22 @@ const Header = () => {
             <span className='font-bold text-xl flex '>Logo</span>
           </Link>
         </div>
-        <div className='grid grid-cols-2 place-items-center '>
+        <div className='grid grid-cols-3 place-items-center'>
           <ThemeToggle />
 
-          <div className='hidden md:block'>
-            <div className='h-8 w-8 rounded-full bg-secondary flex items-center justify-center text-center'>
-              <span className='font-semibold text-sm'>HQ</span>
-            </div>
-          </div>
+          <Button
+            onClick={() =>
+              signOut({
+                redirect: true,
+                callbackUrl: `${window.location.origin}/login`,
+              })
+            }
+            size={'icon'}
+            variant={'ghost'}
+            className='ml-2 rounded-full font-semibold'
+          >
+            <LogOut />
+          </Button>
         </div>
       </div>
     </div>
