@@ -22,6 +22,7 @@ const ContactForm = () => {
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
       name: '',
+      phone: '',
       email: '',
       message: '',
     },
@@ -37,6 +38,10 @@ const ContactForm = () => {
             <p>
               Name:
               <code>{JSON.stringify(data.name, null, 2)}</code>
+            </p>
+            <p>
+              Phone Number:
+              <code>{JSON.stringify(data.phone, null, 2)}</code>
             </p>
             <p>
               Email:
@@ -70,12 +75,25 @@ const ContactForm = () => {
         />
         <FormField
           control={form.control}
+          name='phone'
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Phone Number</FormLabel>
+              <FormControl>
+                <Input placeholder='Phone Number...' type='number' {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
           name='email'
           render={({ field }) => (
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder='Email...' {...field} />
+                <Input placeholder='Email...' type='email' {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

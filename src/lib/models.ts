@@ -1,4 +1,3 @@
-
 import z from 'zod';
 
 const RegisterFormSchema = z
@@ -37,12 +36,23 @@ const LoginFormSchema = z.object({
 
 type LoginForm = z.infer<typeof LoginFormSchema>;
 
+const phoneRegex = new RegExp(
+  /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
+);
+
 const contactFormSchema = z.object({
-  name: z.string().min(2, {
-    message: 'Name must be at least 2 characters.',
+  name: z.string().min(1, {
+    message: 'Name is required.',
   }),
-  email: z.string().email().min(2, {
-    message: 'Email must be at least 2 characters.',
+  phone: z
+    .string()
+    .regex(phoneRegex, 'Invalid Phone Number!')
+    .min(10, { message: 'Phone number must be at least 10 numbers' })
+    .max(14, {
+      message: 'Phone number must be at most 14 numbers with country code',
+    }),
+  email: z.string().email().min(1, {
+    message: 'Email is required.',
   }),
   message: z
     .string()
