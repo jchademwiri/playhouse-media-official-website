@@ -1,4 +1,4 @@
-import { getMessages, messageCount } from '@/data/fetch';
+import { messageCount, messages } from '@/data/fetch';
 
 export const metadata = {
   title: 'PMG Messages',
@@ -6,7 +6,6 @@ export const metadata = {
 };
 
 const ContactMessages = async () => {
-  const messages = await getMessages();
   return (
     <section>
       <p className='font-bold text-4xl pb-2'>Total Messages: {messageCount}</p>
@@ -14,7 +13,7 @@ const ContactMessages = async () => {
         {messages.length === 0 ? (
           <p className='font-bold text-xl'>No Message Yet</p>
         ) : (
-          <pre>{JSON.stringify(messages, null, 2)}</pre>
+          <pre>{JSON.stringify({ messages }, null, 2)}</pre>
         )}
       </div>
     </section>
