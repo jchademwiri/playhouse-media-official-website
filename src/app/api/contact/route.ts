@@ -1,6 +1,18 @@
 import prisma from '@/prisma/client';
 import { NextRequest, NextResponse } from 'next/server';
 import z from 'zod';
+import * as React from 'react';
+import { Resend } from 'resend';
+import { EmailTemplate } from '@/components/EmailTemplate';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+interface EmailTemplateProps {
+  name: string;
+  phone: number;
+  email: string;
+  message: string;
+}
 
 const phoneRegex = new RegExp(
   /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
@@ -30,6 +42,8 @@ const contactFormSchema = z.object({
     }),
 });
 
+// create an inteface fro zod validation
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -44,9 +58,22 @@ export async function POST(request: NextRequest) {
       },
     });
 
+    const sendMessage = await resend.emails.send({
+      from: 'PMG Team <info@playhousemedia.net>',
+      to: email,
+      subject: 'This is Jacob from PMG',
+      react: EmailTemplate({
+        name,
+        phone,
+        email,
+        message,
+      }) as React.ReactElement,
+    });
+
     return NextResponse.json(
       {
         newMessage,
+        sendMessage,
         message: 'Message sent successfully',
       },
       { status: 201 }

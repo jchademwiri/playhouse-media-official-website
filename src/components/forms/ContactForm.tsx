@@ -46,9 +46,11 @@ const ContactForm = () => {
         message: data.message,
       }),
     });
+    revalidatePath('/dashboard/messages');
 
     if (response.ok) {
       setIsSubmitting(false);
+      form.reset();
       toast({
         title: `Thank you ${data.name} for Contacting us,`,
         description: (
@@ -71,8 +73,6 @@ const ContactForm = () => {
           </div>
         ),
       });
-      form.reset();
-      revalidatePath('/dashboard/messages');
     } else {
       setIsSubmitting(false);
       setError('An unexpected error ocured');

@@ -1,4 +1,4 @@
-import { messageCount, messages } from '@/data/fetch';
+import { messageCount, messages } from '@/actions';
 
 export const metadata = {
   title: 'PMG Messages',
