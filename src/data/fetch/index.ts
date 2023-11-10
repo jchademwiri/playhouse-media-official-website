@@ -1,4 +1,5 @@
 import { server } from '@/config';
+import prisma from '@/prisma/client';
 
 export async function getMessages() {
   const res = await fetch(`${server}/api/messages`, {
@@ -10,3 +11,5 @@ export async function getMessages() {
   }
   return res.json();
 }
+
+export const messageCount = await prisma.message.count();

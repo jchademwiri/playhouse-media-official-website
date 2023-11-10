@@ -7,5 +7,8 @@ export async function GET() {
       createdAt: 'desc',
     },
   });
-  return new NextResponse(JSON.stringify(messages), { status: 200 });
+
+  return new NextResponse(JSON.stringify(messages), {
+    status: 200,
+  });
 }
