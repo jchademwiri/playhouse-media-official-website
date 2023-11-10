@@ -135,7 +135,7 @@ const ContactForm = () => {
               <FormLabel>Message</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder='Talk about your website project. Any requirements, ideas, goals, or examples to get the discussion started.'
+                  placeholder='How can we assist you today?'
                   className='resize-none min-h-[120px]'
                   {...field}
                 />
