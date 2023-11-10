@@ -46,10 +46,10 @@ const ContactForm = () => {
         message: data.message,
       }),
     });
-    revalidatePath('/dashboard/messages');
 
     if (response.ok) {
       setIsSubmitting(false);
+      revalidatePath('/dashboard/messages');
       form.reset();
       toast({
         title: `Thank you ${data.name} for Contacting us,`,
