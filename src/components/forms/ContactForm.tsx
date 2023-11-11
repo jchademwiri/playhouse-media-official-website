@@ -15,7 +15,7 @@ import {
 } from '../ui/form';
 import { ContactForm, contactFormSchema } from '@/lib/models';
 import { useState } from 'react';
-import { revalidatePath } from 'next/cache';
+import { revalidatePath, revalidateTag } from 'next/cache';
 
 const ContactForm = () => {
   const form = useForm<ContactForm>({
@@ -72,7 +72,6 @@ const ContactForm = () => {
         ),
       });
       form.reset();
-      revalidatePath('/dashboard/messages');
     } else {
       setIsSubmitting(false);
       setError('An unexpected error ocured');
@@ -135,7 +134,7 @@ const ContactForm = () => {
               <FormLabel>Message</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder='Talk about your website project. Any requirements, ideas, goals, or examples to get the discussion started.'
+                  placeholder='How can we assist you today?'
                   className='resize-none min-h-[120px]'
                   {...field}
                 />
