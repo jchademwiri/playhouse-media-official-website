@@ -15,7 +15,7 @@ import {
 } from '../ui/form';
 import { ContactForm, contactFormSchema } from '@/lib/models';
 import { useState } from 'react';
-import { revalidatePath } from 'next/cache';
+import { revalidatePath, revalidateTag } from 'next/cache';
 
 const ContactForm = () => {
   const form = useForm<ContactForm>({
@@ -49,8 +49,6 @@ const ContactForm = () => {
 
     if (response.ok) {
       setIsSubmitting(false);
-      revalidatePath('/dashboard/messages');
-      form.reset();
       toast({
         title: `Thank you ${data.name} for Contacting us,`,
         description: (
@@ -73,6 +71,7 @@ const ContactForm = () => {
           </div>
         ),
       });
+      form.reset();
     } else {
       setIsSubmitting(false);
       setError('An unexpected error ocured');
