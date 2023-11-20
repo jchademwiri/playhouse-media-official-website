@@ -1,9 +1,10 @@
 'use client';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useScroll } from 'framer-motion';
 import MyProjectCard from './MyProjectCard';
 import { useEffect, useRef } from 'react';
-import { projects } from './data';
+
 import Lenis from '@studio-freight/lenis';
+import { projects } from '@/data/projects';
 
 const ProjectCards = () => {
   const mainContainer = useRef(null);
@@ -21,6 +22,7 @@ const ProjectCards = () => {
 
     requestAnimationFrame(raf);
   });
+
   return (
     <div ref={mainContainer} className='relative mb-10'>
       {projects.map((project, i) => {

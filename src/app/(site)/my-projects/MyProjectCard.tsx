@@ -47,7 +47,7 @@ const MyProjectCard = ({
           backgroundColor: color,
           top: `calc(-1% + ${i * 25}px)`,
         }}
-        className='max-w-screen-lg w-full min-h-[500px] mx-auto rounded-3xl p-4 relative top-[-1%] grid place-items-center'
+        className='w-full min-h-[500px] mx-auto rounded-3xl p-4 relative top-[-1%] grid place-items-center'
       >
         <h2 className='text-center text-xl md:text-3xl font-bold'>{title}</h2>
         <div className='grid md:grid-cols-2 place-items-center'>
