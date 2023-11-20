@@ -20,7 +20,7 @@ const Projects = async () => {
         </div>
       </div>
 
-      {/* <div className='my-5 w-full place-content-center grid gap-2 lg:gap-4 sm:grid-cols-2 lg:grid-cols-3'>
+      <div className='my-5 w-full place-content-center grid gap-2 lg:gap-4 sm:grid-cols-2 lg:grid-cols-3'>
         {projects?.length > 0 ? (
           projects
             .slice(0, 3)
@@ -28,7 +28,7 @@ const Projects = async () => {
         ) : (
           <p>No projects</p>
         )}
-      </div> */}
+      </div>
       <ProjectCards />
     </section>
   );
