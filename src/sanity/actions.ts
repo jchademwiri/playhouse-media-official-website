@@ -1,7 +1,7 @@
 import { groq } from 'next-sanity';
 import { readClient } from './lib/client';
 import { buildQuery } from './uitils';
-import { revalidatePath } from 'next/cache';
+import { unstable_noStore as noStore } from 'next/cache';
 
 interface GetProjectParams {
   query: string;
@@ -10,6 +10,8 @@ interface GetProjectParams {
 }
 
 export const getProjects = async (params: GetProjectParams) => {
+  noStore();
+
   const { query, category, page } = params;
 
   try {
@@ -37,6 +39,7 @@ export const getProjects = async (params: GetProjectParams) => {
 };
 
 export const getProject = async (slug: string) => {
+  noStore();
   try {
     const project = await readClient.fetch(
       groq`
@@ -60,6 +63,7 @@ export const getProject = async (slug: string) => {
 };
 
 export const getPosts = async (params: GetProjectParams) => {
+  noStore();
   const { query, category, page } = params;
 
   try {
@@ -91,6 +95,7 @@ export const getPosts = async (params: GetProjectParams) => {
 };
 
 export const getPost = async (slug: string) => {
+  noStore();
   try {
     const post = await readClient.fetch(
       groq`

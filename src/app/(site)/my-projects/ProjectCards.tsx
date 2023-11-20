@@ -1,9 +1,8 @@
 'use client';
 import { useScroll } from 'framer-motion';
 import MyProjectCard from './MyProjectCard';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
-// import Lenis from '@studio-freight/lenis';
 import { projects } from '@/data/projects';
 
 const ProjectCards = () => {
@@ -12,16 +11,6 @@ const ProjectCards = () => {
     target: mainContainer,
     offset: ['start start', 'end end'],
   });
-
-  // useEffect(() => {
-  //   const lenis = new Lenis();
-  //   function raf(time: any) {
-  //     lenis.raf(time);
-  //     requestAnimationFrame(raf);
-  //   }
-
-  //   requestAnimationFrame(raf);
-  // });
 
   return (
     <div ref={mainContainer} className='relative mb-10'>
