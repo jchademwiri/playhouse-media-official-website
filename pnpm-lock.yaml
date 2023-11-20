@@ -50,6 +50,9 @@ dependencies:
   '@sanity/vision':
     specifier: ^3.19.1
     version: 3.19.1(@babel/runtime@7.23.2)(@codemirror/lint@6.4.2)(@codemirror/state@6.3.1)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.1.0)(codemirror@6.0.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.0)
+  '@studio-freight/lenis':
+    specifier: ^1.0.27
+    version: 1.0.27
   '@types/node':
     specifier: 20.8.10
     version: 20.8.10
@@ -2372,6 +2375,10 @@ packages:
     dependencies:
       domhandler: 5.0.3
       selderee: 0.11.0
+    dev: false
+
+  /@studio-freight/lenis@1.0.27:
+    resolution: {integrity: sha512-1I6EaWR9rxdFjIJtF52CtETJt9ngfY4AjawrJY5pLxCvHa/lQZ+1v2gTUntwNZkuks6E2It6YEXV6jnpnCZFjA==}
     dev: false
 
   /@swc/helpers@0.5.2:

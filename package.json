@@ -29,6 +29,7 @@
     "@sanity/client": "^6.7.1",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.19.1",
+    "@studio-freight/lenis": "^1.0.27",
     "@types/node": "20.8.10",
     "@types/react": "18.2.36",
     "@types/react-dom": "18.2.14",
