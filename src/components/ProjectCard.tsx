@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const ProjectCard = ({ url, name, image, categories }: Project) => {
   return (
-    <div className='w-full'>
+    <div className='w-full px-2'>
       <Link href={url} target='_blank' rel='noopener noreferrer'>
         <h3 className='my-3 text-lg font-medium'>{name}</h3>
         <div className='h-52 w-auto'>

@@ -1,6 +1,7 @@
 import ProjectCard from '../ProjectCard';
 import { getProjects } from '@/sanity/actions';
 import TitleHeader from '../ui/TitleHeader';
+import ProjectSlider from '../ProjectSlider';
 
 // import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 
@@ -19,7 +20,7 @@ const Projects = async () => {
       <div className='items-end justify-between md:flex'>
         <TitleHeader title='Case Study' subTitle='Our Hand Picked Projects' />
       </div>
-      <div className='my-5 w-full grid gap-2 lg:gap-4 sm:grid-cols-2 lg:grid-cols-3'>
+      {/* <div className='my-5 w-full grid gap-2 lg:gap-4 sm:grid-cols-2 lg:grid-cols-3'>
         {projects?.length > 0 ? (
           projects
             .slice(0, 3)
@@ -27,7 +28,8 @@ const Projects = async () => {
         ) : (
           <p>No projects</p>
         )}
-      </div>
+      </div> */}
+      <ProjectSlider />
     </section>
   );
 };

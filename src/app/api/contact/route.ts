@@ -61,7 +61,7 @@ export async function POST(request: NextRequest) {
     const sendMessage = await resend.emails.send({
       from: 'PMG Team <info@playhousemedia.net>',
       to: email,
-      subject: 'This is Jacob from PMG',
+      subject: 'Playhouse Media Group - Contact',
       react: EmailTemplate({
         name,
         phone,
