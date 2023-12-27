@@ -1,13 +1,9 @@
-import SectionTitle from '../SectionTitle';
 import { PrimaryLine } from '../SmallLine';
 import TitleHeader from '../ui/TitleHeader';
 
 const Services = () => {
   return (
-    <section
-      id='services'
-      className='mx-auto py-10 min-h-screen w-full max-w-[1240px] px-4'
-    >
+    <section id='services' className='mx-auto py-10 w-full max-w-[1240px] px-4'>
       <TitleHeader title='Quality & Expertise' subTitle='Our Services' />
 
       <div className='grid gap-4 md:grid-cols-2'>
