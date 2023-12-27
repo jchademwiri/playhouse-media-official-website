@@ -1,10 +1,8 @@
 import { servicesLinks, socialLinks } from '@/data';
-
 import { User2 } from 'lucide-react';
-
 import Link from 'next/link';
 import { PrimaryLine } from './SmallLine';
-import { randomUUID } from 'crypto';
+import { v4 as uuid } from 'uuid';
 
 const Footer = () => {
   return (
@@ -36,7 +34,7 @@ const Footer = () => {
             </h3>
             <ul>
               {servicesLinks.map(({ name, url }) => (
-                <li key={randomUUID()} className='py-1 hover:text-primary'>
+                <li key={uuid()} className='py-1 hover:text-primary'>
                   <Link href={url}>{name}</Link>
                 </li>
               ))}
@@ -48,7 +46,7 @@ const Footer = () => {
             </h3>
             <ul>
               {socialLinks.map(({ name, url }) => (
-                <li key={randomUUID()} className='py-1 hover:text-primary'>
+                <li key={uuid()} className='py-1 hover:text-primary'>
                   <Link href={url} target='_blank' rel='noreferrer'>
                     {name}
                   </Link>

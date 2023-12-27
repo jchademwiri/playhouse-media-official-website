@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import SectionTitle from '../SectionTitle';
 import HeroCard from '../HeroCard';
 import Link from 'next/link';
