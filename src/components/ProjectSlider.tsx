@@ -1,9 +1,43 @@
-const ProjectSlider = () => {
+import * as React from 'react';
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselNext,
+  CarouselPrevious,
+} from './ui/carousel';
+import { ProjectliderCard } from './ProjectliderCard';
+import { getProjects } from '@/sanity/actions';
+import ProjectCard from './ProjectCard';
+
+const ProjectSlider = async () => {
+  const projects: Project[] = await getProjects({
+    query: '',
+    category: '',
+    page: '1',
+  });
   return (
-    <div>
-      <p>ProjectSlider</p>
-      <p>https://youtu.be/XJSOgV4VELk</p>
-    </div>
+    <Carousel
+      opts={{
+        align: 'start',
+      }}
+      className='w-full'
+    >
+      <CarouselContent>
+        {projects?.length > 0 ? (
+          projects
+            // .slice(0, 3)
+            .map((project) => (
+              <ProjectliderCard key={project.id} {...project} />
+            ))
+        ) : (
+          <p>No projects</p>
+        )}
+      </CarouselContent>
+
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
   );
 };
 export default ProjectSlider;
