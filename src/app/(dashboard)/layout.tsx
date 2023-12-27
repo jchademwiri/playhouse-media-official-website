@@ -4,7 +4,6 @@ import MarginWidthWrapper from '@/components/Navigation/margin-width-wrapper';
 import PageWrapper from '@/components/Navigation/page-wrapper';
 import SideNav from '@/components/Navigation/side-nav';
 import AuthProvider from '@/context/AuthProvider';
-import { ThemeProvider } from '@/context/ThemeProvider';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata = {
