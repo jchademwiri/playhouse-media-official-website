@@ -12,7 +12,7 @@ import Link from 'next/link';
 
 const BlogCard = ({ slug, title, author, publishedAt, excerpt }: Post) => {
   return (
-    <Card className='bg-transparent rounded-md border-secondary border gap-4 flex  justify-between flex-col'>
+    <Card className='bg-transparent rounded-md border-secondary border gap-4 flex  justify-between flex-col hover:border-primary '>
       <CardContent>
         <div className='flex justify-between items-center py-4'>
           <CardDescription>

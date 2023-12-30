@@ -15,7 +15,7 @@ const Hero = () => {
       <h1 className='text-4xl font-semibold md:text-8xl '>
         A creative web development agency.
       </h1>
-      <div className='my-10 grid gap-4 md:grid-cols-2 lg:place-items-center'>
+      <div className='my-10 grid gap-4 lg:grid-cols-2 lg:place-items-center'>
         <div>
           <SectionTitle title='About Us' />
           <p className='py-5'>
@@ -30,7 +30,7 @@ const Hero = () => {
             <BsArrowDownCircle className='my-2 animate-bounce text-3xl text-primary opacity-60 hover:opacity-100' />
           </Link>
         </div>
-        <div className='grid gap-2 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2'>
+        <div className='grid gap-2 sm:grid-cols-2 md:grid-cols-2'>
           <HeroCard
             subTitle='Featured Project'
             title='Sithembe Transportation & Projects'
