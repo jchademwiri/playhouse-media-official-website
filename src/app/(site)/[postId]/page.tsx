@@ -1,13 +1,10 @@
 import Link from 'next/link';
 import moment from 'moment';
-
-import { Card, CardDescription, CardTitle } from '@/components/ui/card';
-
+import { CardDescription, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { MoveLeft } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { getPostData, getSortedPostsData } from '@/lib/posts';
-import AuthorProfile from '@/components/AuthorProfile';
 
 export const revalidate = 5;
 
