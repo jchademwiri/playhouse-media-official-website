@@ -11,6 +11,7 @@ import { CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { MoveLeft } from 'lucide-react';
+import { notFound } from 'next/navigation';
 
 export const revalidate = 5;
 // import { SanityImage } from '@/components/SanityImage';
@@ -25,6 +26,12 @@ export async function generateMetadata({
   params: { slug },
 }: PostProps): Promise<Metadata> {
   const post = await getPost(slug);
+  if (!post) {
+    return {
+      title: 'Post not found',
+      description: 'Post not found',
+    };
+  }
   return {
     title: post.title,
     description: post.excerpt,
@@ -34,6 +41,8 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {};
 
 const Post = async ({ params: { slug } }: PostProps) => {
   const post: Post = await getPost(slug);
+
+  if (!post) return notFound();
 
   return (
     <section className='mx-auto my-5 w-full max-w-[1240px] px-4'>

@@ -1,18 +1,22 @@
-import { FAQs } from '@/data';
-import Link from 'next/link';
+'use client';
+import { motion } from 'framer-motion';
 
+import Link from 'next/link';
 import { PrimaryLine } from '../SmallLine';
 import { Button } from '../ui/button';
-import { FAQAccordion } from '../FAQAccordion';
 import Moto from '../Moto';
-import { randomUUID } from 'crypto';
+import FAQCard from '../FAQCard';
 
 const Hosting = () => {
   return (
     <section id='about'>
       <Moto />
       <section className='mx-auto my-10 min-h-screen grid w-full max-w-[1240px] gap-4 px-4 py-10 md:grid-cols-2'>
-        <article>
+        <motion.article
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+        >
           <h2 className='py-2 text-3xl font-semibold'>
             Playhouse Media Group
             <PrimaryLine />
@@ -32,23 +36,14 @@ const Hosting = () => {
           <Button size={'lg'} className='my-6'>
             <Link href={`/`}>GET STATRTED NOW</Link>
           </Button>
-        </article>
+        </motion.article>
         <article className=''>
           <h2 className='py-2 text-3xl font-semibold'>
             Frequently Asked Questions
             <PrimaryLine />
           </h2>
 
-          {FAQs.map((item) => {
-            const { question, answer } = item;
-            return (
-              <div className='my-4' key={randomUUID()}>
-                {/* passing two props to this component */}
-                {/* <Faqs question={question} answer={answer}></Faqs> */}
-                <FAQAccordion question={question} answer={answer} />
-              </div>
-            );
-          })}
+          <FAQCard />
         </article>
       </section>
     </section>
