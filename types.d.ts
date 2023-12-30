@@ -26,3 +26,9 @@ type Post = {
     image: string;
   };
 };
+
+type BlogPost = {
+  id: string;
+  title: string;
+  date: string;
+};
