@@ -1,7 +1,8 @@
 import { getPosts } from '@/sanity/actions';
-import BlogCard from '@/app/(blog)/blog/BlogCard';
+
 import TitleHeader from '../ui/TitleHeader';
-import { revalidatePath } from 'next/cache';
+
+import BlogCard from '@/components/BlogCard';
 
 export const revalidate = 5;
 
@@ -11,7 +12,7 @@ const Blog = async () => {
     category: '',
     page: '1',
   });
-  // revalidatePath('/');
+
   return (
     <section id='blog' className='mx-auto my-20 w-full max-w-[1240px] px-4'>
       <div className='items-end justify-between md:flex'>
