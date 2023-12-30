@@ -28,7 +28,7 @@ export const generateMetadata = ({
 
   if (!post) {
     return {
-      title: 'Post Not Found',
+      title: 'Page Not Found',
     };
   }
 
@@ -62,7 +62,7 @@ const Post = async ({ params }: { params: { postId: string } }) => {
   return (
     <section className='mx-auto my-5 w-full max-w-[900px] px-4'>
       <Button variant={'link'} className='my-2'>
-        <Link href='/posts' className='flex gap-2 items-center'>
+        <Link href='/blog' className='flex gap-2 items-center'>
           <MoveLeft />
           Back to Blog
         </Link>
