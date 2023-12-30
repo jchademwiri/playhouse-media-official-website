@@ -1,5 +1,6 @@
 ---
 title: 'Test Post Two'
+excerpt: 'Next.js has two forms of pre-rendering: Static Generation and Server-side Rendering. The difference is in when it generates the HTML for a page.'
 date: '2023-12-28'
 ---
 

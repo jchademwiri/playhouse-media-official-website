@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import moment from 'moment';
 
-import { CardDescription, CardTitle } from '@/components/ui/card';
+import { Card, CardDescription, CardTitle } from '@/components/ui/card';
 
 import { Button } from '@/components/ui/button';
 import { MoveLeft } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { getPostData, getSortedPostsData } from '@/lib/posts';
+import AuthorProfile from '@/components/AuthorProfile';
 
 export const revalidate = 5;
 
@@ -17,7 +18,7 @@ export const generateStaticParams = () => {
     postId: post.id,
   }));
 };
-// https://youtu.be/puIQhnjOfbc?list=PL0Zuz27SZ-6Pk-QJIdGd1tGZEzy9RTgtj&t=3159
+
 export const generateMetadata = ({
   params,
 }: {
@@ -36,6 +37,18 @@ export const generateMetadata = ({
 
   return {
     title: post.title,
+    description: post.excerpt,
+    alternates: {
+      canonical: post.id,
+    },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+    },
+    twitter: {
+      title: post.title,
+      description: post.excerpt,
+    },
   };
 };
 
@@ -50,7 +63,7 @@ const Post = async ({ params }: { params: { postId: string } }) => {
   const { title, date, contentHtml } = await getPostData(postId);
 
   return (
-    <section className='mx-auto my-5 w-full max-w-[1240px] px-4'>
+    <section className='mx-auto my-5 w-full max-w-[900px] px-4'>
       <Button variant={'link'} className='my-2'>
         <Link href='/posts' className='flex gap-2 items-center'>
           <MoveLeft />
@@ -60,9 +73,8 @@ const Post = async ({ params }: { params: { postId: string } }) => {
       <CardDescription>
         {moment(date ? date : '').format('dddd, MMMM Do YYYY')}
       </CardDescription>
-
       <CardTitle className='py-4'>{title}</CardTitle>
-
+      <hr className='my-2' />
       <article className='prose max-w-[1240px] portableText dark:prose-invert'>
         <section dangerouslySetInnerHTML={{ __html: contentHtml }} />
       </article>

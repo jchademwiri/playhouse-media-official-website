@@ -1,5 +1,6 @@
 ---
 title: 'When to Use Static Generation vs. Server-side Rendering'
+excerpt: 'Next.js has two forms of pre-rendering: Static Generation and Server-side Rendering. The difference is in when it generates the HTML for a page.'
 date: '2023-12-17'
 ---
 
