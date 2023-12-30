@@ -13,10 +13,10 @@ const Posts = () => {
   return (
     <section>
       <div className='w-full grid sm:grid-cols-2 lg:grid-cols-3  gap-4'>
-        {posts.map(({ id, date, title }: BlogPost) => (
+        {posts.map(({ id, slug, date, title }: BlogPost) => (
           <Card key={id}>
             <CardHeader>
-              <Link href={'/posts'}>
+              <Link href={`${slug}`}>
                 <CardTitle>{title}</CardTitle>
               </Link>
             </CardHeader>

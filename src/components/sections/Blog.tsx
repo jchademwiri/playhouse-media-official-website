@@ -1,5 +1,5 @@
 import { getPosts } from '@/sanity/actions';
-import BlogCard from '@/app/(site)/blog/BlogCard';
+import BlogCard from '@/app/(blog)/blog/BlogCard';
 import TitleHeader from '../ui/TitleHeader';
 import { revalidatePath } from 'next/cache';
 
