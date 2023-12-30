@@ -23,6 +23,7 @@ export function getSortedPostsData() {
     const blogPost: BlogPost = {
       id,
       title: matterResult.data.title,
+      excerpt: matterResult.data.excerpt,
       date: matterResult.data.date,
     };
 
@@ -49,6 +50,7 @@ export async function getPostData(id: string) {
   const blogPostWithHTML: BlogPost & { contentHtml: string } = {
     id,
     title: matterResult.data.title,
+    excerpt: matterResult.data.excerpt,
     date: matterResult.data.date,
     contentHtml,
   };

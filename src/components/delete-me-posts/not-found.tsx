@@ -12,7 +12,7 @@ export default function NotFound() {
         Could not find requested blog page, visit our
       </p>
       <p className='py-4 text-xl text-primary'>
-        <Link href='/'>Blog Page</Link>
+        <Link href='/posts'>Blog Page</Link>
       </p>
     </section>
   );
