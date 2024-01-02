@@ -13,6 +13,8 @@ type Filetree = {
   ];
 };
 
+// https://raw.githubusercontent.com/gitdagray/test-blogposts/main/${fileName}
+
 const rawUrl =
   'https://raw.githubusercontent.com/jchademwiri/pmg-blog/master/posts';
 
@@ -25,7 +27,6 @@ export async function getPostByName(
   const res = await fetch(
     `${rawUrl}/${fileName}`,
 
-    // https://raw.githubusercontent.com/gitdagray/test-blogposts/main/${fileName}
     {
       headers: {
         accept: 'application/vnd.github+json',
@@ -110,15 +111,5 @@ export async function getPostsMeta(): Promise<Meta[] | undefined> {
     }
   }
   return posts.sort((a, b) => (a.date < b.date ? 1 : -1));
-}
-
-function compileMDX<T>(arg0: {
-  source: string;
-  components: { Video: any; CustomImage: any };
-  options: { parseFrontmatter: boolean; mdxOptions: { rehypePlugins: any[] } };
-}):
-  | { frontmatter: any; content: any }
-  | PromiseLike<{ frontmatter: any; content: any }> {
-  throw new Error('Function not implemented.');
 }
 // https://youtu.be/6ih_3m_UPKg?t=1126
