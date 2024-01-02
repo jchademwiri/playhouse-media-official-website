@@ -10,7 +10,7 @@ import moment from 'moment';
 import AuthorProfile from './AuthorProfile';
 import { Button } from './ui/button';
 
-const PostCard = ({ id, date, title, excerpt }: Meta) => {
+const PostCard = ({ id, date, title, excerpt, tags }: Meta) => {
   return (
     <Card className='bg-transparent rounded-md border-secondary border gap-4 flex  justify-between flex-col hover:border-primary '>
       <CardContent>
@@ -20,6 +20,13 @@ const PostCard = ({ id, date, title, excerpt }: Meta) => {
           </CardDescription>
           <AuthorProfile />
         </div>
+        {/* <small className='text-muted-foreground'>
+          {tags.map((tag) => (
+            <Link href={`/tags/${tag}`} key={tag} prefetch>
+              <span className='hover:text-primary pr-1'>{tag}</span>
+            </Link>
+          ))}
+        </small> */}
         {/* <Link href={`/posts/${id}`} prefetch> */}
         <Link href={id} prefetch>
           <CardTitle className='hover:underline'>{title}</CardTitle>

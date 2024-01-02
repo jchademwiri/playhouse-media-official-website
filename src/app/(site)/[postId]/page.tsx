@@ -4,27 +4,28 @@ import { CardDescription, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { MoveLeft } from 'lucide-react';
 import { notFound } from 'next/navigation';
-import { getPostData, getSortedPostsData } from '@/lib/posts';
+import { getPostsMeta, getPostByName } from '@/lib/posts';
 
-export const revalidate = 5;
+export const revalidate = 0;
 
-export const generateStaticParams = () => {
-  const posts = getSortedPostsData(); // deduped
-
-  return posts.map((post) => ({
-    postId: post.id,
-  }));
+type Props = {
+  params: {
+    postId: string;
+  };
 };
 
-export const generateMetadata = ({
-  params,
-}: {
-  params: { postId: string };
-}) => {
-  const posts = getSortedPostsData(); // deduped
-  const { postId } = params;
+// export const generateStaticParams = async () => {
+//   const posts = await getPostsMeta(); // deduped
 
-  const post = posts.find((post) => post.id === postId);
+//   if (!posts) return [];
+
+//   return posts.map((post) => ({
+//     postId: post.id,
+//   }));
+// };
+
+export const generateMetadata = async ({ params: { postId } }: Props) => {
+  const post = await getPostByName(`${postId}.mdx`); // deduped
 
   if (!post) {
     return {
@@ -33,31 +34,34 @@ export const generateMetadata = ({
   }
 
   return {
-    title: post.title,
-    description: post.excerpt,
+    title: post.meta.title,
+    description: post.meta.excerpt,
     alternates: {
-      canonical: post.id,
+      canonical: post.meta.id,
     },
     openGraph: {
-      title: post.title,
-      description: post.excerpt,
+      title: post.meta.title,
+      description: post.meta.excerpt,
     },
     twitter: {
-      title: post.title,
-      description: post.excerpt,
+      title: post.meta.title,
+      description: post.meta.excerpt,
     },
   };
 };
 
-const Post = async ({ params }: { params: { postId: string } }) => {
-  const posts = getSortedPostsData(); // deduped
-  const { postId } = params;
+const Post = async ({ params: { postId } }: Props) => {
+  const post = await getPostByName(`${postId}.mdx`); // deduped
 
-  if (!posts.find((post) => post.id === postId)) {
-    return notFound();
-  }
+  if (!post) notFound();
 
-  const { title, date, contentHtml } = await getPostData(postId);
+  const { meta, content } = post;
+
+  const tags = meta.tags.map((tag, i) => (
+    <Link key={i} href={`/tags/${tag}`} className='mr-2' >
+      {tag}
+    </Link>
+  ));
 
   return (
     <section className='mx-auto my-5 w-full max-w-[900px] px-4'>
@@ -68,13 +72,14 @@ const Post = async ({ params }: { params: { postId: string } }) => {
         </Link>
       </Button>
       <CardDescription>
-        {moment(date ? date : '').format('dddd, MMMM Do YYYY')}
+        {moment(meta.date ? meta.date : '').format('dddd, MMMM Do YYYY')}
       </CardDescription>
-      <CardTitle className='py-4'>{title}</CardTitle>
+      <CardTitle className='py-4'>{meta.title}</CardTitle>
       <hr className='my-2' />
-      <article className='prose max-w-[1240px] portableText dark:prose-invert'>
-        <section dangerouslySetInnerHTML={{ __html: contentHtml }} />
-      </article>
+      <section className='prose max-w-[1240px] dark:prose-invert'>
+        <article>{content}</article>
+        <section>{tags}</section>
+      </section>
     </section>
   );
 };
