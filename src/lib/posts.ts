@@ -51,18 +51,18 @@ export async function getPostByName(
     },
     options: {
       parseFrontmatter: true,
-      // mdxOptions: {
-      //   rehypePlugins: [
-      //     rehypeHighlight,
-      //     rehypeSlug,
-      //     [
-      //       rehypeAutolinkHeadings,
-      //       {
-      //         behavior: 'wrap',
-      //       },
-      //     ],
-      //   ],
-      // },
+      mdxOptions: {
+        rehypePlugins: [
+          rehypeSlug,
+          rehypeHighlight,
+          [
+            rehypeAutolinkHeadings,
+            {
+              behavior: 'wrap',
+            },
+          ],
+        ],
+      },
     },
   });
 

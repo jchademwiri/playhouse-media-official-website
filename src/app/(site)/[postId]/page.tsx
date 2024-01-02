@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { MoveLeft } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { getPostsMeta, getPostByName } from '@/lib/posts';
+import 'highlight.js/styles/github-dark.css';
 
 export const revalidate = 0;
 
@@ -58,7 +59,7 @@ const Post = async ({ params: { postId } }: Props) => {
   const { meta, content } = post;
 
   const tags = meta.tags.map((tag, i) => (
-    <Link key={i} href={`/tags/${tag}`} className='mr-2' >
+    <Link key={i} href={`/tags/${tag}`} className='mr-2'>
       {tag}
     </Link>
   ));
@@ -76,7 +77,7 @@ const Post = async ({ params: { postId } }: Props) => {
       </CardDescription>
       <CardTitle className='py-4'>{meta.title}</CardTitle>
       <hr className='my-2' />
-      <section className='prose max-w-[1240px] dark:prose-invert'>
+      <section className='prose dark:prose-invert max-w-[1240px] '>
         <article>{content}</article>
         <section>{tags}</section>
       </section>
