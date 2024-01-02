@@ -42,7 +42,7 @@ const contactFormSchema = z.object({
     }),
 });
 
-// create an inteface fro zod validation
+// create an inteface from zod validation
 
 export async function POST(request: NextRequest) {
   try {
@@ -69,11 +69,23 @@ export async function POST(request: NextRequest) {
         message,
       }) as React.ReactElement,
     });
+    const sendMessageToAdmin = await resend.emails.send({
+      from: 'PMG Team <contact@playhousemedia.net>',
+      to: 'info@playhousemedia.net',
+      subject: 'Playhouse Media Group - Contact',
+      react: EmailTemplate({
+        name,
+        phone,
+        email,
+        message,
+      }) as React.ReactElement,
+    });
 
     return NextResponse.json(
       {
         newMessage,
         sendMessage,
+        sendMessageToAdmin,
         message: 'Message sent successfully',
       },
       { status: 201 }
