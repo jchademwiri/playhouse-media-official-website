@@ -10,7 +10,7 @@ import moment from 'moment';
 import AuthorProfile from './AuthorProfile';
 import { Button } from './ui/button';
 
-const PostCard = ({ id, date, title, excerpt }: BlogPost) => {
+const PostCard = ({ id, date, title, excerpt }: Meta) => {
   return (
     <Card className='bg-transparent rounded-md border-secondary border gap-4 flex  justify-between flex-col hover:border-primary '>
       <CardContent>
