@@ -1,6 +1,9 @@
 import PostCard from '@/components/PostCard';
 import { getSortedPostsData } from '@/lib/posts';
 
+export const revalidate = 10;
+// export const revalidate = 86400;
+
 const posts = () => {
   const posts = getSortedPostsData();
   return (

@@ -42,7 +42,7 @@ const contactFormSchema = z.object({
     }),
 });
 
-// create an inteface fro zod validation
+// create an inteface from zod validation
 
 export async function POST(request: NextRequest) {
   try {
