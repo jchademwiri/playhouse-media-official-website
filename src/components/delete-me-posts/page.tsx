@@ -1,5 +1,5 @@
 import { getPosts } from '@/sanity/actions';
-import BlogCard from '../../../../components/BlogCard';
+import BlogCard from '../BlogCard';
 
 const Blog = async () => {
   const posts = await getPosts({

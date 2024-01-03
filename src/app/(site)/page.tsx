@@ -1,12 +1,12 @@
 import { CallToAction } from '@/components/CallToAction';
 
 import {
-  // Blog,
   Projects,
   Contact,
   Hero,
   Hosting,
   Services,
+  Blog,
 } from '@/components/sections';
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
       <Projects />
       <Hosting />
       <CallToAction />
-      {/* <Blog /> */}
+      <Blog />
       <Contact />
     </main>
   );

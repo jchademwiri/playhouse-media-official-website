@@ -1,26 +1,47 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardTitle,
+} from './ui/card';
+import moment from 'moment';
+import AuthorProfile from './AuthorProfile';
+import { Button } from './ui/button';
+import { Badge } from './ui/badge';
 
-const PostCard = ({ slug, title, mainImage, excerpt }: Post) => {
+const PostCard = ({ id, date, title, excerpt, tags }: Meta) => {
   return (
-    <div className=''>
-      {/* <Link href={`/${slug}`} rel='noopener noreferrer'> */}
-      <Link href={slug} rel='noopener noreferrer' prefetch>
-        <div className='h-52 w-auto'>
-          <Image
-            src={mainImage}
-            alt={title}
-            className='h-52 w-full rounded-lg object-cover'
-            width={311}
-            height={208}
-            placeholder='blur'
-            blurDataURL={`/opengraph-image.png`}
-          />
+    <Card className='bg-transparent rounded-md border-secondary border gap-4 flex  justify-between flex-col hover:border-primary '>
+      <CardContent>
+        <div className='flex justify-between items-center py-4'>
+          <CardDescription>
+            {moment(date).format('DD MMMM YYYY')}
+          </CardDescription>
+          <AuthorProfile />
         </div>
-        <h3 className='my-3 text-lg font-medium'>{title}</h3>
-        <p> {excerpt} </p>
-      </Link>
-    </div>
+
+        <Link href={`/${id}`} prefetch>
+          <CardTitle className='hover:underline'>{title}</CardTitle>
+        </Link>
+        <CardDescription className='py-4'>{excerpt}</CardDescription>
+        <div className='text-muted-foreground'>
+          {tags.map((tag) => (
+            <Link href={`/tags/${tag}`} key={tag} prefetch className='mr-1'>
+              <Badge variant={'outline'}>{tag}</Badge>
+            </Link>
+          ))}
+        </div>
+      </CardContent>
+      <CardFooter>
+        <Button variant={'secondary'} className='hover:bg-secondary w-full'>
+          <Link href={`/${id}`} prefetch>
+            Read More
+          </Link>
+        </Button>
+      </CardFooter>
+    </Card>
   );
 };
 export default PostCard;
