@@ -3,8 +3,7 @@ import { getPostsMeta } from '@/lib/posts';
 
 import Link from 'next/link';
 
-// export const revalidate = 86400;
-export const revalidate = 5;
+export const revalidate = 86400;
 
 type Props = {
   params: {
@@ -40,7 +39,7 @@ export default async function TagPostList({ params: { tag } }: Props) {
     return (
       <div className='text-center'>
         <p className='mt-10'>Sorry, no posts for that keyword.</p>
-        <Link href='/'>Back to Home</Link>
+        <Link href='/blog'>Back to Blog</Link>
       </div>
     );
   }
@@ -52,7 +51,7 @@ export default async function TagPostList({ params: { tag } }: Props) {
       </h1>
       <section className='grid gap-4'>
         <section className='w-full grid sm:grid-cols-2 lg:grid-cols-3  gap-4'>
-          {posts.map((post: Meta) => (
+          {tagPosts.map((post: Meta) => (
             <PostCard key={post.id} {...post} />
           ))}
         </section>
