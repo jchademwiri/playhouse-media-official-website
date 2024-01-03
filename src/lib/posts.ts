@@ -21,7 +21,7 @@ export async function getPostByName(
   fileName: string
 ): Promise<BlogPost | undefined> {
   const res = await fetch(
-    `https://raw.githubusercontent.com/gitdagray/test-blogposts/main/${fileName}`,
+    `https://raw.githubusercontent.com/jchademwiri/pmg-blog/master/${fileName}`,
 
     {
       headers: {
@@ -83,7 +83,7 @@ export async function getPostByName(
 
 export async function getPostsMeta(): Promise<Meta[] | undefined> {
   const res = await fetch(
-    `https://api.github.com/repos/gitdagray/test-blogposts/git/trees/main?recursive=1`,
+    `https://api.github.com/repos/jchademwiri/pmg-blog/git/trees/master?recursive=1`,
     {
       headers: {
         Accept: 'application/vnd.github+json',
