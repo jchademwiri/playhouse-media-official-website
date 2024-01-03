@@ -7,7 +7,7 @@ import { notFound } from 'next/navigation';
 import { getPostsMeta, getPostByName } from '@/lib/posts';
 import 'highlight.js/styles/github-dark.css';
 
-export const revalidate = 0;
+export const revalidate = 5;
 
 type Props = {
   params: {
@@ -15,15 +15,15 @@ type Props = {
   };
 };
 
-// export const generateStaticParams = async () => {
-//   const posts = await getPostsMeta(); // deduped
+export const generateStaticParams = async () => {
+  const posts = await getPostsMeta(); // deduped
 
-//   if (!posts) return [];
+  if (!posts) return [];
 
-//   return posts.map((post) => ({
-//     postId: post.id,
-//   }));
-// };
+  return posts.map((post) => ({
+    postId: post.id,
+  }));
+};
 
 export const generateMetadata = async ({ params: { postId } }: Props) => {
   const post = await getPostByName(`${postId}.mdx`); // deduped
