@@ -6,8 +6,9 @@ import { MoveLeft } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { getPostsMeta, getPostByName } from '@/lib/posts';
 import 'highlight.js/styles/github-dark.css';
+import { Badge } from '@/components/ui/badge';
 
-export const revalidate = 0;
+export const revalidate = 86400;
 
 type Props = {
   params: {
@@ -15,15 +16,15 @@ type Props = {
   };
 };
 
-// export const generateStaticParams = async () => {
-//   const posts = await getPostsMeta(); // deduped
+export const generateStaticParams = async () => {
+  const posts = await getPostsMeta(); // deduped
 
-//   if (!posts) return [];
+  if (!posts) return [];
 
-//   return posts.map((post) => ({
-//     postId: post.id,
-//   }));
-// };
+  return posts.map((post) => ({
+    postId: post.id,
+  }));
+};
 
 export const generateMetadata = async ({ params: { postId } }: Props) => {
   const post = await getPostByName(`${postId}.mdx`); // deduped
@@ -60,7 +61,7 @@ const Post = async ({ params: { postId } }: Props) => {
 
   const tags = meta.tags.map((tag, i) => (
     <Link key={i} href={`/tags/${tag}`} className='mr-2'>
-      {tag}
+      <Badge variant={'outline'}>{tag}</Badge>
     </Link>
   ));
 
@@ -76,11 +77,18 @@ const Post = async ({ params: { postId } }: Props) => {
         {moment(meta.date ? meta.date : '').format('dddd, MMMM Do YYYY')}
       </CardDescription>
       <CardTitle className='py-4'>{meta.title}</CardTitle>
+      <section>{tags}</section>
       <hr className='my-2' />
       <section className='prose dark:prose-invert max-w-[1240px] '>
         <article>{content}</article>
         <section>{tags}</section>
       </section>
+      <Button variant={'link'} className='my-2'>
+        <Link href='/blog' className='flex gap-2 items-center'>
+          <MoveLeft />
+          Back to Blog
+        </Link>
+      </Button>
     </section>
   );
 };
