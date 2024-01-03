@@ -8,7 +8,6 @@ import {
 } from './ui/carousel';
 import { ProjectliderCard } from './ProjectliderCard';
 import { getProjects } from '@/sanity/actions';
-import ProjectCard from './ProjectCard';
 
 const ProjectSlider = async () => {
   const projects: Project[] = await getProjects({
@@ -17,27 +16,28 @@ const ProjectSlider = async () => {
     page: '1',
   });
   return (
-    <Carousel
-      opts={{
-        align: 'start',
-      }}
-      className='w-full'
-    >
-      <CarouselContent>
-        {projects?.length > 0 ? (
-          projects
-            // .slice(0, 3)
-            .map((project) => (
-              <ProjectliderCard key={project.id} {...project} />
-            ))
-        ) : (
-          <p>No projects</p>
-        )}
-      </CarouselContent>
-
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
+    <div>
+      <Carousel
+        opts={{
+          align: 'start',
+        }}
+        className='w-full'
+      >
+        <CarouselContent>
+          {projects?.length > 0 ? (
+            projects
+              // .slice(0, 3)
+              .map((project) => (
+                <ProjectliderCard key={project.id} {...project} />
+              ))
+          ) : (
+            <p>No projects</p>
+          )}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+    </div>
   );
 };
 export default ProjectSlider;

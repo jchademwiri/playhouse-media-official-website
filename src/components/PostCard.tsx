@@ -12,8 +12,6 @@ import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 
 const PostCard = ({ id, date, title, excerpt, tags }: Meta) => {
-  console.log('ID: ', id);
-
   return (
     <Card className='bg-transparent rounded-md border-secondary border gap-4 flex  justify-between flex-col hover:border-primary '>
       <CardContent>
