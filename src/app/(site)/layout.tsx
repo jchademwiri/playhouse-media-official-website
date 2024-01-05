@@ -62,10 +62,10 @@ export default function SiteLayout({
         {/* <Navbar /> */}
         <NavMenu />
         {children}
+        <SpeedInsights />
         <Footer />
         <Toaster />
         <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );
