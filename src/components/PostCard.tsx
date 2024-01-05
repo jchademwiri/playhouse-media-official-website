@@ -34,13 +34,13 @@ const PostCard = ({ id, date, title, excerpt, tags }: Meta) => {
           ))}
         </div>
       </CardContent>
-      <CardFooter>
+      {/* <CardFooter>
         <Button variant={'secondary'} className='hover:bg-secondary w-full'>
           <Link href={`/${id}`} prefetch>
             Read More
           </Link>
         </Button>
-      </CardFooter>
+      </CardFooter> */}
     </Card>
   );
 };
