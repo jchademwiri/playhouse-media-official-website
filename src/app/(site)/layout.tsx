@@ -1,4 +1,5 @@
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import Footer from '@/components/Footer';
 import type { Metadata } from 'next';
@@ -61,6 +62,7 @@ export default function SiteLayout({
         {/* <Navbar /> */}
         <NavMenu />
         {children}
+        <SpeedInsights />
         <Footer />
         <Toaster />
         <Analytics />

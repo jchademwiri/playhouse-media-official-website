@@ -8,7 +8,7 @@ import { getPostsMeta, getPostByName } from '@/lib/posts';
 import 'highlight.js/styles/github-dark.css';
 import { Badge } from '@/components/ui/badge';
 
-export const revalidate = 86400;
+export const revalidate = 10;
 
 type Props = {
   params: {

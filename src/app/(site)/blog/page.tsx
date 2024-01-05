@@ -1,7 +1,7 @@
 import PostCard from '@/components/PostCard';
 import { getPostsMeta } from '@/lib/posts';
 
-export const revalidate = 86400;
+export const revalidate = 10;
 
 const Posts = async () => {
   const posts = await getPostsMeta();
