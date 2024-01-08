@@ -15,7 +15,10 @@ export const links: { title: string; href: string }[] = [
     title: 'About',
     href: '/#about',
   },
-
+  {
+    title: 'Blog',
+    href: '/blog',
+  },
   {
     title: 'Contact',
     href: '/#contact',
