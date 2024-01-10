@@ -24,6 +24,16 @@ export async function generateStaticParams() {
 export function generateMetadata({ params: { tag } }: Props) {
   return {
     title: `Posts about ${tag}`,
+
+    alternates: {
+      canonical: tag,
+    },
+    openGraph: {
+      title: `Posts about ${tag}`,
+    },
+    twitter: {
+      title: `Posts about ${tag}`,
+    },
   };
 }
 
