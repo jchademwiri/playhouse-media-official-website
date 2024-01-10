@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.playhousemedia.net'),
   title: 'Playhouse Media Group - Web Design and Development Services',
   description:
-    "Transform your online presence with Playhouse Media Group. We specialize in creating user-friendly and visually appealing websites that captivate your audience. Boost your brand's visibility and drive organic traffic with our expert web design, development, and SEO services.",
+    'Transform your online presence with Playhouse Media Group. We create captivating, user-friendly websites to boost brand visibility and drive organic traffic. Experts in web design, development, and SEO services.',
   alternates: {
     canonical: 'https://www.playhousemedia.net',
   },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: 'Playhouse Media Group - Web Design and Development Services',
     siteName: 'Playhouse Media Group',
     description:
-      "Transform your online presence with Playhouse Media Group. We specialize in creating user-friendly and visually appealing websites that captivate your audience. Boost your brand's visibility and drive organic traffic with our expert web design, development, and SEO services.",
+      'Transform your online presence with Playhouse Media Group. We create captivating, user-friendly websites to boost brand visibility and drive organic traffic. Experts in web design, development, and SEO services.',
     url: 'https://www.playhousemedia.net',
     locale: 'en_US',
     type: 'website',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   twitter: {
     title: 'Playhouse Media Group - Web Design and Development Services',
     description:
-      "Transform your online presence with Playhouse Media Group. We specialize in creating user-friendly and visually appealing websites that captivate your audience. Boost your brand's visibility and drive organic traffic with our expert web design, development, and SEO services.",
+      'Transform your online presence with Playhouse Media Group. We create captivating, user-friendly websites to boost brand visibility and drive organic traffic. Experts in web design, development, and SEO services.',
     creator: '@jchademwiri',
     creatorId: '1467726470533754880',
     siteId: '1467726470533754880',
