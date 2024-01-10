@@ -26,7 +26,7 @@ export function generateMetadata({ params: { tag } }: Props) {
     title: `Posts about ${tag}`,
 
     alternates: {
-      canonical: tag,
+      canonical: `tags/${tag}`,
     },
     openGraph: {
       title: `Posts about ${tag}`,
