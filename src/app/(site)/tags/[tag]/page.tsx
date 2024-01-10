@@ -24,15 +24,18 @@ export async function generateStaticParams() {
 export function generateMetadata({ params: { tag } }: Props) {
   return {
     title: `Posts about ${tag}`,
+    description: `Welcome to Playhouse Media Group Blog Posts about ${tag}, these posts will teach you about ${tag}, learn something new everyday.`,
 
     alternates: {
       canonical: `tags/${tag}`,
     },
     openGraph: {
       title: `Posts about ${tag}`,
+      description: `Welcome to Playhouse Media Group Blog Posts about ${tag}, these posts will teach you about ${tag}, learn something new everyday.`,
     },
     twitter: {
       title: `Posts about ${tag}`,
+      description: `Welcome to Playhouse Media Group Blog Posts about ${tag}, these posts will teach you about ${tag}, learn something new everyday.`,
     },
   };
 }

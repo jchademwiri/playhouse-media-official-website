@@ -19,7 +19,7 @@ const Blog = async () => {
           />
         </Link>
       </div>
-      <div className='my-5 grid gap-4  sm:grid-cols-2 md:grid-cols-3'>
+      <div className='my-5 w-full grid sm:grid-cols-2 lg:grid-cols-3  gap-4'>
         {posts.slice(0, 3).map((post: Meta) => (
           <PostCard key={post.id} {...post} />
         ))}
