@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'PMG Blog: Insights on Web Design, Development, and SEO',
   description:
     'Explore the latest trends and expert insights in web design, development, and SEO on the Playhouse Media Group blog. Stay informed, inspired, and ahead in the digital landscape.',
+
   alternates: {
     canonical: `blog`,
   },
@@ -16,11 +17,13 @@ export const metadata: Metadata = {
     description:
       'Explore the latest trends and expert insights in web design, development, and SEO on the Playhouse Media Group blog. Stay informed, inspired, and ahead in the digital landscape.',
     url: 'blog',
+    images: '/opengraph-image.png',
   },
   twitter: {
     title: 'PMG Blog: Insights on Web Design, Development, and SEO',
     description:
       'Explore the latest trends and expert insights in web design, development, and SEO on the Playhouse Media Group blog. Stay informed, inspired, and ahead in the digital landscape.',
+    images: '/twitter-image.png',
   },
 };
 
