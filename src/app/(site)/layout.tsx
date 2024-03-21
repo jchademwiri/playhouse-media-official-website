@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import type { Metadata } from 'next';
 import NavMenu from '@/components/NavigationMenu/NavMenu';
 import { Toaster } from '@/components/ui/toaster';
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.playhousemedia.net'),
@@ -67,6 +68,7 @@ export default function SiteLayout({
         <Toaster />
         <Analytics />
       </body>
+      <GoogleAnalytics gaId=" G-51M5BSC068" />
     </html>
   );
 }
