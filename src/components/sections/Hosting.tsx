@@ -37,7 +37,7 @@ const Hosting = () => {
             <Link href={`/`}>GET STATRTED NOW</Link>
           </Button>
         </motion.article>
-        <article className=''>
+        <article>
           <h2 className='py-2 text-3xl font-semibold'>
             Frequently Asked Questions
             <PrimaryLine />
