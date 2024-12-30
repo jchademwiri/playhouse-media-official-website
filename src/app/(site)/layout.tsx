@@ -1,41 +1,40 @@
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import Footer from '@/components/Footer';
-import type { Metadata } from 'next';
-import NavMenu from '@/components/NavigationMenu/NavMenu';
-import { Toaster } from '@/components/ui/toaster';
-import { GoogleAnalytics } from '@next/third-parties/google'
+import Footer from "@/components/Footer";
+import type { Metadata } from "next";
+import NavMenu from "@/components/NavigationMenu/NavMenu";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.playhousemedia.net'),
-  title: 'Playhouse Media Group - Web Design and Development Services',
+  metadataBase: new URL("https://www.playhousemedia.net"),
+  title: "Playhouse Media Group - Web Design and Development Services",
   description:
-    'Transform your online presence with Playhouse Media Group. We create captivating, user-friendly websites to boost brand visibility and drive organic traffic. Experts in web design, development, and SEO services.',
+    "Transform your online presence with Playhouse Media Group. We create captivating, user-friendly websites to boost brand visibility and drive organic traffic. Experts in web design, development, and SEO services.",
   alternates: {
-    canonical: 'https://www.playhousemedia.net',
+    canonical: "https://www.playhousemedia.net",
   },
 
   openGraph: {
-    title: 'Playhouse Media Group - Web Design and Development Services',
-    siteName: 'Playhouse Media Group',
+    title: "Playhouse Media Group - Web Design and Development Services",
+    siteName: "Playhouse Media Group",
     description:
-      'Transform your online presence with Playhouse Media Group. We create captivating, user-friendly websites to boost brand visibility and drive organic traffic. Experts in web design, development, and SEO services.',
-    url: 'https://www.playhousemedia.net',
-    locale: 'en_US',
-    type: 'website',
-    images: '/opengraph-image.png',
+      "Transform your online presence with Playhouse Media Group. We create captivating, user-friendly websites to boost brand visibility and drive organic traffic. Experts in web design, development, and SEO services.",
+    url: "https://www.playhousemedia.net",
+    locale: "en_US",
+    type: "website",
+    images: "/opengraph-image.png",
   },
-  category: 'technology',
+  category: "technology",
   twitter: {
-    title: 'Playhouse Media Group - Web Design and Development Services',
+    title: "Playhouse Media Group - Web Design and Development Services",
     description:
-      'Transform your online presence with Playhouse Media Group. We create captivating, user-friendly websites to boost brand visibility and drive organic traffic. Experts in web design, development, and SEO services.',
-    creator: '@jchademwiri',
-    creatorId: '1467726470533754880',
-    siteId: '1467726470533754880',
-    card: 'summary_large_image',
-    images: '/twitter-image.png',
+      "Transform your online presence with Playhouse Media Group. We create captivating, user-friendly websites to boost brand visibility and drive organic traffic. Experts in web design, development, and SEO services.",
+    creator: "@jchademwiri",
+    creatorId: "1467726470533754880",
+    siteId: "1467726470533754880",
+    card: "summary_large_image",
+    images: "/twitter-image.png",
   },
   robots: {
     index: true,
@@ -45,9 +44,9 @@ export const metadata: Metadata = {
       index: true,
       follow: false,
       noimageindex: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
 };
@@ -58,9 +57,8 @@ export default function SiteLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
+    <html lang="en">
       <body>
-        {/* <Navbar /> */}
         <NavMenu />
         {children}
         <SpeedInsights />

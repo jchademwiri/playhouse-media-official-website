@@ -1,12 +1,13 @@
-import Link from 'next/link';
-import moment from 'moment';
-import { CardDescription, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { MoveLeft } from 'lucide-react';
-import { notFound } from 'next/navigation';
-import { getPostsMeta, getPostByName } from '@/lib/posts';
-import 'highlight.js/styles/github-dark.css';
-import { Badge } from '@/components/ui/badge';
+import moment from "moment";
+import { CardDescription, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { MoveLeft } from "lucide-react";
+
+import { getPostsMeta, getPostByName } from "@/lib/posts";
+import "highlight.js/styles/github-dark.css";
+import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 
 export const revalidate = 3600;
 
@@ -31,7 +32,7 @@ export const generateMetadata = async ({ params: { postId } }: Props) => {
 
   if (!post) {
     return {
-      title: 'Page Not Found',
+      title: "Page Not Found",
     };
   }
 
@@ -44,12 +45,12 @@ export const generateMetadata = async ({ params: { postId } }: Props) => {
     openGraph: {
       title: post.meta.title,
       description: post.meta.excerpt,
-      images: '/opengraph-image.png',
+      images: "/opengraph-image.png",
     },
     twitter: {
       title: post.meta.title,
       description: post.meta.excerpt,
-      images: '/twitter-image.png',
+      images: "/twitter-image.png",
     },
   };
 };
@@ -62,31 +63,31 @@ const Post = async ({ params: { postId } }: Props) => {
   const { meta, content } = post;
 
   const tags = meta.tags.map((tag, i) => (
-    <Link key={i} href={`/tags/${tag}`} className='mr-2'>
-      <Badge variant={'outline'}>{tag}</Badge>
+    <Link key={i} href={`/tags/${tag}`} className="mr-2">
+      <Badge variant={"outline"}>{tag}</Badge>
     </Link>
   ));
 
   return (
-    <section className='mx-auto my-5 w-full max-w-[900px] px-4'>
-      <Button variant={'link'} className='my-2'>
-        <Link href='/blog' className='flex gap-2 items-center'>
+    <section className="mx-auto my-5 w-full max-w-[900px] px-4">
+      <Button variant={"link"} className="my-2">
+        <Link href="/blog" className="flex gap-2 items-center">
           <MoveLeft />
           Back to Blog
         </Link>
       </Button>
       <CardDescription>
-        {moment(meta.date ? meta.date : '').format('dddd, MMMM Do YYYY')}
+        {moment(meta.date ? meta.date : "").format("dddd, MMMM Do YYYY")}
       </CardDescription>
-      <CardTitle className='py-4'>{meta.title}</CardTitle>
+      <CardTitle className="py-4">{meta.title}</CardTitle>
       <section>{tags}</section>
-      <hr className='my-2' />
-      <section className='prose dark:prose-invert max-w-[1240px] '>
+      <hr className="my-2" />
+      <section className="prose dark:prose-invert max-w-[1240px] ">
         <article>{content}</article>
         <section>{tags}</section>
       </section>
-      <Button variant={'link'} className='my-2'>
-        <Link href='/blog' className='flex gap-2 items-center'>
+      <Button variant={"link"} className="my-2">
+        <Link href="/blog" className="flex gap-2 items-center">
           <MoveLeft />
           Back to Blog
         </Link>
