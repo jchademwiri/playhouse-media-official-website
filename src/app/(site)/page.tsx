@@ -1,4 +1,4 @@
-import { CallToAction } from '@/components/CallToAction';
+import { CallToAction } from "@/components/CallToAction";
 
 import {
   Projects,
@@ -7,17 +7,18 @@ import {
   Hosting,
   Services,
   Blog,
-} from '@/components/sections';
+} from "@/components/sections";
 
 export default function Home() {
   return (
-    <main className=''>
+    <main>
       <Hero />
       <Services />
-      <Projects />
+      <Blog />
+      {/* <Projects /> */}
       <Hosting />
       <CallToAction />
-      <Blog />
+
       <Contact />
     </main>
   );
