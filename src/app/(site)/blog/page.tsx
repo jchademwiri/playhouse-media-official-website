@@ -2,7 +2,7 @@ import PostCard from "@/components/PostCard";
 import { getPostsMeta } from "@/lib/posts";
 import { Metadata } from "next";
 
-export const revalidate = 3600;
+export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: "PMG Blog: Insights on Web Design, Development, and SEO",
