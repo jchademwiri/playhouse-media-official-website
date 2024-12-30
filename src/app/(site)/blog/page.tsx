@@ -1,7 +1,31 @@
 import PostCard from '@/components/PostCard';
 import { getPostsMeta } from '@/lib/posts';
+import { Metadata } from 'next';
 
-export const revalidate = 86400;
+export const revalidate = 3600;
+
+export const metadata: Metadata = {
+  title: 'PMG Blog: Insights on Web Design, Development, and SEO',
+  description:
+    'Explore the latest trends and expert insights in web design, development, and SEO on the Playhouse Media Group blog. Stay informed, inspired, and ahead in the digital landscape.',
+
+  alternates: {
+    canonical: `blog`,
+  },
+  openGraph: {
+    title: 'PMG Blog: Insights on Web Design, Development, and SEO',
+    description:
+      'Explore the latest trends and expert insights in web design, development, and SEO on the Playhouse Media Group blog. Stay informed, inspired, and ahead in the digital landscape.',
+    url: 'blog',
+    images: '/opengraph-image.png',
+  },
+  twitter: {
+    title: 'PMG Blog: Insights on Web Design, Development, and SEO',
+    description:
+      'Explore the latest trends and expert insights in web design, development, and SEO on the Playhouse Media Group blog. Stay informed, inspired, and ahead in the digital landscape.',
+    images: '/twitter-image.png',
+  },
+};
 
 const Posts = async () => {
   const posts = await getPostsMeta();

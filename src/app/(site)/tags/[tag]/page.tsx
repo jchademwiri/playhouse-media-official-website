@@ -3,7 +3,7 @@ import { getPostsMeta } from '@/lib/posts';
 
 import Link from 'next/link';
 
-export const revalidate = 86400;
+export const revalidate = 3600;
 
 type Props = {
   params: {
@@ -24,6 +24,21 @@ export async function generateStaticParams() {
 export function generateMetadata({ params: { tag } }: Props) {
   return {
     title: `Posts about ${tag}`,
+    description: `Welcome to Playhouse Media Group Blog Posts about ${tag}, these posts will teach you about ${tag}, learn something new everyday.`,
+
+    alternates: {
+      canonical: `tags/${tag}`,
+    },
+    openGraph: {
+      title: `Posts about ${tag}`,
+      description: `Welcome to Playhouse Media Group Blog Posts about ${tag}, these posts will teach you about ${tag}, learn something new everyday.`,
+      images: '/opengraph-image.png',
+    },
+    twitter: {
+      title: `Posts about ${tag}`,
+      description: `Welcome to Playhouse Media Group Blog Posts about ${tag}, these posts will teach you about ${tag}, learn something new everyday.`,
+    },
+    images: '/twitter-image.png',
   };
 }
 

@@ -8,7 +8,7 @@ import { getPostsMeta, getPostByName } from '@/lib/posts';
 import 'highlight.js/styles/github-dark.css';
 import { Badge } from '@/components/ui/badge';
 
-export const revalidate = 86400;
+export const revalidate = 3600;
 
 type Props = {
   params: {
@@ -44,10 +44,12 @@ export const generateMetadata = async ({ params: { postId } }: Props) => {
     openGraph: {
       title: post.meta.title,
       description: post.meta.excerpt,
+      images: '/opengraph-image.png',
     },
     twitter: {
       title: post.meta.title,
       description: post.meta.excerpt,
+      images: '/twitter-image.png',
     },
   };
 };

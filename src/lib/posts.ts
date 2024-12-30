@@ -13,16 +13,15 @@ type Filetree = {
   ];
 };
 
-const rawUrl = 'https://raw.githubusercontent.com/jchademwiri/pmg-blog/master';
+// const rawUrl = 'https://raw.githubusercontent.com/jchademwiri/pmg-blog/master';
 
-const apiUrl =
-  'https://api.github.com/repos/jchademwiri/pmg-blog/git/trees/master?recursive=1';
+// const apiUrl = 'https://api.github.com/repos/jchademwiri/pmg-blog/git/trees/master?recursive=1';
 
 export async function getPostByName(
   fileName: string
 ): Promise<BlogPost | undefined> {
   const res = await fetch(
-    `${rawUrl}/${fileName}`,
+    `https://raw.githubusercontent.com/jchademwiri/pmg-blog/master/${fileName}`,
 
     {
       headers: {
@@ -83,13 +82,16 @@ export async function getPostByName(
 }
 
 export async function getPostsMeta(): Promise<Meta[] | undefined> {
-  const res = await fetch(`${apiUrl}`, {
-    headers: {
-      Accept: 'application/vnd.github+json',
-      Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-      'X-GitHub-Api-Version': '2022-11-28',
-    },
-  });
+  const res = await fetch(
+    `https://api.github.com/repos/jchademwiri/pmg-blog/git/trees/master?recursive=1`,
+    {
+      headers: {
+        Accept: 'application/vnd.github+json',
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        'X-GitHub-Api-Version': '2022-11-28',
+      },
+    }
+  );
 
   if (!res.ok) return undefined;
 
@@ -110,4 +112,3 @@ export async function getPostsMeta(): Promise<Meta[] | undefined> {
   }
   return posts.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
-// https://youtu.be/6ih_3m_UPKg?t=1126

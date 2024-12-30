@@ -11,7 +11,7 @@ const Hosting = () => {
   return (
     <section id='about'>
       <Moto />
-      <section className='mx-auto my-10 min-h-screen grid w-full max-w-[1240px] gap-4 px-4 py-10 md:grid-cols-2'>
+      <section className='mx-auto my-10 grid w-full max-w-[1240px] gap-4 px-4 py-10 md:grid-cols-2'>
         <motion.article
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
