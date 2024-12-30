@@ -3,7 +3,7 @@ import { getPostsMeta } from "@/lib/posts";
 
 import Link from "next/link";
 
-export const revalidate = 0;
+export const revalidate = 3600;
 
 type Props = {
   params: {
