@@ -1,9 +1,9 @@
-import { compileMDX } from 'next-mdx-remote/rsc';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings/lib';
-import rehypeHighlight from 'rehype-highlight/lib';
-import rehypeSlug from 'rehype-slug';
-import Video from '@/components/Video';
-import CustomImage from '@/components/CustomImage';
+import { compileMDX } from "next-mdx-remote/rsc";
+import rehypeAutolinkHeadings from "rehype-autolink-headings/lib";
+import rehypeHighlight from "rehype-highlight/lib";
+import rehypeSlug from "rehype-slug";
+import Video from "@/components/Video";
+import CustomImage from "@/components/CustomImage";
 
 type Filetree = {
   tree: [
@@ -18,24 +18,24 @@ type Filetree = {
 // const apiUrl = 'https://api.github.com/repos/jchademwiri/pmg-blog/git/trees/master?recursive=1';
 
 export async function getPostByName(
-  fileName: string
+  fileName: string,
 ): Promise<BlogPost | undefined> {
   const res = await fetch(
     `https://raw.githubusercontent.com/jchademwiri/pmg-blog/master/${fileName}`,
 
     {
       headers: {
-        accept: 'application/vnd.github+json',
+        accept: "application/vnd.github+json",
         Authorization: `Bearer  ${process.env.GITHUB_TOKEN}`,
-        'X-GitHub-Api-Version': '2022-11-28',
+        "X-GitHub-Api-Version": "2022-11-28",
       },
-    }
+    },
   );
   if (!res.ok) return undefined;
 
   const rawMDX = await res.text();
 
-  if (rawMDX === '404: Not Found') return undefined;
+  if (rawMDX === "404: Not Found") return undefined;
 
   const { frontmatter, content } = await compileMDX<{
     title: string;
@@ -57,7 +57,7 @@ export async function getPostByName(
           [
             rehypeAutolinkHeadings,
             {
-              behavior: 'wrap',
+              behavior: "wrap",
             },
           ],
         ],
@@ -65,7 +65,7 @@ export async function getPostByName(
     },
   });
 
-  const id = fileName.replace(/\.mdx$/, '');
+  const id = fileName.replace(/\.mdx$/, "");
 
   const blogPostObj: BlogPost = {
     meta: {
@@ -86,11 +86,11 @@ export async function getPostsMeta(): Promise<Meta[] | undefined> {
     `https://api.github.com/repos/jchademwiri/pmg-blog/git/trees/master?recursive=1`,
     {
       headers: {
-        Accept: 'application/vnd.github+json',
+        Accept: "application/vnd.github+json",
         Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-        'X-GitHub-Api-Version': '2022-11-28',
+        "X-GitHub-Api-Version": "2022-11-28",
       },
-    }
+    },
   );
 
   if (!res.ok) return undefined;
@@ -99,7 +99,7 @@ export async function getPostsMeta(): Promise<Meta[] | undefined> {
 
   const filesArray = repoFiletree.tree
     .map((obj) => obj.path)
-    .filter((path) => path.endsWith('.mdx'));
+    .filter((path) => path.endsWith(".mdx"));
 
   const posts: Meta[] = [];
 
