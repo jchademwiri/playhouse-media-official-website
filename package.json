@@ -46,7 +46,7 @@
     "eslint": "8.56.0",
     "eslint-config-next": "14.0.4",
     "framer-motion": "^10.16.16",
-    "highlight.js": "^11.8.0",
+    "highlight.js": "^11.9.0",
     "install": "^0.13.0",
     "lucide-react": "^0.302.0",
     "moment": "^2.30.1",
