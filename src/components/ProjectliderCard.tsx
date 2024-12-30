@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { CardContent } from "./ui/card";
 import { CarouselItem } from "./ui/carousel";
+import Image from "next/image";
 
 export const ProjectliderCard = ({ url, name, image, categories }: Project) => {
   return (
