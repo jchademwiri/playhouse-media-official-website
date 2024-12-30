@@ -66,7 +66,6 @@ export default function SiteLayout({
         <Toaster />
         <Analytics />
       </body>
-      <GoogleAnalytics gaId=" G-51M5BSC068" />
     </html>
   );
 }
