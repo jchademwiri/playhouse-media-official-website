@@ -37,8 +37,8 @@ const Contact = () => {
           />
           <div>
             <h3 className='text-lg font-medium'>Email Address</h3>
-            <Link href={`mailto:info@playhousemedia.net`} className=''>
-              info@playhousemedia.net
+            <Link href={`mailto:info@playhousemedia.co.za`} className=''>
+              info@playhousemedia.co.za
             </Link>
           </div>
         </div>

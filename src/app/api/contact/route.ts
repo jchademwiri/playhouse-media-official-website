@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
     const { name, phone, email, message } = contactFormSchema.parse(body);
 
     const sendMessage = await resend.emails.send({
-      from: "PMG Team <info@playhousemedia.net>",
+      from: "PMG Team <info@playhousemedia.co.za>",
       to: email,
       subject: "Playhouse Media Group - Contact",
       react: EmailTemplate({
@@ -53,8 +53,8 @@ export async function POST(request: NextRequest) {
       }) as React.ReactElement,
     });
     const sendMessageToAdmin = await resend.emails.send({
-      from: "PMG Team <contact@playhousemedia.net>",
-      to: "info@playhousemedia.net",
+      from: "PMG Team <contact@playhousemedia.co.za>",
+      to: "info@playhousemedia.co.za",
       subject: "Playhouse Media Group - Contact",
       react: EmailTemplate({
         name,

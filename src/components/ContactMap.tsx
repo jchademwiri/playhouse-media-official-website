@@ -28,10 +28,10 @@ const ContactMap = () => {
             </h2>
 
             <Link
-              href='mailto:info@playhousemedia.net'
+              href='mailto:info@playhousemedia.co.za'
               className='text-primary leading-relaxed'
             >
-              info@playhousemedia.net
+              info@playhousemedia.co.za
             </Link>
             <h2 className='title-font font-semibold text-muted-foreground tracking-widest text-xs mt-4'>
               PHONE
