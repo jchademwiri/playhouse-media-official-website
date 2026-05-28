@@ -7,12 +7,12 @@ import NavMenu from "@/components/NavigationMenu/NavMenu";
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.playhousemedia.net"),
+  metadataBase: new URL("https://www.playhousemedia.co.za"),
   title: "Playhouse Media Group - Web Design and Development Services",
   description:
     "Transform your online presence with Playhouse Media Group. We create captivating, user-friendly websites to boost brand visibility and drive organic traffic. Experts in web design, development, and SEO services.",
   alternates: {
-    canonical: "https://www.playhousemedia.net",
+    canonical: "https://www.playhousemedia.co.za",
   },
 
   openGraph: {
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     siteName: "Playhouse Media Group",
     description:
       "Transform your online presence with Playhouse Media Group. We create captivating, user-friendly websites to boost brand visibility and drive organic traffic. Experts in web design, development, and SEO services.",
-    url: "https://www.playhousemedia.net",
-    locale: "en_US",
+    url: "https://www.playhousemedia.co.za",
+    locale: "en_ZA",
     type: "website",
     images: "/opengraph-image.png",
   },
