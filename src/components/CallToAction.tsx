@@ -20,13 +20,13 @@ export const CallToAction = () => {
             <span>074 049 1433</span>
           </Link>
           <Link
-            href='mailto:info@playhousemedia.net'
+            href='mailto:info@playhousemedia.co.za'
             className='rounded bg-background px-6 py-2'
           >
             <p className='py-1 text-lg font-medium text-primary'>
               Email Us Now
             </p>
-            <span>info@playhousemedia.net</span>
+            <span>info@playhousemedia.co.za</span>
           </Link>
         </div>
       </div>
